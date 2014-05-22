@@ -1,0 +1,29 @@
+
+
+.arrow_box {
+	position: relative;
+	border-bottom: 1px solid $emphasize;
+	&:before,
+	&:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:after {
+		border-color: transparent;
+		border-top-color: $emphasize;
+		border-width: 5px;//30px;
+		margin-left: -5px;//-30px;
+	}
+	/*&:before {
+		border-color: transparent;
+		border-top-color: $emphasize;
+		border-width: 37px;
+		margin-left: -37px;
+	}*/
+}

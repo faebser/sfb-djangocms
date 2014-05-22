@@ -1,0 +1,16 @@
+/* line 3, ../scss/mainComponent.scss */
+#main img {
+  max-width: 25%; }
+  /* line 5, ../scss/mainComponent.scss */
+  #main img.left {
+    float: left;
+    padding: 0.5em 0.5em 0.5em 0; }
+  /* line 9, ../scss/mainComponent.scss */
+  #main img.right {
+    float: right;
+    padding: 0.5em 0 0.5em 0.5em; }
+  /* line 13, ../scss/mainComponent.scss */
+  #main img .center {
+    float: none;
+    max-width: 100%;
+    width: 100%; }

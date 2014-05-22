@@ -1,0 +1,56 @@
+$textSectionName: ".text-section";
+
+#main {
+    @extend .outerWrapper;
+    #subnav {
+        display: none;
+        float: left;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    #{$textSectionName} {
+        @extend .clearfix;
+        p {
+            $margin: 1em;
+            &:first-of-type {
+                margin-top: 0;
+            }
+            span.plugin_picture {
+                max-width: 25%;
+                min-width: 25%;
+                img {
+                    max-width: 100%;
+                }
+                &.align-left {
+                    float: left;
+                    margin: $margin $margin ($margin + ($margin*0.5)) 0;
+                }
+                &.align-right {
+                    float: right;
+                    margin: $margin 0 ($margin + ($margin*0.5)) $margin;
+                }
+                &.align-center {
+                    float: none;
+                    max-width: 100%;
+                    width: auto;
+                    display: block;
+                    margin: $margin auto;
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+    ul {
+    	list-style-type: square;
+    	li {
+    		padding-bottom: 0.5em;
+    		&:last-child {
+    			padding: 0;
+    		}
+    	}
+    }
+}

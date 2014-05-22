@@ -1,0 +1,12 @@
+footer {
+    @extend .outerWrapper;
+    margin-bottom: 2em;
+    a,
+    a:visited {
+		font-size: 2.1em;
+		color: $emphasize;
+		&:hover {
+			text-decoration: none;
+		}
+    }
+}

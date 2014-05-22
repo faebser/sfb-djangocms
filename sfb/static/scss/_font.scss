@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'nobileregular';
+    src: url('font/nobile/nobile-regular-webfont.eot');
+    src: url('font/nobile/nobile-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/nobile/nobile-regular-webfont.woff') format('woff'),
+         url('font/nobile/nobile-regular-webfont.ttf') format('truetype'),
+         url('font/nobile/nobile-regular-webfont.svg#nobileregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nobilemedium';
+    src: url('font/nobile/nobile-medium-webfont.eot');
+    src: url('font/nobile/nobile-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/nobile/nobile-medium-webfont.woff') format('woff'),
+         url('font/nobile/nobile-medium-webfont.ttf') format('truetype'),
+         url('font/nobile/nobile-medium-webfont.svg#nobilemedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nobilebold';
+    src: url('font/nobile/nobile-bold-webfont.eot');
+    src: url('font/nobile/nobile-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/nobile/nobile-bold-webfont.woff') format('woff'),
+         url('font/nobile/nobile-bold-webfont.ttf') format('truetype'),
+         url('font/nobile/nobile-bold-webfont.svg#nobileregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// The base font size
+$base-font-size: 16px;
+// Base line height
+$base-line-height: 28px;
+// Rhythm unit (Compass vertical rhythm)
+$rhythm-unit: “rem”;
+
+$base-font-size: 18px;
+$base-font-leading: 1;
+$medium-font-size: 21.328px;
+$medium-font-leading: 1.25;
+$large-font-size: 28.43px;
+$large-font-leading: 1.25;
+$x-large-font-size: 37.897px;
+$x-large-font-leading: 1.25;
+
+@mixin typeSize($size) {
+    @if $size == "base" {
+        @include adjust-font-size-to($base-font-size);
+        @include adjust-leading-to($base-font-leading);
+    }
+     @if $size == "medium" {
+        @include adjust-font-size-to($medium-font-size);
+        @include adjust-leading-to($medium-font-leading);
+    }
+    @if $size == "large" {
+        @include adjust-font-size-to($large-font-size);
+        @include adjust-leading-to($large-font-leading);
+    }
+    @if $size == "x-large" {
+        @include adjust-font-size-to($x-large-font-size);
+        @include adjust-leading-to($x-large-font-leading);
+    }
+}
+
+%regular {
+    font-family: 'nobileregular', arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+%medium {
+    font-family: 'nobilemedium', arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+%bold {
+    font-family: 'nobilebold', arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+%t-base {
+ @include typeSize(base);
+}
+%t-medium {
+ @include typeSize(medium);
+}
+%t-large {
+ @include typeSize(large);
+}
+%t-xlarge {
+ @include typeSize(x-large);
+}

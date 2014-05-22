@@ -1,0 +1,664 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 13, ../scss/main.scss */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 25, ../scss/main.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 30, ../scss/main.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 39, ../scss/main.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+/* line 57, ../scss/main.scss */
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 65, ../scss/main.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 75, ../scss/main.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+/* line 83, ../scss/main.scss */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles - fabian.frei@esf-frei.ch
+   ========================================================================== */
+/* compass imports */
+/* colors */
+/* line 110, ../scss/main.scss */
+html,
+body {
+  background-color: #fdf6e3;
+}
+
+/* important stuff */
+/* apply a natural box layout model to all elements */
+/* line 117, ../scss/main.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* typo and font */
+@font-face {
+  font-family: 'nobileregular';
+  src: url("font/nobile/nobile-regular-webfont.eot");
+  src: url("font/nobile/nobile-regular-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-regular-webfont.woff") format("woff"), url("font/nobile/nobile-regular-webfont.ttf") format("truetype"), url("font/nobile/nobile-regular-webfont.svg#nobileregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nobilemedium';
+  src: url("font/nobile/nobile-medium-webfont.eot");
+  src: url("font/nobile/nobile-medium-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-medium-webfont.woff") format("woff"), url("font/nobile/nobile-medium-webfont.ttf") format("truetype"), url("font/nobile/nobile-medium-webfont.svg#nobilemedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nobilebold';
+  src: url("font/nobile/nobile-bold-webfont.eot");
+  src: url("font/nobile/nobile-bold-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-bold-webfont.woff") format("woff"), url("font/nobile/nobile-bold-webfont.ttf") format("truetype"), url("font/nobile/nobile-bold-webfont.svg#nobileregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 70, ../scss/_font.scss */
+p,
+li,
+a {
+  font-family: 'nobileregular', arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 76, ../scss/_font.scss */
+h2,
+h3,
+h4, strong, header h2 a,
+header h2 a:visited,
+#header h2 a,
+#header h2 a:visited, nav #subnav li a,
+nav #subnav li a:visited {
+  font-family: 'nobilemedium', arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 82, ../scss/_font.scss */
+h1, nav ul li a,
+nav ul li a:visited {
+  font-family: 'nobilebold', arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 88, ../scss/_font.scss */
+p,
+li,
+a, strong {
+  font-size: 1em;
+  line-height: 1.55556em;
+  line-height: 1.55556em;
+}
+
+/* line 91, ../scss/_font.scss */
+h2,
+h3,
+h4 {
+  font-size: 1.18489em;
+  line-height: 1.31283em;
+  line-height: 1.94444em;
+}
+
+/* line 94, ../scss/_font.scss */
+h1 {
+  font-size: 1.57944em;
+  line-height: 1.96975em;
+  line-height: 1.94444em;
+}
+
+/* line 97, ../scss/_font.scss */
+header h1,
+#header h1 {
+  font-size: 2.10539em;
+  line-height: 1.47769em;
+  line-height: 1.94444em;
+}
+
+/* line 123, ../scss/main.scss */
+h1 {
+  color: #00407a;
+}
+
+/* line 130, ../scss/main.scss */
+h2,
+h3,
+h4 {
+  color: #00407a;
+}
+
+/* line 138, ../scss/main.scss */
+p,
+li,
+a {
+  color: #324a53;
+}
+
+/* line 143, ../scss/main.scss */
+strong {
+  color: #00407a;
+}
+
+/* line 149, ../scss/main.scss */
+a {
+  color: #00407a;
+  text-decoration: underline;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+/* line 153, ../scss/main.scss */
+a:hover {
+  text-decoration: underline;
+}
+/* line 157, ../scss/main.scss */
+a:hover, a:visited {
+  color: #c5b893;
+}
+
+/* wrappers */
+/* line 164, ../scss/main.scss */
+.outerWrapper, header,
+#header, nav #navInnerWrapper, #main, footer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 0.5em 0 0.5em;
+}
+
+/* components */
+/* line 178, ../scss/main.scss */
+header,
+#header {
+  margin-bottom: 4em;
+  margin-top: 2.2em;
+}
+/* line 182, ../scss/main.scss */
+header h1,
+#header h1 {
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  word-spacing: 0.12em;
+  padding: 0.2em 0 0 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+/* line 190, ../scss/main.scss */
+header h1.second,
+#header h1.second {
+  margin-top: 0;
+  padding-top: 0;
+}
+/* line 195, ../scss/main.scss */
+header h2,
+#header h2 {
+  font-size: 0.8em;
+  text-align: left;
+}
+/* line 199, ../scss/main.scss */
+header h2 a,
+header h2 a:visited,
+#header h2 a,
+#header h2 a:visited {
+  color: #00407a;
+  text-decoration: none;
+}
+
+/* line 207, ../scss/main.scss */
+nav {
+  position: absolute;
+  z-index: 0;
+  top: 0.4em;
+  left: 0;
+  width: 100%;
+  margin-bottom: 2.2em;
+}
+/* line 218, ../scss/main.scss */
+nav ul {
+  width: 60%;
+  float: right;
+  list-style-type: none;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  /*&:before,
+  &:after {
+      width: 100%;
+      height: 1px;
+      @include background(linear-gradient(left, $background, $emphasize, $background));
+  } */
+}
+/* line 234, ../scss/main.scss */
+nav ul li {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  padding: 0 0.2em 0 0;
+}
+/* line 244, ../scss/main.scss */
+nav ul li:last-child {
+  padding-right: 0;
+}
+/* line 248, ../scss/main.scss */
+nav ul li a,
+nav ul li a:visited {
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100%;
+  padding: 2em 0.4em 0.6em 0.4em;
+  background-color: #fdf6e3;
+  color: #00407a;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -o-transition: all 0.75s;
+  transition: all 0.75s;
+  position: relative;
+}
+/* line 259, ../scss/main.scss */
+nav ul li a:before,
+nav ul li a:visited:before {
+  -webkit-transition: background-color 0.75s;
+  -moz-transition: background-color 0.75s;
+  -o-transition: background-color 0.75s;
+  transition: background-color 0.75s;
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -ms-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  transform: skew(45deg);
+  position: absolute;
+  top: -0.4em;
+  left: -3px;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 0.4em;
+  background-color: #fdf6e3;
+}
+/* line 272, ../scss/main.scss */
+nav ul li a:hover, nav ul li a.active,
+nav ul li a:visited:hover,
+nav ul li a:visited.active {
+  text-decoration: none;
+  background-color: #708891;
+  color: #fdf6e3;
+}
+/* line 277, ../scss/main.scss */
+nav ul li a:hover:before, nav ul li a.active:before,
+nav ul li a:visited:hover:before,
+nav ul li a:visited.active:before {
+  background-color: #588393;
+}
+/* line 284, ../scss/main.scss */
+nav #subnav {
+  display: none;
+  border: none;
+}
+/* line 288, ../scss/main.scss */
+nav #subnav:before, nav #subnav:after {
+  height: 0;
+  background: none;
+}
+/* line 292, ../scss/main.scss */
+nav #subnav li {
+  display: inline-block;
+  width: auto;
+  padding: 0;
+}
+/* line 297, ../scss/main.scss */
+nav #subnav li a,
+nav #subnav li a:visited {
+  padding: 0.6em;
+}
+/* line 301, ../scss/main.scss */
+nav #subnav li a.active, nav #subnav li a:hover,
+nav #subnav li a:visited.active,
+nav #subnav li a:visited:hover {
+  background-color: transparent;
+  color: #c5b893;
+}
+
+/*** helpers ***/
+/* line 3, ../scss/_arrow.scss */
+.arrow_box {
+  position: relative;
+  border-bottom: 1px solid #00407a;
+  /*&:before {
+  	border-color: transparent;
+  	border-top-color: $emphasize;
+  	border-width: 37px;
+  	margin-left: -37px;
+  }*/
+}
+/* line 7, ../scss/_arrow.scss */
+.arrow_box:before, .arrow_box:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 17, ../scss/_arrow.scss */
+.arrow_box:after {
+  border-color: transparent;
+  border-top-color: #00407a;
+  border-width: 5px;
+  margin-left: -5px;
+}
+
+/*** components ***/
+/* line 5, ../scss/_content.scss */
+#main #subnav {
+  display: none;
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/* line 16, ../scss/_content.scss */
+#main .text-section p:first-of-type {
+  margin-top: 0;
+}
+/* line 19, ../scss/_content.scss */
+#main .text-section p span.plugin_picture {
+  max-width: 25%;
+  min-width: 25%;
+}
+/* line 22, ../scss/_content.scss */
+#main .text-section p span.plugin_picture img {
+  max-width: 100%;
+}
+/* line 25, ../scss/_content.scss */
+#main .text-section p span.plugin_picture.align-left {
+  float: left;
+  margin: 1em 1em 1.5em 0;
+}
+/* line 29, ../scss/_content.scss */
+#main .text-section p span.plugin_picture.align-right {
+  float: right;
+  margin: 1em 0 1.5em 1em;
+}
+/* line 33, ../scss/_content.scss */
+#main .text-section p span.plugin_picture.align-center {
+  float: none;
+  max-width: 100%;
+  width: auto;
+  display: block;
+  margin: 1em auto;
+}
+/* line 39, ../scss/_content.scss */
+#main .text-section p span.plugin_picture.align-center img {
+  display: block;
+  margin: 0 auto;
+}
+/* line 47, ../scss/_content.scss */
+#main ul {
+  list-style-type: square;
+}
+/* line 49, ../scss/_content.scss */
+#main ul li {
+  padding-bottom: 0.5em;
+}
+/* line 51, ../scss/_content.scss */
+#main ul li:last-child {
+  padding: 0;
+}
+
+/* line 1, ../scss/_footer.scss */
+footer {
+  margin-bottom: 2em;
+}
+/* line 5, ../scss/_footer.scss */
+footer a,
+footer a:visited {
+  font-size: 2.1em;
+  color: #00407a;
+}
+/* line 8, ../scss/_footer.scss */
+footer a:hover,
+footer a:visited:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 320, ../scss/main.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 329, ../scss/main.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 346, ../scss/main.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 359, ../scss/main.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 377, ../scss/main.scss */
+.clearfix:before, nav #navInnerWrapper:before, nav ul:before, #main .text-section:before, .clearfix:after, nav #navInnerWrapper:after, nav ul:after, #main .text-section:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /* line 407, ../scss/main.scss */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 415, ../scss/main.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 419, ../scss/main.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 423, ../scss/main.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links for images, or javascript/internal links
+   */
+  /* line 432, ../scss/main.scss */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 437, ../scss/main.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 442, ../scss/main.scss */
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  }
+
+  /* line 447, ../scss/main.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 451, ../scss/main.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 457, ../scss/main.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 463, ../scss/main.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
