@@ -31,25 +31,14 @@
             <div id="navInnerWrapper">
                 <ul>
                     {% show_menu 0 %}
-                    <!--<li><a href="#" title="">Unsere Welt</a></li>
-                    <li><a href="#" title="" class="active">Aktuelles</a></li>
-                    <li><a href="#" title="">Impressum</a></li>
-                    <li><a href="#" title="">Über uns</a></li>
-                    <li><a href="#" title="">Shop</a></li> -->
                 </ul>
             </div>
         </nav>
         <div id="main">
             <ul id="subnav">
                 {% show_sub_menu 1 %}
-               <!-- <li><a href="#" title="">Unsere Welt</a></li>
-                <li><a href="#" title="" class="active">Aktuelles</a></li>
-                <li><a href="#" title="">Impressum</a></li>
-                <li><a href="#" title="">Über uns</a></li>
-                <li><a href="#" title="">Shop</a></li> -->
             </ul>
             {% block content %}
-                {% placeholder "content" %}
             {% endblock content %}
 
         <footer>
