@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from os import path
 __author__ = 'faebser'
 
 gettext = lambda s: s
@@ -33,9 +34,38 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
-    ('index.html', 'test')
+    ('index.html', 'test'),
+    (path.join('pages', 'sfb-default.html'), 'SFB Standard'),
+    (path.join('pages', 'sfb-event-news.html'), u'SFB News und Event Detailseite'),
+    (path.join('pages', 'sfb-teaser.html'), u'SFB News und Event Übersicht'),
 )
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
+CMS_PLACEHOLDER_CONF = {
+    'intro': {
+        'plugins': ['ArticlePageIntro'],
+        'name': u'Intro',
+        'limits': {
+            'global': 1
+        }
+    },
+    'pdfbox': {
+        'plugins': ['PdfBox'],
+        'name': u'PDF-Box',
+        'limits': {
+            'PdfBox': 1
+        }
+    },
+    'linkbox': {
+        'plugins': ['LinkBox'],
+        'name': u'Link-Box',
+        'limits': {
+            'LinkBox': 1
+        }
+    },
+    'teaserList': {
+        'plugins': ['ArticlePageTeaser'],
+        'name': u'Übersicht'
+    }
+}

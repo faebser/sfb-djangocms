@@ -1,0 +1,9 @@
+{% load cms_tags %}
+<div class="{{ cssClass }}">
+    <h3>{{ title }}</h3>
+    {% for plugin in instance.child_plugin_instances %}
+        <ul>
+            <li>{% render_plugin plugin %}</li>
+        </ul>
+    {% endfor %}
+</div>

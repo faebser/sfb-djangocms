@@ -2,5 +2,11 @@
 {% load cms_tags menu_tags sekizai_tags %}
 
 {% block content %}
+    {% placeholder "intro" %}
+
+    <div class="boxWrapper">
+        {% placeholder "pdfbox" %}
+        {% placeholder "linkbox" %}
+    </div>
     {% placeholder "content" %}
 {% endblock content %}

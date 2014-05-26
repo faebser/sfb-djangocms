@@ -1,0 +1,50 @@
+#main #teaser {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 1.5em;
+		img {
+			max-width: 100%;
+		}
+		.meta {
+			@include transition(bottom 0.75s);
+			padding: 0 1em;
+			color: $background;
+			background-color: $extra;
+			background-color: rgba(0, 25, 46, 0.6);
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+			h2 {
+				color: $background;
+				margin-right: 1em;
+				display: inline-block;
+			}
+			span {
+				font-size: 80%;
+			}
+		}
+		p {
+			height: 100%;
+			color: $background;
+			padding: 1em 1em;
+			margin: 0;
+			position: absolute;
+			top: 100%;
+			background-color: $extra;
+			background-color: rgba(0, 25, 46, 0.6);
+			@include transition(top 0.75s);
+		}
+		&:hover {
+			.meta {
+				bottom: 100%;
+			}
+			p {
+				top: 0%;
+			}
+		}
+	}
+}

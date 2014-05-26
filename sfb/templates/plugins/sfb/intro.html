@@ -1,0 +1,14 @@
+{% load cms_tags %}
+<div class="pageIntro">
+    <div class="meta">
+        <h1>{{ instance.title }}</h1>
+        <p>
+            <span class="author"><span>Von</span> {{ instance.author }}</span>
+            <span class="date"><span>Am</span> {{ instance.publicationDate | date:"j.n.Y" }}</span>
+        </p>
+        {% if instance.image %}
+        <img src="{{ instance.image.url }}" alt=""/>
+        {% endif %}
+    </div>
+    {{ instance.body | safe }}
+</div>

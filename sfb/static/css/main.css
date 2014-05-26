@@ -134,7 +134,8 @@ body {
 /* line 70, ../scss/_font.scss */
 p,
 li,
-a {
+a, .pageIntro .meta p .date span,
+.pageIntro .meta p .author span {
   font-family: 'nobileregular', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -147,7 +148,7 @@ h4, strong, header h2 a,
 header h2 a:visited,
 #header h2 a,
 #header h2 a:visited, nav #subnav li a,
-nav #subnav li a:visited {
+nav #subnav li a:visited, .pageIntro p {
   font-family: 'nobilemedium', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -173,7 +174,7 @@ a, strong {
 /* line 91, ../scss/_font.scss */
 h2,
 h3,
-h4 {
+h4, #main .box h3 {
   font-size: 1.18489em;
   line-height: 1.31283em;
   line-height: 1.94444em;
@@ -431,6 +432,31 @@ nav #subnav li a:visited:hover {
 }
 
 /*** components ***/
+/* line 3, ../scss/_intro.scss */
+.pageIntro .meta img {
+  max-width: 100%;
+}
+/* line 6, ../scss/_intro.scss */
+.pageIntro .meta p {
+  text-transform: uppercase;
+  font-size: 80%;
+  word-spacing: 0.6em;
+}
+/* line 11, ../scss/_intro.scss */
+.pageIntro .meta p .date,
+.pageIntro .meta p .author {
+  color: #00192e;
+}
+/* line 13, ../scss/_intro.scss */
+.pageIntro .meta p .date span,
+.pageIntro .meta p .author span {
+  color: #324a53;
+}
+/* line 18, ../scss/_intro.scss */
+.pageIntro .meta p .author {
+  margin-right: 0.5em;
+}
+
 /* line 5, ../scss/_content.scss */
 #main #subnav {
   display: none;
@@ -486,6 +512,106 @@ nav #subnav li a:visited:hover {
 /* line 51, ../scss/_content.scss */
 #main ul li:last-child {
   padding: 0;
+}
+
+/* line 1, ../scss/_teaser.scss */
+#main #teaser {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 5, ../scss/_teaser.scss */
+#main #teaser li {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+}
+/* line 9, ../scss/_teaser.scss */
+#main #teaser li img {
+  max-width: 100%;
+}
+/* line 12, ../scss/_teaser.scss */
+#main #teaser li .meta {
+  -webkit-transition: bottom 0.75s;
+  -moz-transition: bottom 0.75s;
+  -o-transition: bottom 0.75s;
+  transition: bottom 0.75s;
+  padding: 0 1em;
+  color: #fdf6e3;
+  background-color: #00192e;
+  background-color: rgba(0, 25, 46, 0.6);
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+/* line 21, ../scss/_teaser.scss */
+#main #teaser li .meta h2 {
+  color: #fdf6e3;
+  margin-right: 1em;
+  display: inline-block;
+}
+/* line 26, ../scss/_teaser.scss */
+#main #teaser li .meta span {
+  font-size: 80%;
+}
+/* line 30, ../scss/_teaser.scss */
+#main #teaser li p {
+  height: 100%;
+  color: #fdf6e3;
+  padding: 1em 1em;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  background-color: #00192e;
+  background-color: rgba(0, 25, 46, 0.6);
+  -webkit-transition: top 0.75s;
+  -moz-transition: top 0.75s;
+  -o-transition: top 0.75s;
+  transition: top 0.75s;
+}
+/* line 42, ../scss/_teaser.scss */
+#main #teaser li:hover .meta {
+  bottom: 100%;
+}
+/* line 45, ../scss/_teaser.scss */
+#main #teaser li:hover p {
+  top: 0%;
+}
+
+/* line 2, ../scss/_boxes.scss */
+#main .boxWrapper {
+  float: right;
+}
+/* line 5, ../scss/_boxes.scss */
+#main .box {
+  font-size: 90%;
+  margin-bottom: 1em;
+  padding: 1em;
+  margin: 1em;
+  background-color: #00407A;
+  background-color: rgba(0, 64, 122, 0.7);
+  min-width: 350px;
+}
+/* line 13, ../scss/_boxes.scss */
+#main .box ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 18, ../scss/_boxes.scss */
+#main .box h3 {
+  margin-top: 0;
+  color: #fdf6e3;
+}
+/* line 24, ../scss/_boxes.scss */
+#main .box a,
+#main .box a:visited {
+  color: #fdf6e3;
+  text-decoration: none;
+}
+/* line 28, ../scss/_boxes.scss */
+#main .box a:hover {
+  color: #324a53;
 }
 
 /* line 1, ../scss/_footer.scss */

@@ -1,0 +1,14 @@
+{% load cms_tags %}
+<li>
+    {% if instance.imageOverwrite != "<empty>" %}
+        <img src="{{ instance.imageOverwrite.url }}" alt=""/>
+    {% endif %}
+    {% if teaser.image != "<empty>" %}
+        <img src="{{ teaser.image.url }}" alt=""/>
+    {% endif %}
+    <div class="meta">
+        <h2>{{ instance.titleOverwrite | default:teaser.title }}</h2>
+        <span>{{ instance.publicationDateOverwrite | default:teaser.publicationDate | date:"j.n.Y" }}</span>
+    </div>
+    {{ instance.bodyOverwrite | default:teaser.body | safe }}
+</li>

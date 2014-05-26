@@ -1,0 +1,32 @@
+#main {
+	.boxWrapper {
+		float: right;
+	}
+	.box {
+		font-size: 90%;
+		margin-bottom: 1em; 
+		padding: 1em;
+		margin: 1em;
+		background-color: #00407A;
+		background-color: rgba(0, 64, 122, 0.7);
+		min-width: 350px;
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		h3 {
+			@extend %t-medium;
+			margin-top: 0;
+			color: $background;
+		}
+		a,
+		a:visited {
+			color: $background;
+			text-decoration: none;
+		}
+		a:hover {
+			color: $text;
+		}
+	}
+}

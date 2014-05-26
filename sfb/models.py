@@ -17,12 +17,12 @@ class SfbDefaultText(AbstractText):
 class SfbArticlePageHeader(CMSPlugin):
     title = models.CharField(max_length=256, verbose_name=u"Titel")
     author = models.CharField(max_length=256, verbose_name=u"Autor")
-    image = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, default="<empty>")
+    image = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, default="<empty>", blank=True, null=True)
     publicationDate = models.DateTimeField(verbose_name=u"Datum/Zeit", default=datetime.datetime.now())
     body = HTMLField(verbose_name=u"Abriss")
 
     def __unicode__(self):
-        return "Artikel: " + self.title[0:20] + "... von " + self.author + " / " + str(self.publicationDate.strftime("%H:%M:%S %m/%d/%Y"))
+        return "Artikel: " + self.title[0:25] + "... von " + self.author + " / " + str(self.publicationDate.strftime("%H:%M:%S %m/%d/%Y"))
 
     class Meta:
         verbose_name = "Artikel Intro"
@@ -30,14 +30,17 @@ class SfbArticlePageHeader(CMSPlugin):
 
 class SfbArticleTeaser(CMSPlugin):
     teaserFor = models.ForeignKey(SfbArticlePageHeader, verbose_name=u"Verweis auf")
-    titleOverwrite = models.CharField(max_length=256, verbose_name=u"Titel")
-    authorOverwrite = models.CharField(max_length=256, verbose_name=u"Autor")
-    imageOverwrite = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, default="<empty>")
-    publicationDateOverwrite = models.DateTimeField(verbose_name=u"Datum/Zeit", default=datetime.datetime.now())
-    bodyOverwrite = models.TextField(verbose_name=u"Abriss")
+    titleOverwrite = models.CharField(max_length=256, verbose_name=u"Titel", blank=True)
+    authorOverwrite = models.CharField(max_length=256, verbose_name=u"Autor", blank=True)
+    imageOverwrite = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, default="<empty>", blank=True)
+    publicationDateOverwrite = models.DateTimeField(verbose_name=u"Datum/Zeit", default=datetime.datetime.now(), blank=True)
+    bodyOverwrite = models.TextField(verbose_name=u"Abriss", blank=True)
 
     class Meta:
         verbose_name = "Verweis auf Artikel"
+
+    def __unicode__(self):
+        return "Artikel: " + self.teaserFor.title[0:25] + "... von " + self.teaserFor.author + " / " + str(self.teaserFor.publicationDate.strftime("%H:%M:%S %m/%d/%Y"))
 
 
 class SfbNewsPageHeader(SfbArticlePageHeader):
@@ -65,16 +68,16 @@ class SfbLinkBox(CMSPlugin):
 
 
 class SfbPDFLink(CMSPlugin):
-    pdfFile = models.FileField(verbose_name=u"PDF-Datei", upload_to=CMSPlugin.get_media_path, default="<empty>")
-    text = models.CharField(max_length=256, verbose_name=u"Text für Link")
+    href = models.FileField(verbose_name=u"PDF-Datei", upload_to=CMSPlugin.get_media_path, default="<empty>")
+    name = models.CharField(max_length=256, verbose_name=u"Text für Link")
 
     def __unicode__(self):
-        return self.text
+        return self.name
 
 
 class SfbInternalLink(CMSPlugin):
     name = models.CharField(max_length=256, verbose_name=u"Text für Link")
-    internalHref = models.ForeignKey(Page, verbose_name=u"interne Seite")
+    href = models.ForeignKey(Page, verbose_name=u"interne Seite")
     target = models.CharField(verbose_name=u'Öffnen in', blank=True, default=("_blank", u"gleichem Fenster"), max_length=100, choices=((
         ("", _("gleichem Fenster")),
         ("_blank", _("neuem Fenster")),
@@ -86,7 +89,7 @@ class SfbInternalLink(CMSPlugin):
 
 class SfbExternalLink(CMSPlugin):
     name = models.CharField(max_length=256, verbose_name=u"Text für Link")
-    externalHref = models.URLField(verbose_name=u"externer Link")
+    href = models.URLField(verbose_name=u"externer Link")
     target = models.CharField(verbose_name=u'Öffnen in', blank=True, default=("_blank", u"gleichem Fenster"), max_length=100, choices=((
         ("", _("gleichem Fenster")),
         ("_blank", _("neuem Fenster")),
