@@ -1,5 +1,5 @@
 {% load cms_tags %}
-<li>
+<li data-test="{{ url }}">
     {% if instance.imageOverwrite != "<empty>" %}
         <img src="{{ instance.imageOverwrite.url }}" alt=""/>
     {% endif %}

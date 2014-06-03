@@ -5,6 +5,7 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 from djangocms_text_ckeditor.cms_plugins import TextPlugin
+from django.core.urlresolvers import reverse
 from models import *
 from os import path
 
@@ -38,6 +39,7 @@ class ArticlePageTeaser(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context['instance'] = instance
         context['teaser'] = instance.teaserFor
+        context['url'] = instance.page.get_absolute_url()
         return context
 
 
