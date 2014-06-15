@@ -16,7 +16,7 @@
         {% addtoblock "css" %}<script src="{{ STATIC_URL }}js/vendor/modernizr-2.7.1.min.js"></script>{% endaddtoblock %}
 
     </head>
-    <body>
+    <body {% if request.toolbar.edit_mode %} class="edit" {% endif %} >
     {% cms_toolbar %}
         <header id="header">
             <div id="headerInnerWrapper">

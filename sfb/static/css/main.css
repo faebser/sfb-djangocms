@@ -442,7 +442,7 @@ nav #subnav li a:visited:hover {
 /*** components ***/
 /* line 3, ../scss/_intro.scss */
 .pageIntro .meta img {
-  max-width: 100%;
+  min-width: 100%;
 }
 /* line 6, ../scss/_intro.scss */
 .pageIntro .meta p {
@@ -678,6 +678,12 @@ nav #subnav li a:visited:hover {
 /* line 28, ../scss/_boxes.scss */
 #main .box a:hover {
   color: #324a53;
+}
+
+/* line 34, ../scss/_boxes.scss */
+.edit #main .boxWrapper {
+  float: none;
+  width: 100%;
 }
 
 /* line 1, ../scss/_footer.scss */
