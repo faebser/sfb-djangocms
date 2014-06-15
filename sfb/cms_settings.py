@@ -65,7 +65,11 @@ CMS_PLACEHOLDER_CONF = {
         }
     },
     'teaserList': {
-        'plugins': ['ArticlePageTeaser', 'ArticlePageTeaserSmall'],
-        'name': u'Übersicht'
+        'plugins': ['ArticlePageTeaser'],
+        'name': u'Übersicht mit grossen Teaser'
+    },
+    'teaserListSmall': {
+        'name': u'Liste mit kleinen Teaser',
+        'plugins': ['ArticlePageTeaserSmall']
     }
 }
