@@ -17,7 +17,7 @@ class SfbDefaultText(AbstractText):
 class SfbArticlePageHeader(CMSPlugin):
     title = models.CharField(max_length=256, verbose_name=u"Titel")
     author = models.CharField(max_length=256, verbose_name=u"Autor")
-    image = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, default="<empty>", blank=True, null=True)
+    image = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, blank=True, null=True)
     publicationDate = models.DateTimeField(verbose_name=u"Datum/Zeit", default=datetime.datetime.now())
     body = HTMLField(verbose_name=u"Abriss")
 
@@ -30,11 +30,11 @@ class SfbArticlePageHeader(CMSPlugin):
 
 class SfbArticleTeaser(CMSPlugin):
     teaserFor = models.ForeignKey(SfbArticlePageHeader, verbose_name=u"Verweis auf")
-    titleOverwrite = models.CharField(max_length=256, verbose_name=u"Titel", blank=True)
-    authorOverwrite = models.CharField(max_length=256, verbose_name=u"Autor", blank=True)
-    imageOverwrite = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, default="<empty>", blank=True)
-    publicationDateOverwrite = models.DateTimeField(verbose_name=u"Datum/Zeit", default=datetime.datetime.now(), blank=True)
-    bodyOverwrite = models.TextField(verbose_name=u"Abriss", blank=True)
+    titleOverwrite = models.CharField(max_length=256, verbose_name=u"Titel", blank=True, null=True)
+    authorOverwrite = models.CharField(max_length=256, verbose_name=u"Autor", blank=True, null=True)
+    imageOverwrite = models.ImageField(verbose_name=u"Bild", upload_to=CMSPlugin.get_media_path, blank=True, null=True)
+    publicationDateOverwrite = models.DateTimeField(verbose_name=u"Datum/Zeit", default=datetime.datetime.now(), blank=True, null=True)
+    bodyOverwrite = HTMLField(verbose_name=u"Abriss", blank=True, null=True)
 
     class Meta:
         verbose_name = "Verweis auf Artikel"
@@ -50,7 +50,6 @@ class SfbNewsPageHeader(SfbArticlePageHeader):
 
 
 class SfbNewsTeaser(SfbArticleTeaser):
-
     class Meta:
         verbose_name = "Verweis auf eine News"
 
@@ -68,7 +67,7 @@ class SfbLinkBox(CMSPlugin):
 
 
 class SfbPDFLink(CMSPlugin):
-    href = models.FileField(verbose_name=u"PDF-Datei", upload_to=CMSPlugin.get_media_path, default="<empty>")
+    href = models.FileField(verbose_name=u"PDF-Datei", upload_to=CMSPlugin.get_media_path)
     name = models.CharField(max_length=256, verbose_name=u"Text für Link")
 
     def __unicode__(self):

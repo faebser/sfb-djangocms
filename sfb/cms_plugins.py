@@ -31,7 +31,7 @@ class ArticlePageIntro(CMSPluginBase):
 
 
 class ArticlePageTeaser(CMSPluginBase):
-    name = u"Artikel Teaser"
+    name = u"Artikel Teaser gross"
     module = ps.module
     model = SfbArticleTeaser
     render_template = path.join(ps.templatePath, "teaser.html")
@@ -39,7 +39,20 @@ class ArticlePageTeaser(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context['instance'] = instance
         context['teaser'] = instance.teaserFor
-        context['url'] = instance.page.get_absolute_url()
+        context['url'] = instance.teaserFor.page.get_absolute_url()
+        return context
+
+
+class ArticlePageTeaserSmall(ArticlePageTeaser):
+    name = u"Artikel Teaser klein"
+    render_template = path.join(ps.templatePath, "teaser_small.html")
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        context['teaser'] = instance.teaserFor
+        context['url'] = instance.teaserFor.page.get_absolute_url()
+        if not instance.imageOverwrite and not instance.teaserFor.image:
+            context['noImageCssClass'] = True
         return context
 
 
@@ -125,6 +138,7 @@ class ExternalLink(CMSPluginBase):
 
 plugin_pool.register_plugin(ArticlePageIntro)
 plugin_pool.register_plugin(ArticlePageTeaser)
+plugin_pool.register_plugin(ArticlePageTeaserSmall)
 plugin_pool.register_plugin(NewsPageIntro)
 plugin_pool.register_plugin(NewsPageTeaser)
 plugin_pool.register_plugin(PdfBox)

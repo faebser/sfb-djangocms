@@ -1,4 +1,5 @@
-#main #teaser {
+#main #teaser,
+#main #small-teaser {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -6,8 +7,9 @@
 		position: relative;
 		overflow: hidden;
 		margin-bottom: 1.5em;
+		height: (37.897em * 7 / 16);
 		img {
-			max-width: 100%;
+			min-width: 100%;
 		}
 		.meta {
 			@include transition(bottom 0.75s);
@@ -29,6 +31,7 @@
 		}
 		p {
 			height: 100%;
+			width: 100%;
 			color: $background;
 			padding: 1em 1em;
 			margin: 0;
@@ -44,6 +47,41 @@
 			}
 			p {
 				top: 0%;
+			}
+		}
+	}
+}
+
+#main #small-teaser {
+	vertical-align: top;
+	li {
+		width: 23.475%; // (100 - 3 * 1.5) / 4
+		display: inline-block;
+		margin-right: 1.5%;
+		&:nth-of-type(4n) {
+			margin-right: 0;
+		}
+		&.noImage {
+			border: 1px solid $emphasize;
+			@include transition(border-color 0.75s);
+			&:hover {
+				border-color: $hover; //rgba(0, 25, 46, 0.6);
+			}
+			a {
+				text-decoration: none;
+			}
+			.meta,
+			p,
+			h2 {
+				color: $emphasize;
+			}
+			.meta,
+			p {
+				background-color: transparent;
+				position: static;
+			}
+			p {
+				padding-top: 0;
 			}
 		}
 	}

@@ -1,9 +1,15 @@
 {% load cms_tags %}
+{% if noImageCssClass == True %}
+<li class="noImage">
+{% else %}
 <li>
-    {% if instance.imageOverwrite%}
-        <img src="{{ instance.imageOverwrite.url }}" alt=""/>
-    {% elif teaser.image %}
-        <img src="{{ teaser.image.url }}" alt=""/>
+{% endif %}
+    {% if noImageCssClass != True %}
+        {% if instance.imageOverwrite %}
+            <img src="{{ instance.imageOverwrite.url }}" alt=""/>
+        {% elif teaser.image %}
+            <img src="{{ teaser.image.url }}" alt=""/>
+        {% endif %}
     {% endif %}
     <div class="meta">
         <h2>{{ instance.titleOverwrite | default:teaser.title }}</h2>

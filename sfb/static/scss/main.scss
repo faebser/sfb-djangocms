@@ -98,13 +98,7 @@ textarea {
 @import "compass/css3/transform";
 @import "compass/typography/vertical_rhythm";
 
-/* colors */
-
-$background: #FDF6E3;
-$text: #324A53; //#708891;
-$emphasize: #00407A; //#00407A;
-$extra: #00192E; //#001D38;
-$hover: #C5B893;
+@import 'colors';
 
 html,
 body {
