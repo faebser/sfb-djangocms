@@ -65,7 +65,7 @@
 			border: 1px solid $emphasize;
 			@include transition(border-color 0.75s);
 			&:hover {
-				border-color: $hover; //rgba(0, 25, 46, 0.6);
+				border-color: $background; //rgba(0, 25, 46, 0.6);
 			}
 			a {
 				text-decoration: none;

@@ -621,7 +621,7 @@ nav #subnav li a:visited:hover {
 }
 /* line 67, ../scss/_teaser.scss */
 #main #small-teaser li.noImage:hover {
-  border-color: #c5b893;
+  border-color: #fdf6e3;
 }
 /* line 70, ../scss/_teaser.scss */
 #main #small-teaser li.noImage a {
