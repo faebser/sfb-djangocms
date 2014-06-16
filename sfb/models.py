@@ -7,11 +7,17 @@ from cms.models.pluginmodel import CMSPlugin  # normal cms-plugin
 from djangocms_text_ckeditor.models import AbstractText  # text plugin
 from djangocms_text_ckeditor.fields import HTMLField  # html field
 from django.utils.translation import ugettext_lazy as _
+from django.utils.text import Truncator
+from django.utils.html import strip_tags
 import datetime
 
 
 class SfbDefaultText(AbstractText):
-    title = models.CharField(max_length=256)
+    def __unicode__(self):
+        return Truncator(strip_tags(self.body)).words(3, truncate="...")
+
+    class Meta:
+        verbose_name = u'Text'
 
 
 class SfbArticlePageHeader(CMSPlugin):

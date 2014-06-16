@@ -71,5 +71,9 @@ CMS_PLACEHOLDER_CONF = {
     'teaserListSmall': {
         'name': u'Liste mit kleinen Teaser',
         'plugins': ['ArticlePageTeaserSmall']
+    },
+    'content': {
+        'name': u'Inhalt',
+        'plugins': ['DefaultPlugin', 'PicturePlugin']
     }
 }

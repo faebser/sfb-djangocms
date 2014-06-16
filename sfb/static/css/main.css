@@ -465,7 +465,7 @@ nav #subnav li a:visited:hover {
   margin-right: 0.5em;
 }
 
-/* line 5, ../scss/_content.scss */
+/* line 6, ../scss/_content.scss */
 #main #subnav {
   display: none;
   float: left;
@@ -473,51 +473,51 @@ nav #subnav li a:visited:hover {
   margin: 0;
   list-style-type: none;
 }
-/* line 16, ../scss/_content.scss */
+/* line 17, ../scss/_content.scss */
 #main .text-section p:first-of-type {
   margin-top: 0;
 }
-/* line 19, ../scss/_content.scss */
-#main .text-section p span.plugin_picture {
+/* line 22, ../scss/_content.scss */
+#main span.plugin_picture {
   max-width: 25%;
   min-width: 25%;
 }
-/* line 22, ../scss/_content.scss */
-#main .text-section p span.plugin_picture img {
+/* line 25, ../scss/_content.scss */
+#main span.plugin_picture img {
   max-width: 100%;
 }
-/* line 25, ../scss/_content.scss */
-#main .text-section p span.plugin_picture.align-left {
+/* line 28, ../scss/_content.scss */
+#main span.plugin_picture.align-left {
   float: left;
   margin: 1em 1em 1.5em 0;
 }
-/* line 29, ../scss/_content.scss */
-#main .text-section p span.plugin_picture.align-right {
+/* line 32, ../scss/_content.scss */
+#main span.plugin_picture.align-right {
   float: right;
   margin: 1em 0 1.5em 1em;
 }
-/* line 33, ../scss/_content.scss */
-#main .text-section p span.plugin_picture.align-center {
+/* line 36, ../scss/_content.scss */
+#main span.plugin_picture.align-center {
   float: none;
   max-width: 100%;
   width: auto;
   display: block;
   margin: 1em auto;
 }
-/* line 39, ../scss/_content.scss */
-#main .text-section p span.plugin_picture.align-center img {
+/* line 42, ../scss/_content.scss */
+#main span.plugin_picture.align-center img {
   display: block;
   margin: 0 auto;
 }
-/* line 47, ../scss/_content.scss */
+/* line 48, ../scss/_content.scss */
 #main ul {
   list-style-type: square;
 }
-/* line 49, ../scss/_content.scss */
+/* line 50, ../scss/_content.scss */
 #main ul li {
   padding-bottom: 0.5em;
 }
-/* line 51, ../scss/_content.scss */
+/* line 52, ../scss/_content.scss */
 #main ul li:last-child {
   padding: 0;
 }
@@ -764,7 +764,7 @@ footer a:visited:hover {
  *    `:before` to contain the top-margins of child elements.
  */
 /* line 371, ../scss/main.scss */
-.clearfix:before, nav #navInnerWrapper:before, nav ul:before, #main .text-section:before, .clearfix:after, nav #navInnerWrapper:after, nav ul:after, #main .text-section:after {
+.clearfix:before, nav #navInnerWrapper:before, nav ul:before, .clearfix:after, nav #navInnerWrapper:after, nav ul:after {
   content: " ";
   /* 1 */
   display: table;

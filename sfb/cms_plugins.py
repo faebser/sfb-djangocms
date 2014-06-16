@@ -20,7 +20,11 @@ class DefaultPlugin(TextPlugin):
     name = _(u"Text")
     module = ps.module
     model = SfbDefaultText
-    render_template = path.join(ps.templatePath, "default_plugin.html")
+    render_template = path.join(ps.templatePath, "text.html")
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        return context
 
 
 class ArticlePageIntro(CMSPluginBase):
@@ -136,6 +140,7 @@ class ExternalLink(CMSPluginBase):
         return context
 
 
+plugin_pool.register_plugin(DefaultPlugin)
 plugin_pool.register_plugin(ArticlePageIntro)
 plugin_pool.register_plugin(ArticlePageTeaser)
 plugin_pool.register_plugin(ArticlePageTeaserSmall)
