@@ -125,6 +125,7 @@ class InternalLink(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context['instance'] = instance
         context['cssClass'] = "internal"
+        context['url'] = instance.href.get_absolute_url()
         return context
 
 
@@ -137,6 +138,7 @@ class ExternalLink(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context['instance'] = instance
         context['cssClass'] = "external"
+        context['url'] = instance.href
         return context
 
 
