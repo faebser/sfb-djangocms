@@ -98,6 +98,7 @@ class PdfLink(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context['instance'] = instance
         context['cssClass'] = "pdf"
+        context['url'] = instance.href.url
         return context
 
 
