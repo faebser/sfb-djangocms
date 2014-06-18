@@ -3,12 +3,16 @@ $textSectionName: ".text-section";
 #main {
     $margin: 1em;
     @extend .outerWrapper;
+    padding: 0;
     #subnav {
         display: none;
         float: left;
         padding: 0;
         margin: 0;
         list-style-type: none;
+    }
+    p {
+        margin: 1em 3.125em;   
     }
     #{$textSectionName} {
         //@extend .clearfix;
