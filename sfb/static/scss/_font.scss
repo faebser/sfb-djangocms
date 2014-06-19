@@ -50,7 +50,9 @@ $base-line-height: 28px;
 // Rhythm unit (Compass vertical rhythm)
 $rhythm-unit: rem;
 
-$base-font-size: 18px;
+$small-font-size: 12.003px;
+$small-font-leading: 1;
+//$base-font-size: 18px;
 $base-font-leading: 1;
 $medium-font-size: 21.328px;
 $medium-font-leading: 1.25;
@@ -60,6 +62,10 @@ $x-large-font-size: 37.897px;
 $x-large-font-leading: 1.25;
 
 @mixin typeSize($size) {
+     @if $size == "small" {
+        @include adjust-font-size-to($small-font-size);
+        @include adjust-leading-to($small-font-leading);
+    }
     @if $size == "base" {
         @include adjust-font-size-to($base-font-size);
         @include adjust-leading-to($base-font-leading);
@@ -76,6 +82,13 @@ $x-large-font-leading: 1.25;
         @include adjust-font-size-to($x-large-font-size);
         @include adjust-leading-to($x-large-font-leading);
     }
+}
+
+%nav {
+    font-family: 'nobilebold', arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    @extend %t-small;
 }
 
 %regular {
@@ -96,6 +109,10 @@ $x-large-font-leading: 1.25;
     font-style: normal;
 }
 
+
+%t-small {
+ @include typeSize(small);
+}
 %t-base {
  @include typeSize(base);
 }

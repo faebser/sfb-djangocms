@@ -18,6 +18,11 @@
     </head>
     <body {% if request.toolbar.edit_mode %} class="edit" {% endif %} >
     {% cms_toolbar %}
+        <div id="newNav">
+            <ul>
+                {% show_menu 0 100 100 100 %}
+            </ul>
+        </div>
         <header id="header">
             <div id="headerInnerWrapper">
                 <h1>Schweizerische</h1>
@@ -40,7 +45,7 @@
             </ul>
             {% block content %}
             {% endblock content %}
-
+        </div>
         <footer>
             <!-- <a href="#top"><i class="fa fa-angle-up"></i></a> -->
         </footer>
