@@ -136,7 +136,8 @@ body {
   font-style: normal;
 }
 /* line 87, ../scss/_font.scss */
-#newNav ul li a {
+nav ul li a,
+nav ul li a:hover {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -158,23 +159,22 @@ h3,
 h4, strong, header h2 a,
 header h2 a:visited,
 #header h2 a,
-#header h2 a:visited, nav #subnav li a,
-nav #subnav li a:visited, .pageIntro p {
+#header h2 a:visited, .pageIntro p {
   font-family: 'nobilemedium', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 /* line 106, ../scss/_font.scss */
-h1, nav ul li a,
-nav ul li a:visited {
+h1 {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
 /* line 113, ../scss/_font.scss */
-#newNav ul li a {
+nav ul li a,
+nav ul li a:hover {
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 28px;
@@ -273,7 +273,7 @@ a:hover, a:visited {
 /* wrappers */
 /* line 158, ../scss/main.scss */
 .outerWrapper, header,
-#header, nav #navInnerWrapper, #newNav ul, #main, footer {
+#header, nav ul, #main, footer {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -350,134 +350,19 @@ header h2 a:visited,
 }
 
 /*** components ***/
-/* line 6, ../scss/_nav.scss */
+/* line 10, ../scss/_nav.scss */
 nav {
-  display: none;
-  position: absolute;
-  z-index: 0;
-  top: 0.4em;
-  left: 0;
-  width: 100%;
-  margin-bottom: 2.2em;
-}
-/* line 18, ../scss/_nav.scss */
-nav ul {
-  width: 60%;
-  float: right;
-  list-style-type: none;
-  text-align: right;
-  padding: 0;
-  margin: 0;
-  /*&:before,
-  &:after {
-      width: 100%;
-      height: 1px;
-      @include background(linear-gradient(left, $background, $emphasize, $background));
-  } */
-}
-/* line 34, ../scss/_nav.scss */
-nav ul li {
-  display: inline-block;
-  width: auto;
-  text-align: center;
-  padding: 0 0.2em 0 0;
-}
-/* line 44, ../scss/_nav.scss */
-nav ul li:last-child {
-  padding-right: 0;
-}
-/* line 47, ../scss/_nav.scss */
-nav ul li a,
-nav ul li a:visited {
-  display: inline-block;
-  text-decoration: none;
-  vertical-align: middle;
-  width: 100%;
-  padding: 2em 0.4em 0.6em 0.4em;
-  background-color: #fdf6e3;
-  color: #00407a;
-  -moz-transition: all 0.75s;
-  -o-transition: all 0.75s;
-  -webkit-transition: all 0.75s;
-  transition: all 0.75s;
-  position: relative;
-}
-/* line 59, ../scss/_nav.scss */
-nav ul li a:before,
-nav ul li a:visited:before {
-  -moz-transition: background-color 0.75s;
-  -o-transition: background-color 0.75s;
-  -webkit-transition: background-color 0.75s;
-  transition: background-color 0.75s;
-  -moz-transform: skew(45deg);
-  -ms-transform: skew(45deg);
-  -webkit-transform: skew(45deg);
-  transform: skew(45deg);
-  position: absolute;
-  top: -0.4em;
-  left: -3px;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 0.4em;
-  background-color: #fdf6e3;
-}
-/* line 71, ../scss/_nav.scss */
-nav ul li a:hover, nav ul li a.active,
-nav ul li a:visited:hover,
-nav ul li a:visited.active {
-  text-decoration: none;
-  background-color: #708891;
-  color: #fdf6e3;
-}
-/* line 77, ../scss/_nav.scss */
-nav ul li a:hover:before, nav ul li a.active:before,
-nav ul li a:visited:hover:before,
-nav ul li a:visited.active:before {
-  background-color: #588393;
-}
-/* line 84, ../scss/_nav.scss */
-nav #subnav {
-  display: none;
-  border: none;
-}
-/* line 87, ../scss/_nav.scss */
-nav #subnav:before, nav #subnav:after {
-  height: 0;
-  background: none;
-}
-/* line 92, ../scss/_nav.scss */
-nav #subnav li {
-  display: inline-block;
-  width: auto;
-  padding: 0;
-}
-/* line 96, ../scss/_nav.scss */
-nav #subnav li a,
-nav #subnav li a:visited {
-  padding: 0.6em;
-}
-/* line 100, ../scss/_nav.scss */
-nav #subnav li a.active, nav #subnav li a:hover,
-nav #subnav li a:visited.active,
-nav #subnav li a:visited:hover {
-  background-color: transparent;
-  color: #c5b893;
-}
-
-/* line 111, ../scss/_nav.scss */
-#newNav {
   background-color: #4b7698;
   color: #fdf6e3;
   width: 100%;
 }
-/* line 115, ../scss/_nav.scss */
-#newNav ul {
+/* line 14, ../scss/_nav.scss */
+nav ul {
   list-style-type: none;
   padding: 0 1em;
 }
-/* line 119, ../scss/_nav.scss */
-#newNav ul li {
+/* line 18, ../scss/_nav.scss */
+nav ul li {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -485,33 +370,37 @@ nav #subnav li a:visited:hover {
   *display: inline;
   position: relative;
 }
-/* line 122, ../scss/_nav.scss */
-#newNav ul li a {
+/* line 21, ../scss/_nav.scss */
+nav ul li a,
+nav ul li a:hover {
   display: block;
+  text-decoration: none;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
   padding: 1em 1.6em;
 }
-/* line 131, ../scss/_nav.scss */
-#newNav ul li.selected > a {
+/* line 32, ../scss/_nav.scss */
+nav ul li.selected > a {
   cursor: default;
   color: #4b7698;
   background-color: #fdf6e3;
 }
-/* line 137, ../scss/_nav.scss */
-#newNav ul li > ul {
+/* line 39, ../scss/_nav.scss */
+nav ul li.ancestor > a {
+  color: #3a5b76;
+}
+/* line 43, ../scss/_nav.scss */
+nav ul li > ul {
+  z-index: -100;
   -moz-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   -o-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   -webkit-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   transition: right 0.35s ease-in-out, opacity 0.2s linear;
-  -moz-box-shadow: 0px 0px 10px gray;
-  -webkit-box-shadow: 0px 0px 10px gray;
-  box-shadow: 0px 0px 10px gray;
   padding: 0;
-  background-color: #4b7698;
+  background-color: #3a5b76;
   position: relative;
-  border-bottom: 1px solid #4b7698;
+  border-bottom: 1px solid #3a5b76;
   /*&:before {
   	border-color: transparent;
   	border-top-color: $emphasize;
@@ -519,12 +408,12 @@ nav #subnav li a:visited:hover {
   	margin-left: -37px;
   } */
   position: absolute;
-  top: 102%;
+  top: 88%;
   right: -20%;
   opacity: 0;
 }
 /* line 32, ../scss/_arrow.scss */
-#newNav ul li > ul:before, #newNav ul li > ul:after {
+nav ul li > ul:before, nav ul li > ul:after {
   top: -16px;
   left: 50%;
   border: solid transparent;
@@ -535,23 +424,28 @@ nav #subnav li a:visited:hover {
   pointer-events: none;
 }
 /* line 49, ../scss/_arrow.scss */
-#newNav ul li > ul:after {
+nav ul li > ul:after {
   border-color: transparent;
-  border-bottom-color: #4b7698;
+  border-bottom-color: #3a5b76;
   border-width: 8px;
   margin-left: -8px;
 }
-/* line 147, ../scss/_nav.scss */
-#newNav ul li > ul li {
+/* line 54, ../scss/_nav.scss */
+nav ul li > ul li {
   width: 100%;
 }
-/* line 151, ../scss/_nav.scss */
-#newNav ul li:hover > ul {
+/* line 56, ../scss/_nav.scss */
+nav ul li > ul li.selected a {
+  background-color: #3a5b76;
+}
+/* line 61, ../scss/_nav.scss */
+nav ul li:hover > ul {
   right: 0;
   opacity: 1;
+  z-index: 100;
 }
 
-/* line 158, ../scss/_nav.scss */
+/* line 69, ../scss/_nav.scss */
 .edit #newNav {
   top: 30px;
 }
@@ -889,7 +783,7 @@ footer a:visited:hover {
  *    `:before` to contain the top-margins of child elements.
  */
 /* line 267, ../scss/main.scss */
-.clearfix:before, nav #navInnerWrapper:before, nav ul:before, .clearfix:after, nav #navInnerWrapper:after, nav ul:after {
+.clearfix:before, .clearfix:after {
   content: " ";
   /* 1 */
   display: table;

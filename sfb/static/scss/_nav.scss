@@ -1,114 +1,13 @@
 $navBackground: #4B7698;
+$subNavBackground: darken($navBackground, 10%);
 
 @import "compass/css3/inline-block";
 @import "compass/css3/box-shadow";
 
+
+
+
 nav {
-    display: none;
-    position: absolute;
-    z-index: 0;
-    top: 0.4em;
-    left: 0;
-    width: 100%;
-    margin-bottom: 2.2em;
-    #navInnerWrapper {
-        @extend .outerWrapper;
-        @extend .clearfix;
-    }
-    ul {
-        width: 60%;
-        float: right;
-        list-style-type: none;
-        text-align: right;
-        padding: 0;
-        margin: 0;
-        //border-bottom: 1px solid $emphasize;
-        //border-top: 1px solid $emphasize;
-        @extend .clearfix;
-        /*&:before,
-        &:after {
-            width: 100%;
-            height: 1px;
-            @include background(linear-gradient(left, $background, $emphasize, $background));
-        } */
-        li {
-            display: inline-block;
-            //float: right;
-            width: auto;
-            //width: (100%/5);
-            text-align: center;
-            //border-right: 1px solid $emphasize;
-            padding: 0 0.2em 0 0;
-            //height: 0.3em;
-            //vertical-align: middle;
-            &:last-child {
-                padding-right: 0;
-            }
-            a,
-            a:visited {
-                display: inline-block;
-                text-decoration: none;
-                vertical-align: middle;
-                width: 100%;
-                padding: 2em 0.4em 0.6em 0.4em;
-                background-color: $background;
-                color: $emphasize;
-                @include transition(all 0.75s);
-                position: relative;
-                @extend %bold;
-                &:before {
-                        @include transition(background-color 0.75s);
-                        @include transform(skew(45deg));
-                        position: absolute;
-                        top: -0.4em;
-                        left: -3px;
-                        display: block;
-                        content: "";
-                        width: 100%;
-                        height: 0.4em;
-                        background-color: $background;
-                    }
-                &:hover,
-                &.active {
-                    text-decoration: none;
-                    background-color: #708891;
-                    color: $background;
-                    //border-top: 1px solid darken($text, 2%);
-                    &:before {
-                        background-color: lighten($text, 20%);
-                    }
-                }
-            }
-        }
-    }
-    #subnav {
-        display: none;
-        border: none;
-        &:before,
-        &:after {
-            height: 0;
-            background: none;
-        } 
-        li {
-            display: inline-block;
-            width: auto;
-            padding: 0;
-            a,
-            a:visited {
-                padding: 0.6em;
-                @extend %medium;
-                &.active,
-                &:hover {
-                    background-color: transparent;
-                    color: $hover;
-                }
-            }
-        }
-    }
-}
-
-
-#newNav {
     background-color: $navBackground;
     color: $background;
     width: 100%;
@@ -119,8 +18,10 @@ nav {
         li {
             @include inline-block;
             position: relative;
-            a {
+            a,
+            a:hover {
                 display: block;
+                text-decoration: none;
                 text-transform: uppercase;
                 @extend %nav;
                 text-decoration: none;
@@ -134,23 +35,33 @@ nav {
                     background-color: $background;
                 }
             }
+            &.ancestor {
+                & > a {
+                    color: $subNavBackground;
+                }
+            }
             & > ul {
+                z-index: -100;
                 @include transition(right 0.35s ease-in-out, opacity 0.2s linear);
-                @include box-shadow(0px 0px 10px gray);
+                //@include box-shadow(0px 0px 10px gray);
                 padding: 0;
-                background-color: $navBackground;
-                @include arrow-box($navBackground, 8px);
+                background-color: $subNavBackground;
+                @include arrow-box($subNavBackground, 8px);
                 position: absolute;
-                top: 102%;
+                top: 88%;
                 right: -20%;
                 opacity: 0;
                 li {
                     width: 100%;
+                    &.selected a {
+                        background-color: $subNavBackground;
+                    }
                 }
             }
             &:hover > ul {
                 right: 0;
                 opacity: 1;
+                z-index: 100;
             }
         }
     }
