@@ -3,6 +3,7 @@
 from django.db import models
 from djangocms_text_ckeditor.fields import HTMLField  # html field
 from os import path
+from django.db import models
 # Models for the sfb-shop
 
 
@@ -30,3 +31,4 @@ class Merch(Item):
 
     class Meta:
         verbose_name = u'Merch für Shop'
+
