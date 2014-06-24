@@ -38,6 +38,7 @@ CMS_TEMPLATES = (
     (path.join('pages', 'sfb-default.html'), 'SFB Standard'),
     (path.join('pages', 'sfb-event-news.html'), u'SFB News und Event Detailseite'),
     (path.join('pages', 'sfb-teaser.html'), u'SFB News und Event Übersicht'),
+    (path.join('pages', 'sfb-shop.html'), u'SFB Shop'),
 )
 
 CMS_PERMISSION = True
@@ -75,5 +76,9 @@ CMS_PLACEHOLDER_CONF = {
     'content': {
         'name': u'Inhalt',
         'plugins': ['DefaultPlugin', 'PicturePlugin']
+    },
+    'shop-content': {
+        'name': u'Shop',
+        'plugins': ['ShopCard', 'ShopMerch']
     }
 }

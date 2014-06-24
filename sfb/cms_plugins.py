@@ -8,9 +8,11 @@ from djangocms_text_ckeditor.cms_plugins import TextPlugin
 from django.core.urlresolvers import reverse
 from models import *
 from os import path
+from sfb_shop import models as shop
 
 class PluginSettings():
     templatePath = path.join("plugins", "sfb")
+    templatePathShop = path.join('plugins', 'shop')
     module = u'SFB'
 
 ps = PluginSettings()
@@ -143,6 +145,32 @@ class ExternalLink(CMSPluginBase):
         return context
 
 
+class ShopCard(CMSPluginBase):
+    name = u'Karte'
+    model = shop.Card
+    module = ps.module + ' Shop'
+    render_template = path.join(ps.templatePathShop, 'item.html')
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        if instance.picture.height >= instance.picture.width:
+            context['cssClass'] = 'high'
+        else:
+            context['cssClass'] = 'wide'
+        return context
+
+
+class ShopMerch(CMSPluginBase):
+    name = u'Artikel'
+    model = shop.Merch
+    module = ps.module + ' Shop'
+    render_template = path.join(ps.templatePathShop, 'item.html')
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        return context
+
+
 plugin_pool.register_plugin(DefaultPlugin)
 plugin_pool.register_plugin(ArticlePageIntro)
 plugin_pool.register_plugin(ArticlePageTeaser)
@@ -154,4 +182,8 @@ plugin_pool.register_plugin(LinkBox)
 plugin_pool.register_plugin(PdfLink)
 plugin_pool.register_plugin(InternalLink)
 plugin_pool.register_plugin(ExternalLink)
+
+#shop
+plugin_pool.register_plugin(ShopCard)
+plugin_pool.register_plugin(ShopMerch)
 

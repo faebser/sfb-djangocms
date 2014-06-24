@@ -1,0 +1,9 @@
+<li class="{{ cssClass }}" data-id="{{ instance.id }}">
+    <img src="{{ instance.picture.url }}"/>
+    <div class="itemData">
+        <h2>{{ instance.name }}</h2>
+        <p class="price">{{ instance.price }} Fr.</p>
+        <a href="blab.html">Zum Warenkorb hinzufügen</a>
+        {{ instance.description | safe }}
+    </div>
+</li>

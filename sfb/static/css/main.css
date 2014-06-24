@@ -48,7 +48,7 @@ hr {
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
-/* line 53, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 audio,
 canvas,
 img,
@@ -91,7 +91,7 @@ textarea {
    ========================================================================== */
 /* compass imports */
 /* colors */
-/* line 103, ../scss/main.scss */
+/* line 104, ../scss/main.scss */
 html,
 body {
   background-color: #fdf6e3;
@@ -114,6 +114,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'nobilemedium';
   src: url("font/nobile/nobile-medium-webfont.eot");
@@ -121,6 +122,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'nobilebold';
   src: url("font/nobile/nobile-bold-webfont.eot");
@@ -128,6 +130,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'ptsans-bold';
   src: url("font/ptsans_bold_german/PTS75F-webfont.eot");
@@ -135,9 +138,10 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 /* line 87, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover {
+nav ul li a:hover, #main #shopForm #buy {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -174,58 +178,43 @@ h1 {
 
 /* line 113, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover {
-  font-size: 12px;
-  font-size: 0.75019rem;
-  line-height: 28px;
-  line-height: 1.75rem;
-  line-height: 28px;
-  line-height: 1.75rem;
+nav ul li a:hover, #main #shopForm #buy {
+  font-size: 0.75019em;
+  line-height: 2.33275em;
+  line-height: 1.75em;
 }
 
 /* line 116, ../scss/_font.scss */
 p,
 li,
 a, strong {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 28px;
-  line-height: 1.75rem;
-  line-height: 28px;
-  line-height: 1.75rem;
+  font-size: 1em;
+  line-height: 1.75em;
+  line-height: 1.75em;
 }
 
 /* line 119, ../scss/_font.scss */
 h2,
 h3,
 h4, #main .box h3 {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 28px;
-  line-height: 1.75rem;
-  line-height: 35px;
-  line-height: 2.1875rem;
+  font-size: 1.333em;
+  line-height: 1.31283em;
+  line-height: 2.1875em;
 }
 
 /* line 122, ../scss/_font.scss */
 h1 {
-  font-size: 28px;
-  font-size: 1.77688rem;
-  line-height: 56px;
-  line-height: 3.5rem;
-  line-height: 35px;
-  line-height: 2.1875rem;
+  font-size: 1.77688em;
+  line-height: 1.96975em;
+  line-height: 2.1875em;
 }
 
 /* line 125, ../scss/_font.scss */
 header h1,
 #header h1 {
-  font-size: 38px;
-  font-size: 2.36856rem;
-  line-height: 56px;
-  line-height: 3.5rem;
-  line-height: 35px;
-  line-height: 2.1875rem;
+  font-size: 2.36856em;
+  line-height: 1.47769em;
+  line-height: 2.1875em;
 }
 
 /* line 117, ../scss/main.scss */
@@ -233,14 +222,14 @@ h1 {
   color: #00407a;
 }
 
-/* line 122, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 h2,
 h3,
 h4 {
   color: #00407a;
 }
 
-/* line 130, ../scss/main.scss */
+/* line 132, ../scss/main.scss */
 p,
 li,
 a {
@@ -256,16 +245,16 @@ strong {
 a {
   color: #00407a;
   text-decoration: underline;
+  -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
-  -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
 /* line 147, ../scss/main.scss */
 a:hover {
   text-decoration: underline;
 }
-/* line 150, ../scss/main.scss */
+/* line 151, ../scss/main.scss */
 a:hover, a:visited {
   color: #c5b893;
 }
@@ -281,7 +270,7 @@ a:hover, a:visited {
 }
 
 /* components */
-/* line 171, ../scss/main.scss */
+/* line 172, ../scss/main.scss */
 header,
 #header {
   margin-bottom: 4em;
@@ -309,7 +298,7 @@ header h2,
   font-size: 0.8em;
   text-align: left;
 }
-/* line 192, ../scss/main.scss */
+/* line 193, ../scss/main.scss */
 header h2 a,
 header h2 a:visited,
 #header h2 a,
@@ -330,7 +319,7 @@ header h2 a:visited,
   	margin-left: -37px;
   }*/
 }
-/* line 4, ../scss/_arrow.scss */
+/* line 5, ../scss/_arrow.scss */
 .arrow_box:before, .arrow_box:after {
   top: 100%;
   left: 50%;
@@ -350,27 +339,28 @@ header h2 a:visited,
 }
 
 /*** components ***/
-/* line 10, ../scss/_nav.scss */
+/* line 8, ../scss/_nav.scss */
 nav {
   background-color: #4b7698;
   color: #fdf6e3;
   width: 100%;
 }
-/* line 14, ../scss/_nav.scss */
+/* line 12, ../scss/_nav.scss */
 nav ul {
   list-style-type: none;
   padding: 0 1em;
 }
-/* line 18, ../scss/_nav.scss */
+/* line 16, ../scss/_nav.scss */
 nav ul li {
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  *zoom: 1;
+  zoom: 1;
   *display: inline;
   position: relative;
 }
-/* line 21, ../scss/_nav.scss */
+/* line 20, ../scss/_nav.scss */
 nav ul li a,
 nav ul li a:hover {
   display: block;
@@ -380,22 +370,22 @@ nav ul li a:hover {
   letter-spacing: 0.15em;
   padding: 1em 1.6em;
 }
-/* line 32, ../scss/_nav.scss */
+/* line 30, ../scss/_nav.scss */
 nav ul li.selected > a {
   cursor: default;
   color: #4b7698;
   background-color: #fdf6e3;
 }
-/* line 39, ../scss/_nav.scss */
+/* line 37, ../scss/_nav.scss */
 nav ul li.ancestor > a {
   color: #3a5b76;
 }
-/* line 43, ../scss/_nav.scss */
+/* line 41, ../scss/_nav.scss */
 nav ul li > ul {
   z-index: -100;
+  -webkit-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   -moz-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   -o-transition: right 0.35s ease-in-out, opacity 0.2s linear;
-  -webkit-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   transition: right 0.35s ease-in-out, opacity 0.2s linear;
   padding: 0;
   background-color: #3a5b76;
@@ -412,7 +402,7 @@ nav ul li > ul {
   right: -20%;
   opacity: 0;
 }
-/* line 32, ../scss/_arrow.scss */
+/* line 33, ../scss/_arrow.scss */
 nav ul li > ul:before, nav ul li > ul:after {
   top: -16px;
   left: 50%;
@@ -430,22 +420,22 @@ nav ul li > ul:after {
   border-width: 8px;
   margin-left: -8px;
 }
-/* line 54, ../scss/_nav.scss */
+/* line 52, ../scss/_nav.scss */
 nav ul li > ul li {
   width: 100%;
 }
-/* line 56, ../scss/_nav.scss */
+/* line 54, ../scss/_nav.scss */
 nav ul li > ul li.selected a {
   background-color: #3a5b76;
 }
-/* line 61, ../scss/_nav.scss */
+/* line 59, ../scss/_nav.scss */
 nav ul li:hover > ul {
   right: 0;
   opacity: 1;
   z-index: 100;
 }
 
-/* line 69, ../scss/_nav.scss */
+/* line 67, ../scss/_nav.scss */
 .edit #newNav {
   top: 30px;
 }
@@ -460,7 +450,7 @@ nav ul li:hover > ul {
   font-size: 80%;
   word-spacing: 0.6em;
 }
-/* line 10, ../scss/_intro.scss */
+/* line 11, ../scss/_intro.scss */
 .pageIntro .meta p .date,
 .pageIntro .meta p .author {
   color: #00192e;
@@ -540,7 +530,7 @@ nav ul li:hover > ul {
   padding: 0;
 }
 
-/* line 1, ../scss/_teaser.scss */
+/* line 2, ../scss/_teaser.scss */
 #main #teaser,
 #main #small-teaser {
   list-style-type: none;
@@ -564,9 +554,9 @@ nav ul li:hover > ul {
 /* line 15, ../scss/_teaser.scss */
 #main #teaser li .meta,
 #main #small-teaser li .meta {
+  -webkit-transition: bottom 0.75s;
   -moz-transition: bottom 0.75s;
   -o-transition: bottom 0.75s;
-  -webkit-transition: bottom 0.75s;
   transition: bottom 0.75s;
   padding: 0 1em;
   color: #fdf6e3;
@@ -600,9 +590,9 @@ nav ul li:hover > ul {
   top: 100%;
   background-color: #00192e;
   background-color: rgba(0, 25, 46, 0.6);
+  -webkit-transition: top 0.75s;
   -moz-transition: top 0.75s;
   -o-transition: top 0.75s;
-  -webkit-transition: top 0.75s;
   transition: top 0.75s;
 }
 /* line 46, ../scss/_teaser.scss */
@@ -633,9 +623,9 @@ nav ul li:hover > ul {
 /* line 65, ../scss/_teaser.scss */
 #main #small-teaser li.noImage {
   border: 1px solid #00407a;
+  -webkit-transition: border-color 0.75s;
   -moz-transition: border-color 0.75s;
   -o-transition: border-color 0.75s;
-  -webkit-transition: border-color 0.75s;
   transition: border-color 0.75s;
 }
 /* line 68, ../scss/_teaser.scss */
@@ -646,13 +636,13 @@ nav ul li:hover > ul {
 #main #small-teaser li.noImage a {
   text-decoration: none;
 }
-/* line 74, ../scss/_teaser.scss */
+/* line 76, ../scss/_teaser.scss */
 #main #small-teaser li.noImage .meta,
 #main #small-teaser li.noImage p,
 #main #small-teaser li.noImage h2 {
   color: #00407a;
 }
-/* line 79, ../scss/_teaser.scss */
+/* line 80, ../scss/_teaser.scss */
 #main #small-teaser li.noImage .meta,
 #main #small-teaser li.noImage p {
   background-color: transparent;
@@ -688,7 +678,7 @@ nav ul li:hover > ul {
   margin-top: 0;
   color: #fdf6e3;
 }
-/* line 23, ../scss/_boxes.scss */
+/* line 24, ../scss/_boxes.scss */
 #main .box a,
 #main .box a:visited {
   color: #fdf6e3;
@@ -709,7 +699,7 @@ nav ul li:hover > ul {
 footer {
   margin-bottom: 2em;
 }
-/* line 4, ../scss/_footer.scss */
+/* line 5, ../scss/_footer.scss */
 footer a,
 footer a:visited {
   font-size: 2.1em;
@@ -719,6 +709,78 @@ footer a:visited {
 footer a:hover,
 footer a:visited:hover {
   text-decoration: none;
+}
+
+/* line 1, ../scss/_shop.scss */
+#main #shop {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+/* line 7, ../scss/_shop.scss */
+#main #shop li {
+  list-style-type: none;
+  position: relative;
+  margin-right: 1%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: 340px;
+  overflow: hidden;
+  padding: 0;
+}
+/* line 15, ../scss/_shop.scss */
+#main #shop li:nth-of-type(3n) {
+  margin-right: 0;
+}
+/* line 21, ../scss/_shop.scss */
+#main #shop li.high {
+  max-width: 25%;
+}
+/* line 23, ../scss/_shop.scss */
+#main #shop li.high img {
+  min-height: 100%;
+}
+/* line 27, ../scss/_shop.scss */
+#main #shop li.wide {
+  max-width: 50%;
+}
+/* line 29, ../scss/_shop.scss */
+#main #shop li.wide img {
+  min-height: 100%;
+}
+/* line 34, ../scss/_shop.scss */
+#main #shop li .itemData {
+  display: none;
+  background-color: #4b7698;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* line 46, ../scss/_shop.scss */
+#main #shopForm {
+  margin-top: 1em;
+  width: 100%;
+}
+/* line 49, ../scss/_shop.scss */
+#main #shopForm #buy {
+  display: block;
+  width: 10em;
+  height: 3em;
+  margin: 0 auto;
+  background-color: #4b7698;
+  color: #fdf6e3;
+  border: none;
+}
+/* line 58, ../scss/_shop.scss */
+#main #shopForm #buy:hover {
+  background-color: #3a5b76;
 }
 
 /* ==========================================================================
@@ -752,7 +814,7 @@ footer a:visited:hover {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 236, ../scss/main.scss */
+/* line 237, ../scss/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -782,7 +844,7 @@ footer a:visited:hover {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 267, ../scss/main.scss */
+/* line 268, ../scss/main.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   /* 1 */
@@ -816,7 +878,7 @@ footer a:visited:hover {
     text-shadow: none !important;
   }
 
-  /* line 305, ../scss/main.scss */
+  /* line 306, ../scss/main.scss */
   a,
   a:visited {
     text-decoration: underline;
@@ -835,13 +897,13 @@ footer a:visited:hover {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 322, ../scss/main.scss */
+  /* line 323, ../scss/main.scss */
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 327, ../scss/main.scss */
+  /* line 328, ../scss/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
@@ -854,7 +916,7 @@ footer a:visited:hover {
     /* h5bp.com/t */
   }
 
-  /* line 337, ../scss/main.scss */
+  /* line 338, ../scss/main.scss */
   tr,
   img {
     page-break-inside: avoid;
@@ -865,7 +927,7 @@ footer a:visited:hover {
     max-width: 100% !important;
   }
 
-  /* line 346, ../scss/main.scss */
+  /* line 348, ../scss/main.scss */
   p,
   h2,
   h3 {
@@ -873,7 +935,7 @@ footer a:visited:hover {
     widows: 3;
   }
 
-  /* line 353, ../scss/main.scss */
+  /* line 354, ../scss/main.scss */
   h2,
   h3 {
     page-break-after: avoid;

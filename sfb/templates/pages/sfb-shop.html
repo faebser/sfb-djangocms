@@ -1,0 +1,12 @@
+{% extends "pages/sfb-base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block content %}
+    <ul id="shop">
+        {% placeholder "shop-content" %}
+    </ul>
+    <form action="/submit" id="shopForm">
+        <input type="hidden" name="amount" id="amount"/>
+        <input type="submit" name="button" id="buy" value="Bestellen"/>
+    </form>
+{% endblock content %}

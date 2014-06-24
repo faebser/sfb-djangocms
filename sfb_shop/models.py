@@ -4,10 +4,11 @@ from django.db import models
 from djangocms_text_ckeditor.fields import HTMLField  # html field
 from os import path
 from django.db import models
+from cms.models.pluginmodel import CMSPlugin  # normal cms-plugin
 # Models for the sfb-shop
 
 
-class Item(models.Model):
+class Item(CMSPlugin):
     name = models.CharField(max_length=200, verbose_name=u'Name')
     description = HTMLField(verbose_name=u'Beschreibung')
     picture = models.ImageField(verbose_name=u'Bild', upload_to=path.join('shop/products'))
