@@ -3,8 +3,8 @@
     <div class="meta">
         <h1>{{ instance.title }}</h1>
         <p>
-            <span class="author"><span>Von</span> {{ instance.author }}</span>
-            <span class="date"><span>Am</span> {{ instance.publicationDate | date:"j.n.Y" }}</span>
+            <span class="author">{{ instance.author }}</span>
+            <span class="date"><span>&mdash;</span> {{ instance.publicationDate | date:"j.n.Y" }}</span>
         </p>
         {% if instance.image %}
         <img src="{{ instance.image.url }}" alt=""/>

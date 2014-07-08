@@ -141,7 +141,7 @@ body {
 
 /* line 87, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover, #main #shopForm #buy {
+nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -150,8 +150,8 @@ nav ul li a:hover, #main #shopForm #buy {
 /* line 94, ../scss/_font.scss */
 p,
 li,
-a, .pageIntro .meta p .date span,
-.pageIntro .meta p .author span {
+a, #main .pageIntro .meta p .date span,
+#main .pageIntro .meta p .author span {
   font-family: 'nobileregular', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -163,7 +163,7 @@ h3,
 h4, strong, header h2 a,
 header h2 a:visited,
 #header h2 a,
-#header h2 a:visited, .pageIntro p {
+#header h2 a:visited, #main .pageIntro p {
   font-family: 'nobilemedium', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -178,7 +178,7 @@ h1 {
 
 /* line 113, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover, #main #shopForm #buy {
+nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy {
   font-size: 0.75019em;
   line-height: 2.33275em;
   line-height: 1.75em;
@@ -441,27 +441,27 @@ nav ul li:hover > ul {
 }
 
 /* line 3, ../scss/_intro.scss */
-.pageIntro .meta img {
+#main .pageIntro .meta img {
   min-width: 100%;
 }
 /* line 6, ../scss/_intro.scss */
-.pageIntro .meta p {
+#main .pageIntro .meta p {
   text-transform: uppercase;
   font-size: 80%;
-  word-spacing: 0.6em;
-}
-/* line 11, ../scss/_intro.scss */
-.pageIntro .meta p .date,
-.pageIntro .meta p .author {
-  color: #00192e;
+  margin-left: 0;
 }
 /* line 13, ../scss/_intro.scss */
-.pageIntro .meta p .date span,
-.pageIntro .meta p .author span {
+#main .pageIntro .meta p .date,
+#main .pageIntro .meta p .author {
+  color: #00192e;
+}
+/* line 15, ../scss/_intro.scss */
+#main .pageIntro .meta p .date span,
+#main .pageIntro .meta p .author span {
   color: #324a53;
 }
-/* line 18, ../scss/_intro.scss */
-.pageIntro .meta p .author {
+/* line 20, ../scss/_intro.scss */
+#main .pageIntro .meta p .author {
   margin-right: 0.5em;
 }
 
@@ -497,12 +497,12 @@ nav ul li:hover > ul {
 /* line 32, ../scss/_content.scss */
 #main span.plugin_picture.align-left {
   float: left;
-  margin: 1em 1em 1.5em 0;
+  margin: 1.5em 1.5em 2.25em 0;
 }
 /* line 36, ../scss/_content.scss */
 #main span.plugin_picture.align-right {
   float: right;
-  margin: 1em 0 1.5em 1em;
+  margin: 1.5em 0 2.25em 1.5em;
 }
 /* line 40, ../scss/_content.scss */
 #main span.plugin_picture.align-center {
@@ -510,7 +510,7 @@ nav ul li:hover > ul {
   max-width: 100%;
   width: auto;
   display: block;
-  margin: 1em auto;
+  margin: 1.5em auto;
 }
 /* line 46, ../scss/_content.scss */
 #main span.plugin_picture.align-center img {
@@ -698,17 +698,29 @@ nav ul li:hover > ul {
 /* line 1, ../scss/_footer.scss */
 footer {
   margin-bottom: 2em;
+  margin-top: 5em;
 }
-/* line 5, ../scss/_footer.scss */
-footer a,
-footer a:visited {
-  font-size: 2.1em;
-  color: #00407a;
+/* line 7, ../scss/_footer.scss */
+footer .text-section {
+  float: left;
+  margin-right: 1em;
+  margin-top: 1em;
 }
-/* line 8, ../scss/_footer.scss */
-footer a:hover,
-footer a:visited:hover {
+/* line 11, ../scss/_footer.scss */
+footer .text-section p {
+  margin: 0;
+}
+/* line 16, ../scss/_footer.scss */
+footer a {
+  float: left;
+  margin-right: 1em;
+  margin-top: 1em;
+  text-transform: uppercase;
   text-decoration: none;
+}
+/* line 22, ../scss/_footer.scss */
+footer a:visited {
+  color: #00407a;
 }
 
 /* line 1, ../scss/_shop.scss */
@@ -845,7 +857,7 @@ footer a:visited:hover {
  *    `:before` to contain the top-margins of child elements.
  */
 /* line 268, ../scss/main.scss */
-.clearfix:before, .clearfix:after {
+.clearfix:before, footer:before, .clearfix:after, footer:after {
   content: " ";
   /* 1 */
   display: table;

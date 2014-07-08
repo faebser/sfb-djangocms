@@ -1,7 +1,7 @@
 $textSectionName: ".text-section";
 
 #main {
-    $margin: 1em;
+    $margin: 1.5em;
     @extend .outerWrapper;
     padding: 0;
     #subnav {

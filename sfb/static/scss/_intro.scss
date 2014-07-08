@@ -1,12 +1,14 @@
-.pageIntro {
+#main .pageIntro {
 	.meta {
 		img {
 			min-width: 100%;
 		}
 		p {
 			text-transform: uppercase;
+			//word-spacing: 0.6em;
+			@extend %nav;
 			font-size: 80%;
-			word-spacing: 0.6em;
+			margin-left: 0;
 			.date,
 			.author {
 				color: $extra;
