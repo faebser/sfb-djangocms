@@ -8,10 +8,19 @@ from cms.models.pluginmodel import CMSPlugin  # normal cms-plugin
 # Models for the sfb-shop
 
 
+class ItemContainer(CMSPlugin):
+    name = models.CharField(max_length=200, verbose_name=u'Name')
+    description = HTMLField(verbose_name=u'Beschreibung')
+    picture = models.ImageField(verbose_name=u'Bild', upload_to=path.join('shop', 'products'))
+
+    def __unicode__(self):
+        return self.name
+
+
 class Item(CMSPlugin):
     name = models.CharField(max_length=200, verbose_name=u'Name')
     description = HTMLField(verbose_name=u'Beschreibung')
-    picture = models.ImageField(verbose_name=u'Bild', upload_to=path.join('shop/products'))
+    picture = models.ImageField(verbose_name=u'Bild', upload_to=path.join('shop', 'products', 'variants'))
     price = models.FloatField(verbose_name=u'Preis')
 
     def __unicode__(self):

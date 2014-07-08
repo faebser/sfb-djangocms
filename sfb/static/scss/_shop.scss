@@ -6,8 +6,10 @@
 
 	li {
 		list-style-type: none;
+		background-color: lighten(#C4C4C4, 9%);
 		position: relative;
 		margin-right: 1%;
+		margin-bottom: 2%;
 		@include inline-block;
 		height: 340px;
 		overflow: hidden;
@@ -18,7 +20,14 @@
 		&:hover {
 
 		}
-		&.high {
+		img {
+
+			display: block;
+			height: 80%;
+			width: auto;
+			margin: 0 auto;
+		}
+		/*&.high {
 			max-width: 25%;
 			img {
 				min-height: 100%;
@@ -29,16 +38,24 @@
 			img {
 				min-height: 100%;
 			}
-		}
+		}*/
 		
 		.itemData {
-			display: none;
-			background-color: $navBackground;
-			position: absolute;
+			background-color: #C4C4C4;
+			@include inline-block;
+			height: 20%;
 			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
+			padding: 0.5em 1em;
+			h2,
+			p {
+				color: $emphasize;
+				@include inline-block;
+				margin: 0;
+				vertical-align: baseline;
+			}
+			p {
+				margin: 0 0.5em;
+			}
 		}
 	}
 }

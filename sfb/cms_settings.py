@@ -79,6 +79,6 @@ CMS_PLACEHOLDER_CONF = {
     },
     'shop-content': {
         'name': u'Shop',
-        'plugins': ['ShopCard', 'ShopMerch']
+        'plugins': ['ShopContainer']
     }
 }

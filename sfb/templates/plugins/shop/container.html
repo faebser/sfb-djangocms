@@ -1,0 +1,14 @@
+{% load cms_tags %}
+<li class="container">
+    <img src="{{ instance.picture.url }}" height="{{ instance.picture.height }}" width="{{ instance.picture.width }}"/>
+    <div class="itemData">
+        <h2>{{ instance.name }}</h2>
+        {{ instance.description | safe }}
+    </div>
+
+    <ul class="children">
+        {% for plugin in instance.child_plugin_instances %}
+                {% render_plugin plugin %}
+        {% endfor %}
+    </ul>
+</li>

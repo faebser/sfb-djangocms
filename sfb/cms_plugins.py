@@ -145,6 +145,15 @@ class ExternalLink(CMSPluginBase):
         return context
 
 
+class ShopContainer(CMSPluginBase):
+    name = u'Artikel'
+    model = shop.ItemContainer
+    module = ps.module + ' Shop'
+    allow_children = True
+    child_classes = ["ShopCard", "ShopMerch"]
+    render_template = path.join(ps.templatePathShop, 'container.html')
+
+
 class ShopCard(CMSPluginBase):
     name = u'Karte'
     model = shop.Card
@@ -184,6 +193,7 @@ plugin_pool.register_plugin(InternalLink)
 plugin_pool.register_plugin(ExternalLink)
 
 #shop
+plugin_pool.register_plugin(ShopContainer)
 plugin_pool.register_plugin(ShopCard)
 plugin_pool.register_plugin(ShopMerch)
 

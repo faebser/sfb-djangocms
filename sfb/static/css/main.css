@@ -732,8 +732,10 @@ footer a:visited {
 /* line 7, ../scss/_shop.scss */
 #main #shop li {
   list-style-type: none;
+  background-color: #dbdbdb;
   position: relative;
   margin-right: 1%;
+  margin-bottom: 2%;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -743,44 +745,67 @@ footer a:visited {
   height: 340px;
   overflow: hidden;
   padding: 0;
+  /*&.high {
+  	max-width: 25%;
+  	img {
+  		min-height: 100%;
+  	}
+  }
+  &.wide {
+  	max-width: 50%;
+  	img {
+  		min-height: 100%;
+  	}
+  }*/
 }
-/* line 15, ../scss/_shop.scss */
+/* line 17, ../scss/_shop.scss */
 #main #shop li:nth-of-type(3n) {
   margin-right: 0;
 }
-/* line 21, ../scss/_shop.scss */
-#main #shop li.high {
-  max-width: 25%;
-}
 /* line 23, ../scss/_shop.scss */
-#main #shop li.high img {
-  min-height: 100%;
+#main #shop li img {
+  display: block;
+  height: 80%;
+  width: auto;
+  margin: 0 auto;
 }
-/* line 27, ../scss/_shop.scss */
-#main #shop li.wide {
-  max-width: 50%;
-}
-/* line 29, ../scss/_shop.scss */
-#main #shop li.wide img {
-  min-height: 100%;
-}
-/* line 34, ../scss/_shop.scss */
+/* line 43, ../scss/_shop.scss */
 #main #shop li .itemData {
-  display: none;
-  background-color: #4b7698;
-  position: absolute;
+  background-color: #C4C4C4;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: 20%;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  padding: 0.5em 1em;
+}
+/* line 50, ../scss/_shop.scss */
+#main #shop li .itemData h2,
+#main #shop li .itemData p {
+  color: #00407a;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0;
+  vertical-align: baseline;
+}
+/* line 56, ../scss/_shop.scss */
+#main #shop li .itemData p {
+  margin: 0 0.5em;
 }
 
-/* line 46, ../scss/_shop.scss */
+/* line 63, ../scss/_shop.scss */
 #main #shopForm {
   margin-top: 1em;
   width: 100%;
 }
-/* line 49, ../scss/_shop.scss */
+/* line 66, ../scss/_shop.scss */
 #main #shopForm #buy {
   display: block;
   width: 10em;
@@ -790,7 +815,7 @@ footer a:visited {
   color: #fdf6e3;
   border: none;
 }
-/* line 58, ../scss/_shop.scss */
+/* line 75, ../scss/_shop.scss */
 #main #shopForm #buy:hover {
   background-color: #3a5b76;
 }
