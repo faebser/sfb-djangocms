@@ -72,7 +72,7 @@ sfb.shop = (function ($) {
 			var e = $(element);
 			amount += parseFloat(e.html());
 		});
-		total.html(m.render(templates.total, {'amount': amount}));
+		total.html(m.render(templates.total, {'amount': amount.toPrecision(3)}));
 	},
 	getAjaxSettings = function (url, data) {
 		return {
