@@ -1,19 +1,45 @@
+%shopItem {
+	list-style-type: none;
+	background-color: lighten(#C4C4C4, 9%);
+	position: relative;
+	margin-right: 1%;
+	margin-bottom: 2%;
+	@include inline-block;
+	height: 340px;
+	overflow: hidden;
+	padding: 0;
+	cursor: pointer;
+	img {
+		display: block;
+		height: 80%;
+		width: auto;
+		margin: 0 auto;
+	}
+	.itemData {
+		background-color: #C4C4C4;
+		@include inline-block;
+		height: 20%;
+		width: 100%;
+		padding: 0.5em 1em;
+		h2,
+		p {
+			color: $emphasize;
+			@include inline-block;
+			margin: 0;
+			vertical-align: baseline;
+		}
+		p {
+			margin: 0 0.5em;
+		}
+	}
+}
+
 #main #shop {
 	padding: 0;
 	margin: 0;
 	width: 100%;
-
-
 	li {
-		list-style-type: none;
-		background-color: lighten(#C4C4C4, 9%);
-		position: relative;
-		margin-right: 1%;
-		margin-bottom: 2%;
-		@include inline-block;
-		height: 340px;
-		overflow: hidden;
-		padding: 0;
+		@extend %shopItem;
 		&:nth-of-type(3n) {
 			margin-right: 0;
 		}
@@ -27,20 +53,7 @@
 			width: auto;
 			margin: 0 auto;
 		}
-		/*&.high {
-			max-width: 25%;
-			img {
-				min-height: 100%;
-			}
-		}
-		&.wide {
-			max-width: 50%;
-			img {
-				min-height: 100%;
-			}
-		}*/
-		
-		.itemData {
+		/*.itemData {
 			background-color: #C4C4C4;
 			@include inline-block;
 			height: 20%;
@@ -56,6 +69,28 @@
 			p {
 				margin: 0 0.5em;
 			}
+		}*/
+		.children {
+			display: none;
+		}
+	}
+}
+
+#main table#cart {
+	width: 100%;
+	tr {
+		th {
+			@extend %medium;
+			@extend %t-base;
+			text-align: left;
+		}
+		td {
+			@extend %regular;
+			@extend %t-base;
+		}
+		th.right,
+		td.right {
+			text-align: right;
 		}
 	}
 }
@@ -74,6 +109,54 @@
 		@extend %nav;
 		&:hover {
 			background-color: $subNavBackground;
+		}
+	}
+}
+
+#main #noJs {
+	width: 100%;
+	background-color: #C4C4C4;
+	padding: 1em;
+	margin: 1em 0;
+	@extend %medium;
+	@extend %t-base;
+	p {
+		text-align: center;
+	}
+}
+
+#main #overlay {
+	display: none;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $subNavBackground;
+	background-color: rgba($subNavBackground, 0.5);
+	@extend %center-parent;
+	&.show {
+		display: block;
+	}
+	ul {
+		@extend %center-child;
+		width: 65%;
+		margin: 0 auto;
+		li {
+			@include inline-block;
+			@extend %shopItem;
+			height: auto;
+			//width: 48%;
+			width: auto;
+			.itemData {
+				.price {
+					@include inline-block;
+				}
+				p {
+					display: block;
+				}
+			}
 		}
 	}
 }

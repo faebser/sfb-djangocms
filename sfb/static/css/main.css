@@ -151,7 +151,7 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy {
 p,
 li,
 a, #main .pageIntro .meta p .date span,
-#main .pageIntro .meta p .author span {
+#main .pageIntro .meta p .author span, #main table#cart tr td {
   font-family: 'nobileregular', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -163,7 +163,7 @@ h3,
 h4, strong, header h2 a,
 header h2 a:visited,
 #header h2 a,
-#header h2 a:visited, #main .pageIntro p {
+#header h2 a:visited, #main .pageIntro p, #main table#cart tr th, #main #noJs {
   font-family: 'nobilemedium', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -187,7 +187,7 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy {
 /* line 116, ../scss/_font.scss */
 p,
 li,
-a, strong {
+a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs {
   font-size: 1em;
   line-height: 1.75em;
   line-height: 1.75em;
@@ -338,19 +338,49 @@ header h2 a:visited,
   margin-left: -5px;
 }
 
+/* line 1, ../scss/_util.scss */
+#main #overlay {
+  text-align: center;
+}
+/* line 3, ../scss/_util.scss */
+#main #overlay:before {
+  content: ' ';
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* Adjusts for spacing */
+}
+
+/* line 12, ../scss/_util.scss */
+#main #overlay ul {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  vertical-align: middle;
+}
+
 /*** components ***/
-/* line 8, ../scss/_nav.scss */
+/* line 7, ../scss/_nav.scss */
 nav {
   background-color: #4b7698;
   color: #fdf6e3;
   width: 100%;
 }
-/* line 12, ../scss/_nav.scss */
+/* line 11, ../scss/_nav.scss */
 nav ul {
   list-style-type: none;
   padding: 0 1em;
 }
-/* line 16, ../scss/_nav.scss */
+/* line 15, ../scss/_nav.scss */
 nav ul li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -360,7 +390,7 @@ nav ul li {
   *display: inline;
   position: relative;
 }
-/* line 20, ../scss/_nav.scss */
+/* line 19, ../scss/_nav.scss */
 nav ul li a,
 nav ul li a:hover {
   display: block;
@@ -370,17 +400,17 @@ nav ul li a:hover {
   letter-spacing: 0.15em;
   padding: 1em 1.6em;
 }
-/* line 30, ../scss/_nav.scss */
+/* line 29, ../scss/_nav.scss */
 nav ul li.selected > a {
   cursor: default;
   color: #4b7698;
   background-color: #fdf6e3;
 }
-/* line 37, ../scss/_nav.scss */
+/* line 36, ../scss/_nav.scss */
 nav ul li.ancestor > a {
   color: #3a5b76;
 }
-/* line 41, ../scss/_nav.scss */
+/* line 40, ../scss/_nav.scss */
 nav ul li > ul {
   z-index: -100;
   -webkit-transition: right 0.35s ease-in-out, opacity 0.2s linear;
@@ -420,22 +450,22 @@ nav ul li > ul:after {
   border-width: 8px;
   margin-left: -8px;
 }
-/* line 52, ../scss/_nav.scss */
+/* line 51, ../scss/_nav.scss */
 nav ul li > ul li {
   width: 100%;
 }
-/* line 54, ../scss/_nav.scss */
+/* line 53, ../scss/_nav.scss */
 nav ul li > ul li.selected a {
   background-color: #3a5b76;
 }
-/* line 59, ../scss/_nav.scss */
+/* line 58, ../scss/_nav.scss */
 nav ul li:hover > ul {
   right: 0;
   opacity: 1;
   z-index: 100;
 }
 
-/* line 67, ../scss/_nav.scss */
+/* line 66, ../scss/_nav.scss */
 .edit #newNav {
   top: 30px;
 }
@@ -724,13 +754,7 @@ footer a:visited {
 }
 
 /* line 1, ../scss/_shop.scss */
-#main #shop {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-/* line 7, ../scss/_shop.scss */
-#main #shop li {
+#main #shop li, #main #overlay ul li {
   list-style-type: none;
   background-color: #dbdbdb;
   position: relative;
@@ -745,32 +769,17 @@ footer a:visited {
   height: 340px;
   overflow: hidden;
   padding: 0;
-  /*&.high {
-  	max-width: 25%;
-  	img {
-  		min-height: 100%;
-  	}
-  }
-  &.wide {
-  	max-width: 50%;
-  	img {
-  		min-height: 100%;
-  	}
-  }*/
+  cursor: pointer;
 }
-/* line 17, ../scss/_shop.scss */
-#main #shop li:nth-of-type(3n) {
-  margin-right: 0;
-}
-/* line 23, ../scss/_shop.scss */
-#main #shop li img {
+/* line 12, ../scss/_shop.scss */
+#main #shop li img, #main #overlay ul li img {
   display: block;
   height: 80%;
   width: auto;
   margin: 0 auto;
 }
-/* line 43, ../scss/_shop.scss */
-#main #shop li .itemData {
+/* line 18, ../scss/_shop.scss */
+#main #shop li .itemData, #main #overlay ul li .itemData {
   background-color: #C4C4C4;
   display: -moz-inline-stack;
   display: inline-block;
@@ -782,9 +791,10 @@ footer a:visited {
   width: 100%;
   padding: 0.5em 1em;
 }
-/* line 50, ../scss/_shop.scss */
-#main #shop li .itemData h2,
-#main #shop li .itemData p {
+/* line 25, ../scss/_shop.scss */
+#main #shop li .itemData h2, #main #overlay ul li .itemData h2,
+#main #shop li .itemData p,
+#main #overlay ul li .itemData p {
   color: #00407a;
   display: -moz-inline-stack;
   display: inline-block;
@@ -795,17 +805,73 @@ footer a:visited {
   margin: 0;
   vertical-align: baseline;
 }
-/* line 56, ../scss/_shop.scss */
-#main #shop li .itemData p {
+/* line 31, ../scss/_shop.scss */
+#main #shop li .itemData p, #main #overlay ul li .itemData p {
   margin: 0 0.5em;
 }
 
-/* line 63, ../scss/_shop.scss */
+/* line 37, ../scss/_shop.scss */
+#main #shop {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+/* line 41, ../scss/_shop.scss */
+#main #shop li {
+  /*.itemData {
+  	background-color: #C4C4C4;
+  	@include inline-block;
+  	height: 20%;
+  	width: 100%;
+  	padding: 0.5em 1em;
+  	h2,
+  	p {
+  		color: $emphasize;
+  		@include inline-block;
+  		margin: 0;
+  		vertical-align: baseline;
+  	}
+  	p {
+  		margin: 0 0.5em;
+  	}
+  }*/
+}
+/* line 43, ../scss/_shop.scss */
+#main #shop li:nth-of-type(3n) {
+  margin-right: 0;
+}
+/* line 49, ../scss/_shop.scss */
+#main #shop li img {
+  display: block;
+  height: 80%;
+  width: auto;
+  margin: 0 auto;
+}
+/* line 73, ../scss/_shop.scss */
+#main #shop li .children {
+  display: none;
+}
+
+/* line 79, ../scss/_shop.scss */
+#main table#cart {
+  width: 100%;
+}
+/* line 82, ../scss/_shop.scss */
+#main table#cart tr th {
+  text-align: left;
+}
+/* line 92, ../scss/_shop.scss */
+#main table#cart tr th.right,
+#main table#cart tr td.right {
+  text-align: right;
+}
+
+/* line 98, ../scss/_shop.scss */
 #main #shopForm {
   margin-top: 1em;
   width: 100%;
 }
-/* line 66, ../scss/_shop.scss */
+/* line 101, ../scss/_shop.scss */
 #main #shopForm #buy {
   display: block;
   width: 10em;
@@ -815,9 +881,67 @@ footer a:visited {
   color: #fdf6e3;
   border: none;
 }
-/* line 75, ../scss/_shop.scss */
+/* line 110, ../scss/_shop.scss */
 #main #shopForm #buy:hover {
   background-color: #3a5b76;
+}
+
+/* line 116, ../scss/_shop.scss */
+#main #noJs {
+  width: 100%;
+  background-color: #C4C4C4;
+  padding: 1em;
+  margin: 1em 0;
+}
+/* line 123, ../scss/_shop.scss */
+#main #noJs p {
+  text-align: center;
+}
+
+/* line 128, ../scss/_shop.scss */
+#main #overlay {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #3a5b76;
+  background-color: rgba(58, 91, 118, 0.5);
+}
+/* line 139, ../scss/_shop.scss */
+#main #overlay.show {
+  display: block;
+}
+/* line 142, ../scss/_shop.scss */
+#main #overlay ul {
+  width: 65%;
+  margin: 0 auto;
+}
+/* line 146, ../scss/_shop.scss */
+#main #overlay ul li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: auto;
+  width: auto;
+}
+/* line 153, ../scss/_shop.scss */
+#main #overlay ul li .itemData .price {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 156, ../scss/_shop.scss */
+#main #overlay ul li .itemData p {
+  display: block;
 }
 
 /* ==========================================================================

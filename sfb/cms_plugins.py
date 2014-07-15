@@ -162,6 +162,7 @@ class ShopCard(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context['instance'] = instance
+        context['type'] = 'card'
         if instance.picture.height >= instance.picture.width:
             context['cssClass'] = 'high'
         else:
@@ -177,6 +178,7 @@ class ShopMerch(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context['instance'] = instance
+        context['type'] = 'merch'
         return context
 
 
