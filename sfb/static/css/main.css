@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -48,7 +49,7 @@ hr {
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
-/* line 57, ../scss/main.scss */
+/* line 53, ../scss/main.scss */
 audio,
 canvas,
 img,
@@ -91,15 +92,53 @@ textarea {
    ========================================================================== */
 /* compass imports */
 /* colors */
-/* line 104, ../scss/main.scss */
+/* line 7, ../scss/_util.scss */
+#main #overlay {
+  text-align: center;
+}
+/* line 9, ../scss/_util.scss */
+#main #overlay:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  height: 100%;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+/* line 19, ../scss/_util.scss */
+#main #overlay ul {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 64, ../scss/_util.scss */
+.clearfix:before, footer:before, .clearfix:after, footer:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+/* line 70, ../scss/_util.scss */
+.clearfix:after, footer:after {
+  clear: both;
+}
+
+/* line 105, ../scss/main.scss */
 html,
 body {
-  background-color: #fdf6e3;
+  background-color: #FDF6E3;
 }
 
 /* important stuff */
 /* apply a natural box layout model to all elements */
-/* line 111, ../scss/main.scss */
+/* line 113, ../scss/main.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -108,46 +147,87 @@ body {
 
 /* typo and font */
 @font-face {
-  font-family: 'nobileregular';
+  font-family: "nobileregular";
   src: url("font/nobile/nobile-regular-webfont.eot");
-  src: url("font/nobile/nobile-regular-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-regular-webfont.woff") format("woff"), url("font/nobile/nobile-regular-webfont.ttf") format("truetype"), url("font/nobile/nobile-regular-webfont.svg#nobileregular") format("svg");
+  src: url("font/nobile/nobile-regular-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-regular-webfont.woff") format("woff"), url("font/nobile/nobile-regular-webfont.ttf") format("truetype"), url("font/nobile/nobile-regular-webfont.svg#pt_sansregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'nobilemedium';
+  font-family: "nobilemedium";
   src: url("font/nobile/nobile-medium-webfont.eot");
-  src: url("font/nobile/nobile-medium-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-medium-webfont.woff") format("woff"), url("font/nobile/nobile-medium-webfont.ttf") format("truetype"), url("font/nobile/nobile-medium-webfont.svg#nobilemedium") format("svg");
+  src: url("font/nobile/nobile-medium-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-medium-webfont.woff") format("woff"), url("font/nobile/nobile-medium-webfont.ttf") format("truetype"), url("font/nobile/nobile-medium-webfont.svg#pt_sansregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'nobilebold';
+  font-family: "nobilebold";
   src: url("font/nobile/nobile-bold-webfont.eot");
-  src: url("font/nobile/nobile-bold-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-bold-webfont.woff") format("woff"), url("font/nobile/nobile-bold-webfont.ttf") format("truetype"), url("font/nobile/nobile-bold-webfont.svg#nobileregular") format("svg");
+  src: url("font/nobile/nobile-bold-webfont.eot?#iefix") format("embedded-opentype"), url("font/nobile/nobile-bold-webfont.woff") format("woff"), url("font/nobile/nobile-bold-webfont.ttf") format("truetype"), url("font/nobile/nobile-bold-webfont.svg#pt_sansregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'ptsans-bold';
+  font-family: "ptsans-bold";
   src: url("font/ptsans_bold_german/PTS75F-webfont.eot");
-  src: url("font/ptsans_bold_german/PTS75F-webfont.eot?#iefix") format("embedded-opentype"), url("font/ptsans_bold_german/PTS75F-webfont.woff") format("woff"), url("font/ptsans_bold_german/PTS75F-webfont.ttf") format("truetype"), url("font/ptsans_bold_german/PTS75F-webfont.svg#ptsans-bold") format("svg");
+  src: url("font/ptsans_bold_german/PTS75F-webfont.eot?#iefix") format("embedded-opentype"), url("font/ptsans_bold_german/PTS75F-webfont.woff") format("woff"), url("font/ptsans_bold_german/PTS75F-webfont.ttf") format("truetype"), url("font/ptsans_bold_german/PTS75F-webfont.svg#pt_sansregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "sfb-shop";
+  src: url("font/fontello/sfb-shop.eot");
+  src: url("font/fontello/sfb-shop.eot?#iefix") format("embedded-opentype"), url("font/fontello/sfb-shop.woff") format("woff"), url("font/fontello/sfb-shop.ttf") format("truetype"), url("font/fontello/sfb-shop.svg#pt_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 7, ../scss/_font.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "sfb-shop";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
 
-/* line 87, ../scss/_font.scss */
+/* line 38, ../scss/_font.scss */
+.icon-plus-circled:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 39, ../scss/_font.scss */
+.icon-minus-circled:before {
+  content: '\e801';
+}
+
+/* '' */
+/* line 82, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy {
+nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #overlay .overlayButtonWrapper a {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 94, ../scss/_font.scss */
+/* line 89, ../scss/_font.scss */
 p,
 li,
 a, #main .pageIntro .meta p .date span,
@@ -157,7 +237,7 @@ a, #main .pageIntro .meta p .date span,
   font-style: normal;
 }
 
-/* line 100, ../scss/_font.scss */
+/* line 95, ../scss/_font.scss */
 h2,
 h3,
 h4, strong, header h2 a,
@@ -169,98 +249,113 @@ header h2 a:visited,
   font-style: normal;
 }
 
-/* line 106, ../scss/_font.scss */
+/* line 101, ../scss/_font.scss */
 h1 {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 113, ../scss/_font.scss */
+/* line 108, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy {
-  font-size: 0.75019em;
-  line-height: 2.33275em;
-  line-height: 1.75em;
+nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #overlay .overlayButtonWrapper a {
+  font-size: 12px;
+  font-size: 0.75019rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+  line-height: 28px;
+  line-height: 1.75rem;
 }
 
-/* line 116, ../scss/_font.scss */
+/* line 111, ../scss/_font.scss */
 p,
 li,
 a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs {
-  font-size: 1em;
-  line-height: 1.75em;
-  line-height: 1.75em;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+  line-height: 28px;
+  line-height: 1.75rem;
 }
 
-/* line 119, ../scss/_font.scss */
+/* line 114, ../scss/_font.scss */
 h2,
 h3,
 h4, #main .box h3 {
-  font-size: 1.333em;
-  line-height: 1.31283em;
-  line-height: 2.1875em;
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+  line-height: 35px;
+  line-height: 2.1875rem;
 }
 
-/* line 122, ../scss/_font.scss */
+/* line 117, ../scss/_font.scss */
 h1 {
-  font-size: 1.77688em;
-  line-height: 1.96975em;
-  line-height: 2.1875em;
+  font-size: 28px;
+  font-size: 1.77688rem;
+  line-height: 56px;
+  line-height: 3.5rem;
+  line-height: 35px;
+  line-height: 2.1875rem;
 }
 
-/* line 125, ../scss/_font.scss */
+/* line 120, ../scss/_font.scss */
 header h1,
 #header h1 {
-  font-size: 2.36856em;
-  line-height: 1.47769em;
-  line-height: 2.1875em;
+  font-size: 38px;
+  font-size: 2.36856rem;
+  line-height: 56px;
+  line-height: 3.5rem;
+  line-height: 35px;
+  line-height: 2.1875rem;
 }
 
-/* line 117, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 h1 {
-  color: #00407a;
+  color: #00407A;
 }
 
 /* line 124, ../scss/main.scss */
 h2,
 h3,
 h4 {
-  color: #00407a;
+  color: #00407A;
 }
 
 /* line 132, ../scss/main.scss */
 p,
 li,
 a {
-  color: #324a53;
+  color: #324A53;
 }
 
-/* line 137, ../scss/main.scss */
+/* line 139, ../scss/main.scss */
 strong {
-  color: #00407a;
+  color: #00407A;
 }
 
-/* line 143, ../scss/main.scss */
+/* line 145, ../scss/main.scss */
 a {
-  color: #00407a;
+  color: #00407A;
   text-decoration: underline;
-  -webkit-transition: color 0.5s;
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
-/* line 147, ../scss/main.scss */
+/* line 149, ../scss/main.scss */
 a:hover {
   text-decoration: underline;
 }
-/* line 151, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 a:hover, a:visited {
-  color: #c5b893;
+  color: #C5B893;
 }
 
 /* wrappers */
-/* line 158, ../scss/main.scss */
+/* line 160, ../scss/main.scss */
 .outerWrapper, header,
 #header, nav ul, #main, footer {
   width: 100%;
@@ -270,13 +365,13 @@ a:hover, a:visited {
 }
 
 /* components */
-/* line 172, ../scss/main.scss */
+/* line 173, ../scss/main.scss */
 header,
 #header {
   margin-bottom: 4em;
   margin-top: 2.2em;
 }
-/* line 176, ../scss/main.scss */
+/* line 178, ../scss/main.scss */
 header h1,
 #header h1 {
   line-height: 1.2;
@@ -286,24 +381,24 @@ header h1,
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 184, ../scss/main.scss */
+/* line 186, ../scss/main.scss */
 header h1.second,
 #header h1.second {
   margin-top: 0;
   padding-top: 0;
 }
-/* line 189, ../scss/main.scss */
+/* line 191, ../scss/main.scss */
 header h2,
 #header h2 {
   font-size: 0.8em;
   text-align: left;
 }
-/* line 193, ../scss/main.scss */
+/* line 194, ../scss/main.scss */
 header h2 a,
 header h2 a:visited,
 #header h2 a,
 #header h2 a:visited {
-  color: #00407a;
+  color: #00407A;
   text-decoration: none;
 }
 
@@ -311,7 +406,7 @@ header h2 a:visited,
 /* line 1, ../scss/_arrow.scss */
 .arrow_box {
   position: relative;
-  border-bottom: 1px solid #00407a;
+  border-bottom: 1px solid #00407A;
   /*&:before {
   	border-color: transparent;
   	border-top-color: $emphasize;
@@ -319,7 +414,7 @@ header h2 a:visited,
   	margin-left: -37px;
   }*/
 }
-/* line 5, ../scss/_arrow.scss */
+/* line 4, ../scss/_arrow.scss */
 .arrow_box:before, .arrow_box:after {
   top: 100%;
   left: 50%;
@@ -333,46 +428,54 @@ header h2 a:visited,
 /* line 15, ../scss/_arrow.scss */
 .arrow_box:after {
   border-color: transparent;
-  border-top-color: #00407a;
+  border-top-color: #00407A;
   border-width: 5px;
   margin-left: -5px;
 }
 
-/* line 1, ../scss/_util.scss */
+/* line 7, ../scss/_util.scss */
 #main #overlay {
   text-align: center;
 }
-/* line 3, ../scss/_util.scss */
+/* line 9, ../scss/_util.scss */
 #main #overlay:before {
   content: ' ';
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
   height: 100%;
   vertical-align: middle;
-  margin-right: -0.25em;
-  /* Adjusts for spacing */
+  font-size: 0;
 }
 
-/* line 12, ../scss/_util.scss */
+/* line 19, ../scss/_util.scss */
 #main #overlay ul {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
-  vertical-align: middle;
+}
+
+/* line 64, ../scss/_util.scss */
+.clearfix:before, footer:before, .clearfix:after, footer:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+/* line 70, ../scss/_util.scss */
+.clearfix:after, footer:after {
+  clear: both;
 }
 
 /*** components ***/
 /* line 7, ../scss/_nav.scss */
 nav {
-  background-color: #4b7698;
-  color: #fdf6e3;
+  background-color: #4B7698;
+  color: #FDF6E3;
   width: 100%;
 }
 /* line 11, ../scss/_nav.scss */
@@ -382,15 +485,14 @@ nav ul {
 }
 /* line 15, ../scss/_nav.scss */
 nav ul li {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
   position: relative;
 }
-/* line 19, ../scss/_nav.scss */
+/* line 18, ../scss/_nav.scss */
 nav ul li a,
 nav ul li a:hover {
   display: block;
@@ -403,8 +505,8 @@ nav ul li a:hover {
 /* line 29, ../scss/_nav.scss */
 nav ul li.selected > a {
   cursor: default;
-  color: #4b7698;
-  background-color: #fdf6e3;
+  color: #4B7698;
+  background-color: #FDF6E3;
 }
 /* line 36, ../scss/_nav.scss */
 nav ul li.ancestor > a {
@@ -413,9 +515,9 @@ nav ul li.ancestor > a {
 /* line 40, ../scss/_nav.scss */
 nav ul li > ul {
   z-index: -100;
-  -webkit-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   -moz-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   -o-transition: right 0.35s ease-in-out, opacity 0.2s linear;
+  -webkit-transition: right 0.35s ease-in-out, opacity 0.2s linear;
   transition: right 0.35s ease-in-out, opacity 0.2s linear;
   padding: 0;
   background-color: #3a5b76;
@@ -432,7 +534,7 @@ nav ul li > ul {
   right: -20%;
   opacity: 0;
 }
-/* line 33, ../scss/_arrow.scss */
+/* line 32, ../scss/_arrow.scss */
 nav ul li > ul:before, nav ul li > ul:after {
   top: -16px;
   left: 50%;
@@ -480,15 +582,15 @@ nav ul li:hover > ul {
   font-size: 80%;
   margin-left: 0;
 }
-/* line 13, ../scss/_intro.scss */
+/* line 12, ../scss/_intro.scss */
 #main .pageIntro .meta p .date,
 #main .pageIntro .meta p .author {
-  color: #00192e;
+  color: #00192E;
 }
 /* line 15, ../scss/_intro.scss */
 #main .pageIntro .meta p .date span,
 #main .pageIntro .meta p .author span {
-  color: #324a53;
+  color: #324A53;
 }
 /* line 20, ../scss/_intro.scss */
 #main .pageIntro .meta p .author {
@@ -560,7 +662,7 @@ nav ul li:hover > ul {
   padding: 0;
 }
 
-/* line 2, ../scss/_teaser.scss */
+/* line 1, ../scss/_teaser.scss */
 #main #teaser,
 #main #small-teaser {
   list-style-type: none;
@@ -584,13 +686,13 @@ nav ul li:hover > ul {
 /* line 15, ../scss/_teaser.scss */
 #main #teaser li .meta,
 #main #small-teaser li .meta {
-  -webkit-transition: bottom 0.75s;
   -moz-transition: bottom 0.75s;
   -o-transition: bottom 0.75s;
+  -webkit-transition: bottom 0.75s;
   transition: bottom 0.75s;
   padding: 0 1em;
-  color: #fdf6e3;
-  background-color: #00192e;
+  color: #FDF6E3;
+  background-color: #00192E;
   background-color: rgba(0, 25, 46, 0.6);
   position: absolute;
   bottom: 0%;
@@ -599,7 +701,7 @@ nav ul li:hover > ul {
 /* line 24, ../scss/_teaser.scss */
 #main #teaser li .meta h2,
 #main #small-teaser li .meta h2 {
-  color: #fdf6e3;
+  color: #FDF6E3;
   margin-right: 1em;
   display: inline-block;
 }
@@ -613,16 +715,16 @@ nav ul li:hover > ul {
 #main #small-teaser li p {
   height: 100%;
   width: 100%;
-  color: #fdf6e3;
+  color: #FDF6E3;
   padding: 1em 1em;
   margin: 0;
   position: absolute;
   top: 100%;
-  background-color: #00192e;
+  background-color: #00192E;
   background-color: rgba(0, 25, 46, 0.6);
-  -webkit-transition: top 0.75s;
   -moz-transition: top 0.75s;
   -o-transition: top 0.75s;
+  -webkit-transition: top 0.75s;
   transition: top 0.75s;
 }
 /* line 46, ../scss/_teaser.scss */
@@ -652,27 +754,27 @@ nav ul li:hover > ul {
 }
 /* line 65, ../scss/_teaser.scss */
 #main #small-teaser li.noImage {
-  border: 1px solid #00407a;
-  -webkit-transition: border-color 0.75s;
+  border: 1px solid #00407A;
   -moz-transition: border-color 0.75s;
   -o-transition: border-color 0.75s;
+  -webkit-transition: border-color 0.75s;
   transition: border-color 0.75s;
 }
 /* line 68, ../scss/_teaser.scss */
 #main #small-teaser li.noImage:hover {
-  border-color: #fdf6e3;
+  border-color: #FDF6E3;
 }
 /* line 71, ../scss/_teaser.scss */
 #main #small-teaser li.noImage a {
   text-decoration: none;
 }
-/* line 76, ../scss/_teaser.scss */
+/* line 74, ../scss/_teaser.scss */
 #main #small-teaser li.noImage .meta,
 #main #small-teaser li.noImage p,
 #main #small-teaser li.noImage h2 {
-  color: #00407a;
+  color: #00407A;
 }
-/* line 80, ../scss/_teaser.scss */
+/* line 79, ../scss/_teaser.scss */
 #main #small-teaser li.noImage .meta,
 #main #small-teaser li.noImage p {
   background-color: transparent;
@@ -706,17 +808,17 @@ nav ul li:hover > ul {
 /* line 18, ../scss/_boxes.scss */
 #main .box h3 {
   margin-top: 0;
-  color: #fdf6e3;
+  color: #FDF6E3;
 }
-/* line 24, ../scss/_boxes.scss */
+/* line 23, ../scss/_boxes.scss */
 #main .box a,
 #main .box a:visited {
-  color: #fdf6e3;
+  color: #FDF6E3;
   text-decoration: none;
 }
 /* line 28, ../scss/_boxes.scss */
 #main .box a:hover {
-  color: #324a53;
+  color: #324A53;
 }
 
 /* line 34, ../scss/_boxes.scss */
@@ -750,7 +852,7 @@ footer a {
 }
 /* line 22, ../scss/_footer.scss */
 footer a:visited {
-  color: #00407a;
+  color: #00407A;
 }
 
 /* line 1, ../scss/_shop.scss */
@@ -760,11 +862,10 @@ footer a:visited {
   position: relative;
   margin-right: 1%;
   margin-bottom: 2%;
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
   height: 340px;
   overflow: hidden;
@@ -781,26 +882,24 @@ footer a:visited {
 /* line 18, ../scss/_shop.scss */
 #main #shop li .itemData, #main #overlay ul li .itemData {
   background-color: #C4C4C4;
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
   height: 20%;
   width: 100%;
   padding: 0.5em 1em;
 }
-/* line 25, ../scss/_shop.scss */
+/* line 24, ../scss/_shop.scss */
 #main #shop li .itemData h2, #main #overlay ul li .itemData h2,
 #main #shop li .itemData p,
 #main #overlay ul li .itemData p {
-  color: #00407a;
-  display: -moz-inline-stack;
+  color: #00407A;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
   margin: 0;
   vertical-align: baseline;
@@ -860,7 +959,7 @@ footer a:visited {
 #main table#cart tr th {
   text-align: left;
 }
-/* line 92, ../scss/_shop.scss */
+/* line 91, ../scss/_shop.scss */
 #main table#cart tr th.right,
 #main table#cart tr td.right {
   text-align: right;
@@ -877,8 +976,8 @@ footer a:visited {
   width: 10em;
   height: 3em;
   margin: 0 auto;
-  background-color: #4b7698;
-  color: #fdf6e3;
+  background-color: #4B7698;
+  color: #FDF6E3;
   border: none;
 }
 /* line 110, ../scss/_shop.scss */
@@ -921,27 +1020,59 @@ footer a:visited {
 }
 /* line 146, ../scss/_shop.scss */
 #main #overlay ul li {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
+  position: relative;
   height: auto;
   width: auto;
+  max-width: 45%;
 }
 /* line 153, ../scss/_shop.scss */
-#main #overlay ul li .itemData .price {
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  zoom: 1;
-  *display: inline;
+#main #overlay ul li img {
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  height: auto;
 }
-/* line 156, ../scss/_shop.scss */
+/* line 158, ../scss/_shop.scss */
+#main #overlay ul li i {
+  font-size: 2em;
+  color: #00407A;
+}
+/* line 162, ../scss/_shop.scss */
+#main #overlay ul li .itemData {
+  margin-top: 0.5em;
+}
+/* line 164, ../scss/_shop.scss */
 #main #overlay ul li .itemData p {
   display: block;
+}
+/* line 170, ../scss/_shop.scss */
+#main #overlay .overlayButtonWrapper {
+  position: fixed;
+  width: 100%;
+  bottom: 30px;
+}
+/* line 174, ../scss/_shop.scss */
+#main #overlay .overlayButtonWrapper a {
+  display: inline-block;
+  height: 3em;
+  margin: 0 auto;
+  background-color: #4B7698;
+  color: #FDF6E3;
+  border: none;
+  padding: 0.25em 1em;
+  text-decoration: none;
+}
+/* line 184, ../scss/_shop.scss */
+#main #overlay .overlayButtonWrapper a#stop {
+  background-color: #3a5b76;
+}
+/* line 187, ../scss/_shop.scss */
+#main #overlay .overlayButtonWrapper a:hover {
+  background-color: #3a5b76;
 }
 
 /* ==========================================================================
@@ -950,7 +1081,7 @@ footer a:visited {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-/* line 211, ../scss/main.scss */
+/* line 213, ../scss/main.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -959,7 +1090,7 @@ footer a:visited {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 220, ../scss/main.scss */
+/* line 222, ../scss/main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -975,7 +1106,7 @@ footer a:visited {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 237, ../scss/main.scss */
+/* line 238, ../scss/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -989,7 +1120,7 @@ footer a:visited {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 250, ../scss/main.scss */
+/* line 252, ../scss/main.scss */
 .invisible {
   visibility: hidden;
 }
@@ -1005,7 +1136,7 @@ footer a:visited {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 268, ../scss/main.scss */
+/* line 269, ../scss/main.scss */
 .clearfix:before, footer:before, .clearfix:after, footer:after {
   content: " ";
   /* 1 */
@@ -1030,7 +1161,7 @@ footer a:visited {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 298, ../scss/main.scss */
+  /* line 300, ../scss/main.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -1039,18 +1170,18 @@ footer a:visited {
     text-shadow: none !important;
   }
 
-  /* line 306, ../scss/main.scss */
+  /* line 307, ../scss/main.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 310, ../scss/main.scss */
+  /* line 312, ../scss/main.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 314, ../scss/main.scss */
+  /* line 316, ../scss/main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1058,32 +1189,32 @@ footer a:visited {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 323, ../scss/main.scss */
+  /* line 324, ../scss/main.scss */
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 328, ../scss/main.scss */
+  /* line 329, ../scss/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 333, ../scss/main.scss */
+  /* line 335, ../scss/main.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 338, ../scss/main.scss */
+  /* line 339, ../scss/main.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 342, ../scss/main.scss */
+  /* line 344, ../scss/main.scss */
   img {
     max-width: 100% !important;
   }
@@ -1096,7 +1227,7 @@ footer a:visited {
     widows: 3;
   }
 
-  /* line 354, ../scss/main.scss */
+  /* line 355, ../scss/main.scss */
   h2,
   h3 {
     page-break-after: avoid;

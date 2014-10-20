@@ -6,6 +6,7 @@ from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 from djangocms_text_ckeditor.cms_plugins import TextPlugin
 from django.core.urlresolvers import reverse
+import json
 from models import *
 from os import path
 from sfb_shop import models as shop
@@ -167,6 +168,10 @@ class ShopCard(CMSPluginBase):
             context['cssClass'] = 'high'
         else:
             context['cssClass'] = 'wide'
+        dump = dict()
+        for item in instance.price.items.all():
+            dump[str(item.amount)] = item.price
+        context['priceData'] = json.dumps(dump)
         return context
 
 

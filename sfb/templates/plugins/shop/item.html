@@ -1,8 +1,12 @@
-<li class="{{ cssClass }}" data-id="{{ instance.id }}" data-type="{{ type }}">
+<li class="{{ cssClass }}" data-id="{{ instance.id }}" data-type="{{ type }}" data-price="{{ priceData }}">
     <img src="{{ instance.picture.url }}"/>
+    <i class="icon-plus-circled"></i>
+    <i class="icon-minus-circled"></i>
+    <div class="tempPrice">
+        <p></p>
+    </div>
     <div class="itemData">
         <h2>{{ instance.name }}</h2>
-        <p class="price">{{ instance.price }} Fr.</p>
         {{ instance.description | safe }}
     </div>
 </li>

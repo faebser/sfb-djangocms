@@ -145,17 +145,47 @@
 		margin: 0 auto;
 		li {
 			@include inline-block;
+			position: relative;
 			@extend %shopItem;
 			height: auto;
-			//width: 48%;
 			width: auto;
+			max-width: 45%;
+			img {
+				margin-bottom: 0.5em;
+				max-width: 100%;
+				height: auto;
+			}
+			i {
+				font-size: 2em;
+				color: $emphasize;
+			}
 			.itemData {
-				.price {
-					@include inline-block;
-				}
+				margin-top: 0.5em;
 				p {
 					display: block;
-				}
+				}	
+			}
+		}
+	}
+	.overlayButtonWrapper {
+		position: fixed;
+		width: 100%;
+		bottom: 30px;
+		a {
+			display: inline-block;
+			height: 3em;
+			margin: 0 auto;
+			background-color: $navBackground;
+			color: $background;
+			border: none;
+			@extend %nav;
+			padding: 0.25em 1em;
+			text-decoration: none;
+			&#stop {
+				background-color: $subNavBackground;
+			}
+			&:hover {
+				background-color: $subNavBackground;
 			}
 		}
 	}

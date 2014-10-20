@@ -9,25 +9,24 @@
     </div>
     <div id="overlay">
         <ul></ul>
+        <div class="overlayButtonWrapper">
+            <a href="#" id="go">In Warenkorb übertragen</a>
+            <a href="#" id="stop">Abbrechen</a>
+        </div>
     </div>
     <ul id="shop">
         {% placeholder "shop-content" %}
     </ul>
-    <table id="cart">
-        <tr>
+    <table id="cart" >
+        <tr class="stay">
             <th>Produkt</th>
             <th>Menge</th>
             <th class="right">Preis</th>
         </tr>
-        <tr>
-            <td>Karte mit Motiv</td>
-            <td>2</td>
-            <td class="right">2 CHF</td>
-        </tr>
-        <tr>
+        <tr class="stay">
             <td></td>
             <td>Total:</td>
-            <td id="total" class="right">4 CHF</td>
+            <td id="total" class="right"></td>
         </tr>
     </table>
     <form action="/submit" id="shopForm">

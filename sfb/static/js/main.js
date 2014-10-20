@@ -8,71 +8,115 @@ sfb.shop = (function ($) {
 	var c = {
 			'hidden': 'hidden',
 			'children': 'children',
-			'show': 'show'
+			'show': 'show',
+			'stay': 'stay'
 		},
+		tempCart = {},
 		cart = $("#cart"),
 		total = $('#total'),
 		parentItems = $('#shop > .container'),
 		overlay = $('#overlay ul'),
+		stop = $('#stop'),
+		go = $('#go'),
 		win = $(window),
+		currentTransaction = {},
+		render_cart = {},
 		urls = {
 			'add': 'addToCart/',
 			'checkout': 'checkout/'
 		},
 		templates = {
-			'total': '{{amount}} CHF'
+			'total': '{{amount}} CHF',
+			'priceModel': '{{amount}} à {{price}} CHF',
+			'row': '{{#.}}<tr><td>{{name}}</td><td>{{amount}} à {{price}} CHF</td><td class="right">{{total}} CHF</td></tr>{{/.}}',
 		},
 		module = {};
 	// private methods
 	var showItemInOverlay = function (items, parentName) {
 		items.clone().appendTo(overlay);
+		items.each(function(index, element) {
+			var e = $(element);
+			var id = e.data('id');
+			currentTransaction[id] = tempCart[id] || { 'amount': 0, 'price': 0, 'name': e.find('.itemData h2').html() };
+			if(currentTransaction[id].amount != 0) {
+				e.find('.tempPrice').html(m.render(templates.priceModel, currentTransaction[id]));
+			} // it is not empty, so we render the template into the item
+		});
 		overlay.parent().addClass(c.show);
 		overlay.data('parentName', parentName);
 	},
 	closeOverlay = function () {
 		overlay.parent().removeClass(c.show);
 		overlay.find('li').remove();
-		overlay.css('height', ''); 	
+		overlay.css('height', '');
+		
+		for(var i in currentTransaction) {
+			if(currentTransaction[i].amount != 0) tempCart[i] = currentTransaction[i];
+		}
+		currentTransaction = {};
+		updateCart();
+	},
+	quitOverlay = function () {
+		overlay.parent().removeClass(c.show);
+		overlay.find('li').remove();
+		overlay.css('height', '');
+		
+		currentTransaction = {};
+		updateCart();
+	},
+	computePrice = function () {
+		var return_float = (this.amount * this.price);
+		if(return_float < 1) return return_float.toPrecision(2);
+		return (this.amount * this.price).toPrecision(3);
 	},
 	clickHandler = function () {
 		parentItems.on('click.sfb.shop', function(event){
 			showItemInOverlay($(this).find('.' + c.children + ' li'), $(this).find('h2').html());
 		});
 
-		overlay.parent().on('click.sfb.shop', closeOverlay);
-
-		overlay.on('click.sfb.shop', 'li', function(event) {
-			console.log("add to cart");
-			var e = $(this);
-			var settings = getAjaxSettings(urls.add, {
-				'itemId': e.data('id'),
-				'amount': 1,
-				'type': e.data('type')
-			});
-
-			$.ajax(settings).done(function(data) {
-				var context = {
-					'parentName': overlay.data('parentName'),
-					'name': e.find('h2').html(),
-					'amount': data.amount,
-					'price': data.price
-				};
-				addHtmlToCart($(m.render(data.template, context)));
-			});
+		overlay.on('click.sfb.shop', 'li .icon-plus-circled', function(event) {
+			event.stopPropagation();
+			updateTempCart($(this), 1, $(this).parent().data('id'));
 		});
+
+		overlay.on('click.sfb.shop', 'li .icon-minus-circled', function(event) {
+			event.stopPropagation();
+			updateTempCart($(this), -1, $(this).parent().data('id'));
+		});
+
+		//overlay.on('click.sfb.shop', closeOverlay);
+		go.on('click.sfb.shop', function(){
+			event.preventDefault();
+			closeOverlay();
+		});
+		stop.on('click.sfb.shop', function(){
+			event.preventDefault();
+			quitOverlay();
+		});
+
 	},
 	addHtmlToCart = function (html) {
 		cart.find('tr').last().before(html);
 		updateCart();
 	},
+	cleanCart = function () {
+		cart.find('tbody > tr').not("."+c.stay).remove();	
+	},
 	updateCart = function () {
-		var add = cart.find('td.right').not('#total'),
-			amount = 0;
-		add.each(function(index, element){
-			var e = $(element);
-			amount += parseFloat(e.html());
-		});
-		total.html(m.render(templates.total, {'amount': amount.toPrecision(3)}));
+		var total_price = 0;
+		var flat_list = [];
+
+		for(var id in tempCart) {
+			var current = tempCart[id];
+			current['total'] = computePrice;
+			total_price += parseFloat(current['total']());
+			flat_list.push(current);
+		}
+
+		cleanCart();
+		cart.find('tr').last().before(m.render(templates.row, flat_list));
+
+		total.html(m.render(templates.total, {'amount': parseFloat(total_price).toPrecision(3)}));
 	},
 	getAjaxSettings = function (url, data) {
 		return {
@@ -83,6 +127,30 @@ sfb.shop = (function ($) {
 			'data' : data,
 			'type': 'POST'
 		};
+	},
+	getPriceModel = function (e) {
+		return e.parent().data('price');
+	},
+	getPrice = function (priceModel, amount) {
+		var diff;
+		for (var key in priceModel) {
+			diff = amount - key;
+			if(diff < 0 || diff === 0) { // we found something
+				return priceModel[key];
+			}
+		}
+	},
+	updateTempCart = function (e, amount, id) {
+		var current = currentTransaction[id];
+		current.amount += amount;
+		current.price = getPrice(getPriceModel(e), current.amount);
+		if(current.amount == 0 || current.amount < 0) {
+			current.amount = 0;
+			e.parent().find('.tempPrice').html('');
+		}
+		else {
+			e.parent().find('.tempPrice').html(m.render(templates.priceModel, current));
+		}
 	};
 	// public methods
 	module.init = function () {

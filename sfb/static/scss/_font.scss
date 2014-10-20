@@ -1,47 +1,42 @@
-@font-face {
-    font-family: 'nobileregular';
-    src: url('font/nobile/nobile-regular-webfont.eot');
-    src: url('font/nobile/nobile-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/nobile/nobile-regular-webfont.woff') format('woff'),
-         url('font/nobile/nobile-regular-webfont.ttf') format('truetype'),
-         url('font/nobile/nobile-regular-webfont.svg#nobileregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@include font-block('nobileregular', 'font/nobile/nobile-regular-webfont');
+@include font-block('nobilemedium','font/nobile/nobile-medium-webfont');
+@include font-block('nobilebold', 'font/nobile/nobile-bold-webfont');
+@include font-block('ptsans-bold', 'font/ptsans_bold_german/PTS75F-webfont');
+@include font-block('sfb-shop', 'font/fontello/sfb-shop');
+ 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "sfb-shop";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
-@font-face {
-    font-family: 'nobilemedium';
-    src: url('font/nobile/nobile-medium-webfont.eot');
-    src: url('font/nobile/nobile-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/nobile/nobile-medium-webfont.woff') format('woff'),
-         url('font/nobile/nobile-medium-webfont.ttf') format('truetype'),
-         url('font/nobile/nobile-medium-webfont.svg#nobilemedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'nobilebold';
-    src: url('font/nobile/nobile-bold-webfont.eot');
-    src: url('font/nobile/nobile-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/nobile/nobile-bold-webfont.woff') format('woff'),
-         url('font/nobile/nobile-bold-webfont.ttf') format('truetype'),
-         url('font/nobile/nobile-bold-webfont.svg#nobileregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'ptsans-bold';
-    src: url('font/ptsans_bold_german/PTS75F-webfont.eot');
-    src: url('font/ptsans_bold_german/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/ptsans_bold_german/PTS75F-webfont.woff') format('woff'),
-         url('font/ptsans_bold_german/PTS75F-webfont.ttf') format('truetype'),
-         url('font/ptsans_bold_german/PTS75F-webfont.svg#ptsans-bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+ 
+.icon-plus-circled:before { content: '\e800'; } /* '' */
+.icon-minus-circled:before { content: '\e801'; } /* '' */
 
 // The base font size
 $base-font-size: 16px;
