@@ -14,6 +14,8 @@
             <a href="#" id="stop">Abbrechen</a>
         </div>
     </div>
+    <div id="adressOverlay">
+    </div>
     <ul id="shop">
         {% placeholder "shop-content" %}
     </ul>
@@ -30,7 +32,6 @@
         </tr>
     </table>
     <form action="/submit" id="shopForm">
-        <input type="hidden" name="amount" id="amount"/>
         <input type="submit" name="button" id="buy" value="Bestellen"/>
     </form>
 {% endblock content %}

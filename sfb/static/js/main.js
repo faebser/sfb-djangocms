@@ -20,7 +20,10 @@ sfb.shop = (function ($) {
 		go = $('#go'),
 		win = $(window),
 		currentTransaction = {},
+		adressOverlay = $('#adressOverlay'),
 		render_cart = {},
+		buy = $('#buy'),
+		buy2 = $('#buy2'),
 		urls = {
 			'add': 'addToCart/',
 			'checkout': 'checkout/'
@@ -84,16 +87,48 @@ sfb.shop = (function ($) {
 			updateTempCart($(this), -1, $(this).parent().data('id'));
 		});
 
-		//overlay.on('click.sfb.shop', closeOverlay);
 		go.on('click.sfb.shop', function(){
 			event.preventDefault();
 			closeOverlay();
 		});
+
 		stop.on('click.sfb.shop', function(){
 			event.preventDefault();
 			quitOverlay();
 		});
 
+		buy.on('click.sfb.shop', function(){
+			event.preventDefault();
+			// get form and display overview
+			$.get('form', function(data) {
+				adressOverlay.append($(data));
+			});
+			adressOverlay.addClass(c.show);
+		});
+
+		adressOverlay.on('submit.sfb.shop', '#buy-form', function(){
+			event.preventDefault();
+			$.ajax({
+	            type: 'post',
+	            url: $('#buy-form').attr('action'),
+	            data: $('#buy-form').serialize(),
+	            success: function (data) {
+	                $('#buy-form').html('<h2 class="closeOverlay">Vielen Dank!</h2> <p class="closeOverlay">Sie werden in Kürze ein E-Mail als Bestätigung erhalten.</h2>');
+	            },
+	            error: function(data) {
+	                console.error(data);
+	            }
+	        });
+		});
+
+		adressOverlay.on('click.sfb.shop', '.closeOverlay', function() {
+			adressOverlay.removeClass(c.show);
+			adressOverlay.find('*').remove();
+			location.reload();
+		});
+	},
+	getForm = function () {
+		
 	},
 	addHtmlToCart = function (html) {
 		cart.find('tr').last().before(html);

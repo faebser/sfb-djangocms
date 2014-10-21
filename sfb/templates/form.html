@@ -1,0 +1,6 @@
+<form action="checkout/" method="post" id="buy-form">
+    {% csrf_token %}
+    <ul>{{ form.as_ul }}</ul>
+    <input type="submit" value="Bestellen" id="buy2"/>
+</form>
+

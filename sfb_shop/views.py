@@ -2,10 +2,25 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseServerError
 from sfb_shop import models as shop
 import json
+from django import forms
 
 # template strings
 cartTemplate = u'<tr> <td>{{parentName}}: {{name}}</td> <td>{{amount}}</td> <td class="right">{{price}} CHF</td> <tr>'
 # Create your views here.
+
+
+class NameForm(forms.Form):
+    name = forms.CharField(label=u"Vorname, Nachname", max_length=256)
+    street = forms.CharField(label=u'Strasse, Nummer', max_length=256)
+    plz = forms.CharField(label=u'PLZ/Ort', max_length=256)
+    email = forms.EmailField(label=u'E-Mail', max_length=512)
+    comments = forms.CharField(label=u'Bemerkungen', max_length=512)
+
+
+def get_form(request):
+    form = NameForm()
+    return render(request, 'form.html', {'form': form})
+
 
 def index(request):
     return HttpResponse("Hello test, you are at the index.")
@@ -41,7 +56,10 @@ def addToCart(request):
     HttpResponseServerError("error")
 
 
-
 def checkout(request):
-    # check and send mail
-    pass
+    if request.POST:
+        post = request.POST
+        form = NameForm(request.POST)
+        if form.is_valid():
+            pass
+    return HttpResponse('success')

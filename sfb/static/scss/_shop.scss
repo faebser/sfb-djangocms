@@ -125,6 +125,55 @@
 	}
 }
 
+#main #adressOverlay {
+	@extend #overlay;
+	form {
+		@include inline-block;
+		width: 27%;
+		background-color: #C4C4C4;
+		padding: 1em 0;
+		ul + input {
+			display: block;
+			width: 200px;
+			margin: 0 auto;
+			display: inline-block;
+			height: 3em;
+			margin: 0 auto;
+			background-color: $navBackground;
+			color: $background;
+			border: none;
+			@extend %nav;
+			padding: 0.25em 1em;
+			text-decoration: none;
+		}
+		ul {
+			padding-left: 0;
+			width: 80%;
+			margin: 0 auto 0.75em auto;
+			li {
+				display: block;
+				width: 100%;
+				margin: 0 auto;
+				background-color: transparent;
+				text-align: left;
+				max-width: 100%;
+				padding: 0.25em 0;
+				label {
+					@include inline-block;
+					max-width: 350px;
+					min-width: 200px;
+				}
+				input {
+					display: inline;
+					width: 200px;
+					background-color: $background;
+					border: 1px solid $emphasize;
+				}
+			}
+		}
+	}
+}
+
 #main #overlay {
 	display: none;
 	z-index: 1000;
