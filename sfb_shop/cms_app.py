@@ -10,5 +10,4 @@ class ShopApphook(CMSApp):
     urls = ["sfb_shop.urls"]
 
 
-print "bla"
 apphook_pool.register(ShopApphook)

@@ -170,7 +170,7 @@ class ShopCard(CMSPluginBase):
             context['cssClass'] = 'wide'
         dump = dict()
         for item in instance.price.items.all():
-            dump[str(item.amount)] = item.price
+            dump[str(item.amount)] = float(item.price)
         context['priceData'] = json.dumps(dump)
         return context
 

@@ -1,0 +1,20 @@
+Vielen Dank für Ihre Bestellung:
+
+{% for article in articles %}
+{{ article.amount }} x {{ article.name}}: {{ article.desc }}
+{{ article.total|floatformat:"2"|rjust:"17" }} CHF
+{% endfor %}
+
+Total: {{ total|floatformat:"2"|rjust:"10" }} CHF
+
+Ihre Anschrift:
+{{ data.name }}
+{{ data.street }}
+{{ data.plz }}
+
+Kontakt:
+{{ data.email }}
+
+Bemerkungen:
+{{ data.comments }}
+

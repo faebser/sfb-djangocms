@@ -108,12 +108,28 @@ sfb.shop = (function ($) {
 
 		adressOverlay.on('submit.sfb.shop', '#buy-form', function(){
 			event.preventDefault();
+			var form = $('#buy-form');
+			var formData = {
+				'cart': JSON.stringify(serializeCart(tempCart)),
+				'csrfmiddlewaretoken': $.cookie('csrftoken')
+			};
+
+			form.find(":input").each(function(index, e){
+				formData[e.name] = $(e).val();
+			});
+			
 			$.ajax({
 	            type: 'post',
-	            url: $('#buy-form').attr('action'),
-	            data: $('#buy-form').serialize(),
+	            url: form.attr('action'),
+	            data: formData,
 	            success: function (data) {
-	                $('#buy-form').html('<h2 class="closeOverlay">Vielen Dank!</h2> <p class="closeOverlay">Sie werden in Kürze ein E-Mail als Bestätigung erhalten.</h2>');
+	            	if(data.status && data.status === 'success') {
+	                	form.html('<h2 class="closeOverlay">Vielen Dank!</h2> <p class="closeOverlay">Sie werden in Kürze ein E-Mail als Bestätigung erhalten.</h2>');
+	            	}
+	            	else {
+	            		form.remove();
+	            		adressOverlay.html($(data));	
+	            	}
 	            },
 	            error: function(data) {
 	                console.error(data);
@@ -127,8 +143,15 @@ sfb.shop = (function ($) {
 			location.reload();
 		});
 	},
-	getForm = function () {
+	serializeCart = function (cart) {
+		var returnCart = jQuery.extend(true, {}, cart);
 		
+		for(var key in returnCart) {
+			delete returnCart[key].computePrice;
+			delete returnCart[key].total;
+		};
+		console.log(returnCart);
+		return returnCart;
 	},
 	addHtmlToCart = function (html) {
 		cart.find('tr').last().before(html);

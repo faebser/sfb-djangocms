@@ -12,7 +12,7 @@ import json
 
 class PriceModelItem(CMSPlugin):
     amount = models.IntegerField(verbose_name=u'Max. Anzahl')
-    price = models.FloatField(verbose_name=u'Preis')
+    price = models.DecimalField(verbose_name=u'Preis', max_digits=5, decimal_places=2)
 
     class Meta:
         verbose_name = u'Preismodel-Eintrag'
@@ -22,7 +22,7 @@ class PriceModelItem(CMSPlugin):
 
 
 class PriceModel(CMSPlugin):
-    items = models.ManyToManyField(PriceModelItem, verbose_name=u'Preisstufen')
+    items = models.ManyToManyField(PriceModelItem, verbose_name=u'Preisstufen', related_name='items')
     name = models.CharField(max_length=512, verbose_name=u'Name')
 
     class Meta:
