@@ -913,7 +913,7 @@ footer a:visited {
 /* line 37, ../scss/_shop.scss */
 #main #shop {
   padding: 0;
-  margin: 0;
+  margin: 0 0 2em 0;
   width: 100%;
 }
 /* line 41, ../scss/_shop.scss */
@@ -955,23 +955,24 @@ footer a:visited {
 /* line 79, ../scss/_shop.scss */
 #main table#cart {
   width: 100%;
+  margin-bottom: 2em;
 }
-/* line 82, ../scss/_shop.scss */
+/* line 83, ../scss/_shop.scss */
 #main table#cart tr th {
   text-align: left;
 }
-/* line 91, ../scss/_shop.scss */
+/* line 92, ../scss/_shop.scss */
 #main table#cart tr th.right,
 #main table#cart tr td.right {
   text-align: right;
 }
 
-/* line 98, ../scss/_shop.scss */
+/* line 99, ../scss/_shop.scss */
 #main #shopForm {
   margin-top: 1em;
   width: 100%;
 }
-/* line 101, ../scss/_shop.scss */
+/* line 102, ../scss/_shop.scss */
 #main #shopForm #buy {
   display: block;
   width: 10em;
@@ -981,24 +982,24 @@ footer a:visited {
   color: #FDF6E3;
   border: none;
 }
-/* line 110, ../scss/_shop.scss */
+/* line 111, ../scss/_shop.scss */
 #main #shopForm #buy:hover {
   background-color: #3a5b76;
 }
 
-/* line 116, ../scss/_shop.scss */
+/* line 117, ../scss/_shop.scss */
 #main #noJs {
   width: 100%;
   background-color: #C4C4C4;
   padding: 1em;
   margin: 1em 0;
 }
-/* line 123, ../scss/_shop.scss */
+/* line 124, ../scss/_shop.scss */
 #main #noJs p {
   text-align: center;
 }
 
-/* line 130, ../scss/_shop.scss */
+/* line 131, ../scss/_shop.scss */
 #main #adressOverlay form {
   display: inline-block;
   vertical-align: middle;
@@ -1006,10 +1007,11 @@ footer a:visited {
   *zoom: 1;
   *display: inline;
   width: 27%;
+  min-width: 520px;
   background-color: #C4C4C4;
-  padding: 1em 0;
+  padding: 1.8em 0;
 }
-/* line 135, ../scss/_shop.scss */
+/* line 137, ../scss/_shop.scss */
 #main #adressOverlay form ul + input {
   display: block;
   width: 200px;
@@ -1023,13 +1025,13 @@ footer a:visited {
   padding: 0.25em 1em;
   text-decoration: none;
 }
-/* line 149, ../scss/_shop.scss */
+/* line 151, ../scss/_shop.scss */
 #main #adressOverlay form ul {
   padding-left: 0;
   width: 80%;
   margin: 0 auto 0.75em auto;
 }
-/* line 153, ../scss/_shop.scss */
+/* line 155, ../scss/_shop.scss */
 #main #adressOverlay form ul li {
   display: block;
   width: 100%;
@@ -1039,7 +1041,7 @@ footer a:visited {
   max-width: 100%;
   padding: 0.25em 0;
 }
-/* line 161, ../scss/_shop.scss */
+/* line 163, ../scss/_shop.scss */
 #main #adressOverlay form ul li label {
   display: inline-block;
   vertical-align: middle;
@@ -1049,15 +1051,19 @@ footer a:visited {
   max-width: 350px;
   min-width: 200px;
 }
-/* line 166, ../scss/_shop.scss */
+/* line 168, ../scss/_shop.scss */
 #main #adressOverlay form ul li input {
   display: inline;
   width: 200px;
   background-color: #FDF6E3;
   border: 1px solid #00407A;
 }
+/* line 174, ../scss/_shop.scss */
+#main #adressOverlay form ul li .errorlist ~ input {
+  border: 2px solid #E5002C;
+}
 
-/* line 177, ../scss/_shop.scss */
+/* line 182, ../scss/_shop.scss */
 #main #overlay, #main #adressOverlay {
   display: none;
   z-index: 1000;
@@ -1069,16 +1075,16 @@ footer a:visited {
   background-color: #3a5b76;
   background-color: rgba(58, 91, 118, 0.5);
 }
-/* line 188, ../scss/_shop.scss */
+/* line 193, ../scss/_shop.scss */
 #main #overlay.show, #main .show#adressOverlay {
   display: block;
 }
-/* line 191, ../scss/_shop.scss */
+/* line 196, ../scss/_shop.scss */
 #main #overlay ul, #main #adressOverlay ul {
   width: 65%;
   margin: 0 auto;
 }
-/* line 195, ../scss/_shop.scss */
+/* line 200, ../scss/_shop.scss */
 #main #overlay ul li, #main #adressOverlay ul li {
   display: inline-block;
   vertical-align: middle;
@@ -1090,32 +1096,32 @@ footer a:visited {
   width: auto;
   max-width: 45%;
 }
-/* line 202, ../scss/_shop.scss */
+/* line 207, ../scss/_shop.scss */
 #main #overlay ul li img, #main #adressOverlay ul li img {
   margin-bottom: 0.5em;
   max-width: 100%;
   height: auto;
 }
-/* line 207, ../scss/_shop.scss */
+/* line 212, ../scss/_shop.scss */
 #main #overlay ul li i, #main #adressOverlay ul li i {
   font-size: 2em;
   color: #00407A;
 }
-/* line 211, ../scss/_shop.scss */
+/* line 216, ../scss/_shop.scss */
 #main #overlay ul li .itemData, #main #adressOverlay ul li .itemData {
   margin-top: 0.5em;
 }
-/* line 213, ../scss/_shop.scss */
+/* line 218, ../scss/_shop.scss */
 #main #overlay ul li .itemData p, #main #adressOverlay ul li .itemData p {
   display: block;
 }
-/* line 219, ../scss/_shop.scss */
+/* line 224, ../scss/_shop.scss */
 #main #overlay .overlayButtonWrapper, #main #adressOverlay .overlayButtonWrapper {
   position: fixed;
   width: 100%;
   bottom: 30px;
 }
-/* line 223, ../scss/_shop.scss */
+/* line 228, ../scss/_shop.scss */
 #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a {
   display: inline-block;
   height: 3em;
@@ -1126,11 +1132,11 @@ footer a:visited {
   padding: 0.25em 1em;
   text-decoration: none;
 }
-/* line 233, ../scss/_shop.scss */
+/* line 238, ../scss/_shop.scss */
 #main #overlay .overlayButtonWrapper a#stop, #main #adressOverlay .overlayButtonWrapper a#stop {
   background-color: #3a5b76;
 }
-/* line 236, ../scss/_shop.scss */
+/* line 241, ../scss/_shop.scss */
 #main #overlay .overlayButtonWrapper a:hover, #main #adressOverlay .overlayButtonWrapper a:hover {
   background-color: #3a5b76;
 }

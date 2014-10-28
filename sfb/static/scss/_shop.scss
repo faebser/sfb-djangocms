@@ -36,7 +36,7 @@
 
 #main #shop {
 	padding: 0;
-	margin: 0;
+	margin: 0 0 2em 0;
 	width: 100%;
 	li {
 		@extend %shopItem;
@@ -78,6 +78,7 @@
 
 #main table#cart {
 	width: 100%;
+	margin-bottom: 2em;
 	tr {
 		th {
 			@extend %medium;
@@ -130,8 +131,9 @@
 	form {
 		@include inline-block;
 		width: 27%;
+		min-width: 520px;
 		background-color: #C4C4C4;
-		padding: 1em 0;
+		padding: 1.8em 0;
 		ul + input {
 			display: block;
 			width: 200px;
@@ -168,6 +170,9 @@
 					width: 200px;
 					background-color: $background;
 					border: 1px solid $emphasize;
+				}
+				.errorlist ~ input {
+					border: 2px solid #E5002C;
 				}
 			}
 		}
