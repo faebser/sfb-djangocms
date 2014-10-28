@@ -21,3 +21,21 @@ class PriceModelMenu(CMSToolbar):
         price_models.add_modal_item(_(u'Neues Preismodel hinzufügen'), reverse("admin:sfb_shop_pricemodel_add"))
         url = reverse('admin:sfb_shop_pricemodel_changelist')
         price_models.add_sideframe_item(_('Liste der Preismodelle'), url=url)
+
+
+@toolbar_pool.register
+class IssueToolbar(CMSToolbar):
+
+    menu_key = 'issues'
+    verbose_name = 'Unsere Welt'
+
+    def populate(self):
+        admin_menu = self.toolbar.get_or_create_menu(self.menu_key, self.verbose_name)
+        #price_models = admin_menu.get_or_create_menu('model', _('Preis-Modelle'))
+        admin_menu.add_modal_item(_(u'Neues Schlagwort hinzufügen'), reverse("admin:sfb_paper_tag_add"))
+        admin_menu.add_modal_item(_(u'Neuen Autor hinzufügen'), reverse("admin:sfb_paper_author_add"))
+        admin_menu.add_modal_item(_(u'Neues PDF hinzufügen'), reverse("admin:sfb_paper_download_add"))
+        admin_menu.add_modal_item(_(u'Neuesn Artikel hinzufügen'), reverse("admin:sfb_paper_article_add"))
+        admin_menu.add_modal_item(_(u'Neuesn Ausgabe hinzufügen'), reverse("admin:sfb_paper_issue_add"))
+        #url = reverse('admin:sfb_shop_pricemodel_changelist')
+        #price_models.add_sideframe_item(_('Liste der Preismodelle'), url=url)
