@@ -87,12 +87,12 @@ sfb.shop = (function ($) {
 			updateTempCart($(this), -1, $(this).parent().data('id'));
 		});
 
-		go.on('click.sfb.shop', function(){
+		go.on('click.sfb.shop', function(event){
 			event.preventDefault();
 			closeOverlay();
 		});
 
-		stop.on('click.sfb.shop', function(){
+		stop.on('click.sfb.shop', function(event){
 			event.preventDefault();
 			quitOverlay();
 		});
