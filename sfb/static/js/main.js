@@ -228,9 +228,15 @@ sfb.main = (function ($) {
 	// private methods
 	// public methods
 	module.init = function () { // init all the other modules
-		if(main.find('#shop').lenght != 0) {
+		if(main.find('#shop').length != 0) {
 			sfb.shop.init();
 		}
+		$('#noJs').addClass('hidden');
+		$('.articles li article').click(function(event) {
+			var e = $('section.paper').addClass('active');
+			e.find('section').addClass('active');
+			e.find('article').first().addClass('active');
+		});
 	};
 	//return the module
 	return module;

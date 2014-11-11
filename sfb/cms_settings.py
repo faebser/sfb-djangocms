@@ -39,6 +39,7 @@ CMS_TEMPLATES = (
     (path.join('pages', 'sfb-event-news.html'), u'SFB News und Event Detailseite'),
     (path.join('pages', 'sfb-teaser.html'), u'SFB News und Event Übersicht'),
     (path.join('pages', 'sfb-shop.html'), u'SFB Shop'),
+    (path.join('pages', 'sfb-paper.html'), u'SFB Archiv'),
 )
 
 CMS_PERMISSION = True

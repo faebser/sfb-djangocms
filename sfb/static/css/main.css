@@ -231,7 +231,9 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
 p,
 li,
 a, #main .pageIntro .meta p .date span,
-#main .pageIntro .meta p .author span, #main table#cart tr td {
+#main .pageIntro .meta p .author span, #main table#cart tr td, #paperParent #keywords .articles li h1,
+#paperParent #keywords .articles li h2, #paperParent #keywords .paper section article h1,
+#paperParent #keywords .paper section article h2 {
   font-family: 'nobileregular', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -243,7 +245,7 @@ h3,
 h4, strong, header h2 a,
 header h2 a:visited,
 #header h2 a,
-#header h2 a:visited, #main .pageIntro p, #main table#cart tr th, #main #noJs {
+#header h2 a:visited, #main .pageIntro p, #main table#cart tr th, #main #noJs, #paperParent #keywords .articles li h1, #paperParent #keywords .paper section article h1 {
   font-family: 'nobilemedium', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -270,7 +272,9 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
 /* line 111, ../scss/_font.scss */
 p,
 li,
-a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs {
+a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperParent #keywords .articles li h1,
+#paperParent #keywords .articles li h2, #paperParent #keywords .paper section article h1,
+#paperParent #keywords .paper section article h2 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 28px;
@@ -1139,6 +1143,116 @@ footer a:visited {
 /* line 241, ../scss/_shop.scss */
 #main #overlay .overlayButtonWrapper a:hover, #main #adressOverlay .overlayButtonWrapper a:hover {
   background-color: #3a5b76;
+}
+
+/* line 13, ../scss/_paper.scss */
+#paperParent #keywords {
+  position: relative;
+}
+/* line 15, ../scss/_paper.scss */
+#paperParent #keywords .options {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 19, ../scss/_paper.scss */
+#paperParent #keywords .options li {
+  display: inline-block;
+  background-color: #00407A;
+  color: #FDF6E3;
+  padding: 0.5em;
+  margin: 0.25em;
+  cursor: pointer;
+}
+/* line 28, ../scss/_paper.scss */
+#paperParent #keywords .keywords {
+  list-style-type: none;
+  padding-left: 0;
+  display: none;
+}
+/* line 32, ../scss/_paper.scss */
+#paperParent #keywords .keywords.active {
+  display: block;
+}
+/* line 35, ../scss/_paper.scss */
+#paperParent #keywords .keywords li {
+  display: inline;
+  background-color: #4B7698;
+  color: #FDF6E3;
+  padding: 0.4em;
+  margin: 0.25em;
+  border: 1px solid #4B7698;
+  cursor: pointer;
+}
+/* line 43, ../scss/_paper.scss */
+#paperParent #keywords .keywords li.active {
+  background-color: #FDF6E3;
+  color: #4B7698;
+}
+/* line 49, ../scss/_paper.scss */
+#paperParent #keywords .articles {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* line 52, ../scss/_paper.scss */
+#paperParent #keywords .articles li {
+  cursor: pointer;
+}
+/* line 54, ../scss/_paper.scss */
+#paperParent #keywords .articles li h1,
+#paperParent #keywords .articles li h2 {
+  display: inline;
+}
+/* line 65, ../scss/_paper.scss */
+#paperParent #keywords .paper {
+  position: relative;
+  right: -200%;
+  top: -112px;
+  width: 100%;
+  background-color: #FDF6E3;
+  -moz-transition: right 0.7s;
+  -o-transition: right 0.7s;
+  -webkit-transition: right 0.7s;
+  transition: right 0.7s;
+}
+/* line 72, ../scss/_paper.scss */
+#paperParent #keywords .paper.active {
+  right: 0;
+}
+/* line 75, ../scss/_paper.scss */
+#paperParent #keywords .paper img {
+  max-width: 100%;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+/* line 81, ../scss/_paper.scss */
+#paperParent #keywords .paper > h1, #paperParent #keywords .paper > a {
+  text-align: center;
+  display: block;
+}
+/* line 87, ../scss/_paper.scss */
+#paperParent #keywords .paper section h2 {
+  margin-bottom: 0.4em;
+}
+/* line 90, ../scss/_paper.scss */
+#paperParent #keywords .paper section.active > h2,
+#paperParent #keywords .paper section article.active {
+  background-color: #EAD7A5;
+  -moz-transition: background-color 0.7s linear 1s;
+  -o-transition: background-color 0.7s linear 1s;
+  -webkit-transition: background-color 0.7s linear;
+  -webkit-transition-delay: 1s;
+  transition: background-color 0.7s linear 1s;
+}
+/* line 95, ../scss/_paper.scss */
+#paperParent #keywords .paper section article {
+  padding-left: 0.5em;
+}
+/* line 97, ../scss/_paper.scss */
+#paperParent #keywords .paper section article h1,
+#paperParent #keywords .paper section article h2 {
+  display: inline;
 }
 
 /* ==========================================================================

@@ -33,4 +33,3 @@ class Issue(CMSPlugin):
     year = models.IntegerField(verbose_name=u'Jahr')
     month = models.IntegerField(verbose_name=u'Monat')
     download = models.ForeignKey(Download, verbose_name=u'Download')
-

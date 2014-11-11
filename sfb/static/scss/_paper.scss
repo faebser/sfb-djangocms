@@ -1,0 +1,115 @@
+#paperParent {
+
+}
+
+// search
+
+#paperParent #search {
+
+}
+
+// keywords
+
+#paperParent #keywords {
+	position: relative;
+	.options {
+		list-style-type: none;
+		margin-left: 0;
+		padding-left: 0;
+		li {
+			display: inline-block;
+			background-color: $emphasize;
+			color: $background;
+			padding: 0.5em;
+			margin: 0.25em;
+			cursor: pointer;
+		}
+	}
+	.keywords {
+		list-style-type: none;
+		padding-left: 0;
+		display: none;
+		&.active {
+			display: block;
+		}
+		li {
+			display: inline;
+			background-color: #4B7698;
+			color: $background;
+			padding: 0.4em;
+			margin: 0.25em;
+			border: 1px solid #4B7698;
+			cursor: pointer;
+			&.active {
+				background-color: $background;
+				color: #4B7698;
+			}
+		}
+	}
+	.articles {
+		list-style-type: none;
+		padding-left: 0;
+		li {
+			cursor: pointer;
+			h1,
+			h2 {
+				@extend %regular;
+    			@extend %t-base;
+    			display: inline;
+			}
+			h1 {
+				@extend %medium;
+			}
+		}
+	}
+	.paper {
+		position: relative;
+		right: -200%;
+		top: -112px;
+		width: 100%;
+		background-color: $background;
+		@include single-transition(right, 0.7s);
+		&.active {
+			right: 0;
+		}
+		img {
+			max-width: 100%;
+			height: 400px;
+			display: block;
+			margin: 0 auto;
+		}
+		& > h1,
+		& > a {
+			text-align: center;
+			display: block;
+		}
+		section {
+			h2 {
+				margin-bottom: 0.4em;
+			}
+			&.active > h2,
+			article.active {
+				background-color: #EAD7A5;
+				@include single-transition(background-color, 0.7s, linear, 1s);
+			}
+			article {
+				padding-left: 0.5em;
+				h1,
+				h2 {
+					@extend %regular;
+	    			@extend %t-base;
+	    			display: inline;
+				}
+				h1 {
+					@extend %medium;
+				}
+			}
+		}
+	}
+}
+
+// chronolgical
+
+#paperParent #history {
+
+}

@@ -1,0 +1,84 @@
+{% extends "pages/sfb-base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block content %}
+    <div id="noJs">
+        <p>
+            Bitte JavaScript aktivieren um den Archiv zu nutzen
+        </p>
+    </div>
+    <div id="paperParent">
+        <div id="search">
+            <h1>Volltextsuche</h1>
+            <iframe src="http://duckduckgo.com/search.html?kn=1&prefill=Archiv mit DuckDuckGo durchsuchen" style="overflow:hidden;margin:0;padding:0;width:408px;height:40px;" frameborder="0"></iframe>
+        </div>
+        <br/>
+        <div id="history">
+            <h1>Chronologisch</h1>
+        </div>
+        <br/>
+        <div id="keywords">
+            <h1>Schlagworte</h1>
+            <ul class="options">
+                <li>Schwerpunkte</li>
+                <li>Beliebt</li>
+                <li>...</li>
+            </ul>
+            <hr/>
+            <ul class="keywords active">
+                <li>Internationaler Tag des Friedens</li>
+                <li class="active">Frieden</li>
+                <li>Kalter Krieg</li>
+            </ul>
+            <ul class="keywords loved">
+                <li>Frieden</li>
+                <li>Internationaler Tag des Friedens</li>
+                <li>Kalter Krieg</li>
+            </ul>
+            <hr/>
+            <ul class="articles">
+                <li>
+                    <article>
+                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg? &middot;</h1>
+                        <h2>Yannick van den Berg &middot;</h2>
+                        <h2>Nr. 3 – 2014</h2>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg? &middot;</h1>
+                        <h2>Yannick van den Berg &middot;</h2>
+                        <h2>Nr. 3 – 2014</h2>
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg? &middot;</h1>
+                        <h2>Yannick van den Berg &middot;</h2>
+                        <h2>Nr. 3 – 2014</h2>
+                    </article>
+                </li>
+            </ul>
+            <section class="paper">
+                    <img src="/media/papers/UW1_14_front.png" alt=""/>
+                    <h1>Unsere Welt Nr. 3 - 2014</h1>
+                    <a href="#">Download</a>
+                <section class="">
+                    <h2>Seite 1</h2>
+                    <article>
+                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg?</h1>
+                        <h2>Yannick van den Berg</h2>
+                    </article>
+                    <article>
+                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg?</h1>
+                        <h2>Yannick van den Berg</h2>
+                    </article>
+                    <article>
+                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg?</h1>
+                        <h2>Yannick van den Berg</h2>
+                    </article>
+                </section>
+            </section>
+        </div>
+    </div>
+{% endblock content %}
