@@ -1,6 +1,8 @@
 {% extends "pages/sfb-base.html" %}
 {% load cms_tags menu_tags sekizai_tags %}
 
+{% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vue.js"></script>{% endaddtoblock %}
+
 {% block content %}
     <div id="noJs">
         <p>

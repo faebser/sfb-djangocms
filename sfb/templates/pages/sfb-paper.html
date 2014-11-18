@@ -4,19 +4,13 @@
 {% block content %}
     <div id="noJs">
         <p>
-            Bitte JavaScript aktivieren um den Archiv zu nutzen
+            Bitte JavaScript aktivieren um das Archiv zu nutzen
         </p>
     </div>
     <div id="paperParent">
-        <div id="search">
-            <h1>Volltextsuche</h1>
-            <iframe src="http://duckduckgo.com/search.html?kn=1&prefill=Archiv mit DuckDuckGo durchsuchen" style="overflow:hidden;margin:0;padding:0;width:408px;height:40px;" frameborder="0"></iframe>
-        </div>
-        <br/>
-        <div id="history">
-            <h1>Chronologisch</h1>
-        </div>
-        <br/>
+        {% placeholder 'search' %}
+        {% placeholder 'history' %}
+        {% placeholder 'tags' %}
         <div id="keywords">
             <h1>Schlagworte</h1>
             <ul class="options">

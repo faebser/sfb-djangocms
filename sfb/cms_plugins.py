@@ -10,10 +10,12 @@ import json
 from models import *
 from os import path
 from sfb_shop import models as shop
+from sfb_paper import models as paper
 
 class PluginSettings():
     templatePath = path.join("plugins", "sfb")
     templatePathShop = path.join('plugins', 'shop')
+    templatePathPaper = path.join('plugins', 'paper')
     module = u'SFB'
 
 ps = PluginSettings()
@@ -187,6 +189,38 @@ class ShopMerch(CMSPluginBase):
         return context
 
 
+class TagContainer(CMSPluginBase):
+    name = u'Schlagworte Schwerpunkte'
+    module = ps.module + ' Archiv'
+    render_template = path.join(ps.templatePathPaper, 'tag-container.html')
+    allow_children = True
+
+
+class PaperTag(CMSPluginBase):
+    name = u'Schlagwort'
+    module = ps.module + ' Archiv'
+    model = paper.TagPlaceholder
+    render_template = path.join(ps.templatePathPaper, 'tag.html')
+
+
+class ArticleList(CMSPluginBase):
+    name = u'Chronologische Übersicht'
+    module = ps.module + ' Archiv'
+    model = paper.ArticleList
+    render_template = path.join(ps.templatePathPaper, 'issues.html')
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        context['issues'] = paper.Issue.objects.all()
+
+        return context
+
+
+class SearchPlugin(CMSPluginBase):
+    name = u'Suche'
+    module = ps.module + ' Archiv'
+    render_template = path.join(ps.templatePathPaper, 'search.html')
+
 plugin_pool.register_plugin(DefaultPlugin)
 plugin_pool.register_plugin(ArticlePageIntro)
 plugin_pool.register_plugin(ArticlePageTeaser)
@@ -203,4 +237,10 @@ plugin_pool.register_plugin(ExternalLink)
 plugin_pool.register_plugin(ShopContainer)
 plugin_pool.register_plugin(ShopCard)
 plugin_pool.register_plugin(ShopMerch)
+
+#paper
+plugin_pool.register_plugin(TagContainer)
+plugin_pool.register_plugin(PaperTag)
+plugin_pool.register_plugin(ArticleList)
+plugin_pool.register_plugin(SearchPlugin)
 
