@@ -2,7 +2,6 @@ from django.db import models
 from cms.models.pluginmodel import CMSPlugin  # normal cms-plugin
 from djangocms_text_ckeditor.fields import HTMLField  # html field
 from unidecode import unidecode
-from django_select2.fields import ModelSelect2Field
 from os import path
 from csv import reader as csv_reader
 from time import strftime
