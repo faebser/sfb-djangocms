@@ -1,6 +1,159 @@
 var sfb = {};
 var m = Mustache;
 
+sfb.paper = (function ($, Vue) {
+	// javascript module pattern
+	"use strict"; // enable strict mode for javascript module
+	// private vars
+	var module = {},
+		tagHeaders = null,
+		tagHeadersList = null,
+		tagList = null,
+		tagListItems = null,
+		articleList = $('.articles'),
+		overlay = $('#container .paper'),
+		message = $('#message'),
+		messageOverlay = $('#paper-overlay'),
+		c = {
+			'active': 'active',
+			'show': 'show'
+		},
+		urls = {
+			'tag': 'tags/',
+			'issue': 'issue/'
+		};
+	// private methods
+	var parseTagList = function () {
+		var headers = [];
+		tagList = $('#tagList');
+		$('.taglist').each(function(index, element) {
+			var e = $(element);
+			headers.push(e.find('h2').html());
+			e.find('h2').remove();
+			e.clone().appendTo(tagList).removeClass('taglist');
+		});
+		tagHeaders = new Vue({
+			'el': '#tagHeader',
+			'data': {
+				'tags': headers
+			},
+			'methods': {
+				'toggle': function(header) {
+					$.each(tagListItems, function(index, e) {
+						e.removeClass(c.active);
+					});
+					$.each(tagHeadersList, function(index, e) {
+						e.removeClass(c.active);
+					});
+					tagHeadersList[header.$index].addClass(c.active);
+					tagListItems[header.$index].addClass(c.active);
+					tagList.find('li').removeClass(c.active);
+				}
+			}
+		});
+
+		tagHeadersList = $('#tagHeader').find('li').map(function(){
+			return $(this);
+		}).get();
+
+		tagListItems = tagList.find('ul').map(function() {
+			return $(this);
+		}).get();
+
+		$('.taglist').remove();
+		tagHeadersList[0].click();
+	},
+	clickHandler = function () {
+		tagList.find('li').on('click', function(event) {
+			var e = $(this);
+			e.toggleClass(c.active);
+			if(tagList.find('li.' + c.active).length != 0) {
+				var tagUrls = tagList.find('li.' + c.active).map(function() {
+					return $(this).data('url')
+				}).get().join('/');
+				$.ajax({
+				  url: urls.tag + tagUrls + '/',
+				  dataType: 'html',
+				  success: function(data) {
+				  	articleList.html(data);
+				  }
+				});
+			}
+			else {
+				articleList.html('');
+			}
+		});
+		articleList.on('click', 'li article', function(event) {
+			var e = $(this);
+			$.ajax({
+			  url: urls.issue + e.data('url') + '/',
+			  dataType: 'html',
+			  success: function(data) {
+			  	overlay.html(data);
+			  	overlay.parent().height(overlay.height());
+			  	overlay.toggleClass(c.show);
+			  }
+			});
+		});
+		overlay.on('click', '.close', function(event){
+			event.preventDefault();
+			overlay.toggleClass(c.show);
+			window.setTimeout(function(){
+				overlay.parent().height('auto');
+			}, 770);
+		});
+		$('#paperParent h1').on('click', function(event) {
+			var e = $(this);
+			e.toggleClass(c.show);
+			if(e.hasClass(c.show)) {
+				$(this).parent().height('auto');
+			}
+			else {
+				e.parent().height(e.outerHeight(true));
+			}
+			
+		});
+		$(document).on('click', '.pdf-download', function(event, letItSlide) {
+			var e = $(this);
+			if(!letItSlide || letItSlide === false) {
+				event.preventDefault();
+				if(!$.cookie('counter')) $.cookie('counter', 0);
+				var counter = parseInt($.cookie('counter'));
+				if(counter >= 5) {
+					messageOverlay.html(message.html());
+					messageOverlay.find('.overlayButtonWrapper a').attr('href', $(this).attr('href')).on('click', function(event) {
+						messageOverlay.toggleClass(c.show);
+					});
+					messageOverlay.toggleClass(c.show);
+					$.cookie('counter', 0);
+				}
+				else {
+					$.cookie('counter', ++counter);
+					e.trigger('click', [true]);
+				}
+			}
+			else {
+				window.open(e.attr('href'));
+			}
+		});
+	},
+	makeHeadlinesSmall = function () {
+		$('#paperParent h1').each(function(index, element) {
+			var e = $(element);
+			e.parent().height(e.outerHeight(true));
+		})
+	};
+	// public methods
+	module.init = function () {
+		parseTagList();
+		makeHeadlinesSmall();
+		clickHandler();
+	};
+	//return the module
+	return module;
+}(jQuery, Vue));
+
+
 sfb.shop = (function ($) {
 	// javascript module pattern
 	"use strict"; // enable strict mode for javascript module
@@ -237,6 +390,7 @@ sfb.main = (function ($) {
 			e.find('section').addClass('active');
 			e.find('article').first().addClass('active');
 		});
+		if(sfb.paper) sfb.paper.init();
 	};
 	//return the module
 	return module;

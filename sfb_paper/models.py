@@ -10,9 +10,6 @@ import codecs
 
 # Create your models here.
 
-
-
-
 VERBOSE_NAME = u'Archiv'
 
 
@@ -87,6 +84,7 @@ class Article(models.Model):
     csv_id = models.IntegerField(editable=False, blank=True, null=True)
 
     class Meta:
+        ordering = ['-page']
         verbose_name = u'Artikel'
         verbose_name_plural = u'Artikel'
 

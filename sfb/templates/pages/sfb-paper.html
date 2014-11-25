@@ -1,6 +1,8 @@
 {% extends "pages/sfb-base.html" %}
 {% load cms_tags menu_tags sekizai_tags %}
 
+
+
 {% block content %}
     <div id="noJs">
         <p>
@@ -8,71 +10,45 @@
         </p>
     </div>
     <div id="paperParent">
+        <div id="paper-overlay">
+
+        </div>
+        <div id="message">
+            <div class="messageInnerWrapper">
+                {% placeholder 'message' %}
+                <div class="overlayButtonWrapper">
+                     <a target="_blank">Fortsetzten</a>
+                </div>
+            </div>
+        </div>
         {% placeholder 'search' %}
         {% placeholder 'history' %}
         {% placeholder 'tags' %}
         <div id="keywords">
             <h1>Schlagworte</h1>
-            <ul class="options">
-                <li>Schwerpunkte</li>
-                <li>Beliebt</li>
-                <li>...</li>
-            </ul>
-            <hr/>
-            <ul class="keywords active">
-                <li>Internationaler Tag des Friedens</li>
-                <li class="active">Frieden</li>
-                <li>Kalter Krieg</li>
-            </ul>
-            <ul class="keywords loved">
-                <li>Frieden</li>
-                <li>Internationaler Tag des Friedens</li>
-                <li>Kalter Krieg</li>
-            </ul>
-            <hr/>
-            <ul class="articles">
-                <li>
-                    <article>
-                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg? &middot;</h1>
-                        <h2>Yannick van den Berg &middot;</h2>
-                        <h2>Nr. 3 – 2014</h2>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg? &middot;</h1>
-                        <h2>Yannick van den Berg &middot;</h2>
-                        <h2>Nr. 3 – 2014</h2>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg? &middot;</h1>
-                        <h2>Yannick van den Berg &middot;</h2>
-                        <h2>Nr. 3 – 2014</h2>
-                    </article>
+            {% verbatim %}
+            <ul id="tagHeader">
+                <li v-repeat="tags" v-on="click: toggle(this)">
+                    <h2>{{ $value }}</h2>
                 </li>
             </ul>
-            <section class="paper">
-                    <img src="/media/papers/UW1_14_front.png" alt=""/>
-                    <h1>Unsere Welt Nr. 3 - 2014</h1>
-                    <a href="#">Download</a>
-                <section class="">
-                    <h2>Seite 1</h2>
-                    <article>
-                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg?</h1>
-                        <h2>Yannick van den Berg</h2>
-                    </article>
-                    <article>
-                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg?</h1>
-                        <h2>Yannick van den Berg</h2>
-                    </article>
-                    <article>
-                        <h1>Internationaler Tag des Friedens - Neuer (K)alter Krieg?</h1>
-                        <h2>Yannick van den Berg</h2>
-                    </article>
+            <ul id="tagList">
+            </ul>
+            {% endverbatim %}
+            <div id="container">
+                <ul class="articles">
+                    <li>
+                        <article>
+                            <h1>Keine Artikel gefunden.</h1>
+                        </article>
+                    </li>
+                </ul>
+                <section class="paper">
                 </section>
-            </section>
+            </div>
         </div>
     </div>
 {% endblock content %}
+
+{% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vendor/vue.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script src="{{ STATIC_URL }}js/paper.js"></script>{% endaddtoblock %}

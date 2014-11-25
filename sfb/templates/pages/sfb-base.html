@@ -46,6 +46,7 @@
 
         {% addtoblock "js" %}<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>{% endaddtoblock %}
         {% addtoblock "js" %}<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.11.0.min.js"><\/script>')</script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vue.js"></script>{% endaddtoblock %}
         {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/plugins.js"></script>{% endaddtoblock %}
         {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/main.js"></script>{% endaddtoblock %}
     </body>

@@ -93,11 +93,11 @@ textarea {
 /* compass imports */
 /* colors */
 /* line 7, ../scss/_util.scss */
-#main #overlay, #main #adressOverlay {
+#main #overlay, #main #adressOverlay, #main #paper-overlay, #paperParent #history ul > li ul li a .hover, #main .paper div a .hover {
   text-align: center;
 }
 /* line 9, ../scss/_util.scss */
-#main #overlay:before, #main #adressOverlay:before {
+#main #overlay:before, #main #adressOverlay:before, #main #paper-overlay:before, #paperParent #history ul > li ul li a .hover:before, #main .paper div a .hover:before {
   content: ' ';
   display: inline-block;
   vertical-align: middle;
@@ -110,7 +110,7 @@ textarea {
 }
 
 /* line 19, ../scss/_util.scss */
-#main #overlay ul, #main #adressOverlay ul {
+#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul, #paperParent #history ul > li ul li a .hover p, #main .paper div a .hover p, #main #paper-overlay .messageInnerWrapper {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -181,7 +181,14 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-/* line 7, ../scss/_font.scss */
+@font-face {
+  font-family: "sfb-shop";
+  src: url("font/fontello/sfb-paper.eot");
+  src: url("font/fontello/sfb-paper.eot?#iefix") format("embedded-opentype"), url("font/fontello/sfb-paper.woff") format("woff"), url("font/fontello/sfb-paper.ttf") format("truetype"), url("font/fontello/sfb-paper.svg#pt_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 8, ../scss/_font.scss */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "sfb-shop";
   font-style: normal;
@@ -207,60 +214,65 @@ body {
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-/* line 38, ../scss/_font.scss */
+/* line 39, ../scss/_font.scss */
 .icon-plus-circled:before {
   content: '\e800';
 }
 
 /* '' */
-/* line 39, ../scss/_font.scss */
+/* line 40, ../scss/_font.scss */
 .icon-minus-circled:before {
   content: '\e801';
 }
 
 /* '' */
-/* line 82, ../scss/_font.scss */
+/* line 41, ../scss/_font.scss */
+.icon-download:before {
+  content: '\e810';
+}
+
+/* '' */
+/* line 84, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a {
+nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a, #main #paper-overlay .overlayButtonWrapper a {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 89, ../scss/_font.scss */
+/* line 91, ../scss/_font.scss */
 p,
 li,
 a, #main .pageIntro .meta p .date span,
 #main .pageIntro .meta p .author span, #main table#cart tr td, #paperParent #keywords .articles li h1,
-#paperParent #keywords .articles li h2, #paperParent #keywords .paper section article h1,
-#paperParent #keywords .paper section article h2 {
+#paperParent #keywords .articles li h2 {
   font-family: 'nobileregular', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 95, ../scss/_font.scss */
+/* line 97, ../scss/_font.scss */
 h2,
 h3,
 h4, strong, header h2 a,
 header h2 a:visited,
 #header h2 a,
-#header h2 a:visited, #main .pageIntro p, #main table#cart tr th, #main #noJs, #paperParent #keywords .articles li h1, #paperParent #keywords .paper section article h1 {
+#header h2 a:visited, #main .pageIntro p, #main table#cart tr th, #main #noJs, #paperParent #keywords .articles li h1 {
   font-family: 'nobilemedium', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 101, ../scss/_font.scss */
+/* line 103, ../scss/_font.scss */
 h1 {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 108, ../scss/_font.scss */
+/* line 110, ../scss/_font.scss */
 nav ul li a,
-nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a {
+nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a, #main #paper-overlay .overlayButtonWrapper a {
   font-size: 12px;
   font-size: 0.75019rem;
   line-height: 28px;
@@ -269,12 +281,11 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
   line-height: 1.75rem;
 }
 
-/* line 111, ../scss/_font.scss */
+/* line 113, ../scss/_font.scss */
 p,
 li,
 a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperParent #keywords .articles li h1,
-#paperParent #keywords .articles li h2, #paperParent #keywords .paper section article h1,
-#paperParent #keywords .paper section article h2 {
+#paperParent #keywords .articles li h2 {
   font-size: 16px;
   font-size: 1rem;
   line-height: 28px;
@@ -283,7 +294,7 @@ a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperPa
   line-height: 1.75rem;
 }
 
-/* line 114, ../scss/_font.scss */
+/* line 116, ../scss/_font.scss */
 h2,
 h3,
 h4, #main .box h3 {
@@ -295,7 +306,7 @@ h4, #main .box h3 {
   line-height: 2.1875rem;
 }
 
-/* line 117, ../scss/_font.scss */
+/* line 119, ../scss/_font.scss */
 h1 {
   font-size: 28px;
   font-size: 1.77688rem;
@@ -305,7 +316,7 @@ h1 {
   line-height: 2.1875rem;
 }
 
-/* line 120, ../scss/_font.scss */
+/* line 122, ../scss/_font.scss */
 header h1,
 #header h1 {
   font-size: 38px;
@@ -438,11 +449,11 @@ header h2 a:visited,
 }
 
 /* line 7, ../scss/_util.scss */
-#main #overlay, #main #adressOverlay {
+#main #overlay, #main #adressOverlay, #main #paper-overlay, #paperParent #history ul > li ul li a .hover, #main .paper div a .hover {
   text-align: center;
 }
 /* line 9, ../scss/_util.scss */
-#main #overlay:before, #main #adressOverlay:before {
+#main #overlay:before, #main #adressOverlay:before, #main #paper-overlay:before, #paperParent #history ul > li ul li a .hover:before, #main .paper div a .hover:before {
   content: ' ';
   display: inline-block;
   vertical-align: middle;
@@ -455,7 +466,7 @@ header h2 a:visited,
 }
 
 /* line 19, ../scss/_util.scss */
-#main #overlay ul, #main #adressOverlay ul {
+#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul, #paperParent #history ul > li ul li a .hover p, #main .paper div a .hover p, #main #paper-overlay .messageInnerWrapper {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -860,7 +871,7 @@ footer a:visited {
 }
 
 /* line 1, ../scss/_shop.scss */
-#main #shop li, #main #overlay ul li, #main #adressOverlay ul li {
+#main #shop li, #main #overlay ul li, #main #adressOverlay ul li, #main #paper-overlay ul li {
   list-style-type: none;
   background-color: #dbdbdb;
   position: relative;
@@ -877,14 +888,14 @@ footer a:visited {
   cursor: pointer;
 }
 /* line 12, ../scss/_shop.scss */
-#main #shop li img, #main #overlay ul li img, #main #adressOverlay ul li img {
+#main #shop li img, #main #overlay ul li img, #main #adressOverlay ul li img, #main #paper-overlay ul li img {
   display: block;
   height: 80%;
   width: auto;
   margin: 0 auto;
 }
 /* line 18, ../scss/_shop.scss */
-#main #shop li .itemData, #main #overlay ul li .itemData, #main #adressOverlay ul li .itemData {
+#main #shop li .itemData, #main #overlay ul li .itemData, #main #adressOverlay ul li .itemData, #main #paper-overlay ul li .itemData {
   background-color: #C4C4C4;
   display: inline-block;
   vertical-align: middle;
@@ -896,10 +907,11 @@ footer a:visited {
   padding: 0.5em 1em;
 }
 /* line 24, ../scss/_shop.scss */
-#main #shop li .itemData h2, #main #overlay ul li .itemData h2, #main #adressOverlay ul li .itemData h2,
+#main #shop li .itemData h2, #main #overlay ul li .itemData h2, #main #adressOverlay ul li .itemData h2, #main #paper-overlay ul li .itemData h2,
 #main #shop li .itemData p,
 #main #overlay ul li .itemData p,
-#main #adressOverlay ul li .itemData p {
+#main #adressOverlay ul li .itemData p,
+#main #paper-overlay ul li .itemData p {
   color: #00407A;
   display: inline-block;
   vertical-align: middle;
@@ -910,7 +922,7 @@ footer a:visited {
   vertical-align: baseline;
 }
 /* line 31, ../scss/_shop.scss */
-#main #shop li .itemData p, #main #overlay ul li .itemData p, #main #adressOverlay ul li .itemData p {
+#main #shop li .itemData p, #main #overlay ul li .itemData p, #main #adressOverlay ul li .itemData p, #main #paper-overlay ul li .itemData p {
   margin: 0 0.5em;
 }
 
@@ -1068,7 +1080,7 @@ footer a:visited {
 }
 
 /* line 182, ../scss/_shop.scss */
-#main #overlay, #main #adressOverlay {
+#main #overlay, #main #adressOverlay, #main #paper-overlay {
   display: none;
   z-index: 1000;
   position: fixed;
@@ -1080,16 +1092,16 @@ footer a:visited {
   background-color: rgba(58, 91, 118, 0.5);
 }
 /* line 193, ../scss/_shop.scss */
-#main #overlay.show, #main .show#adressOverlay {
+#main #overlay.show, #main .show#adressOverlay, #main .show#paper-overlay {
   display: block;
 }
 /* line 196, ../scss/_shop.scss */
-#main #overlay ul, #main #adressOverlay ul {
+#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul {
   width: 65%;
   margin: 0 auto;
 }
 /* line 200, ../scss/_shop.scss */
-#main #overlay ul li, #main #adressOverlay ul li {
+#main #overlay ul li, #main #adressOverlay ul li, #main #paper-overlay ul li {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -1101,32 +1113,32 @@ footer a:visited {
   max-width: 45%;
 }
 /* line 207, ../scss/_shop.scss */
-#main #overlay ul li img, #main #adressOverlay ul li img {
+#main #overlay ul li img, #main #adressOverlay ul li img, #main #paper-overlay ul li img {
   margin-bottom: 0.5em;
   max-width: 100%;
   height: auto;
 }
 /* line 212, ../scss/_shop.scss */
-#main #overlay ul li i, #main #adressOverlay ul li i {
+#main #overlay ul li i, #main #adressOverlay ul li i, #main #paper-overlay ul li i {
   font-size: 2em;
   color: #00407A;
 }
 /* line 216, ../scss/_shop.scss */
-#main #overlay ul li .itemData, #main #adressOverlay ul li .itemData {
+#main #overlay ul li .itemData, #main #adressOverlay ul li .itemData, #main #paper-overlay ul li .itemData {
   margin-top: 0.5em;
 }
 /* line 218, ../scss/_shop.scss */
-#main #overlay ul li .itemData p, #main #adressOverlay ul li .itemData p {
+#main #overlay ul li .itemData p, #main #adressOverlay ul li .itemData p, #main #paper-overlay ul li .itemData p {
   display: block;
 }
 /* line 224, ../scss/_shop.scss */
-#main #overlay .overlayButtonWrapper, #main #adressOverlay .overlayButtonWrapper {
+#main #overlay .overlayButtonWrapper, #main #adressOverlay .overlayButtonWrapper, #main #paper-overlay .overlayButtonWrapper {
   position: fixed;
   width: 100%;
   bottom: 30px;
 }
 /* line 228, ../scss/_shop.scss */
-#main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a {
+#main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a, #main #paper-overlay .overlayButtonWrapper a {
   display: inline-block;
   height: 3em;
   margin: 0 auto;
@@ -1137,25 +1149,48 @@ footer a:visited {
   text-decoration: none;
 }
 /* line 238, ../scss/_shop.scss */
-#main #overlay .overlayButtonWrapper a#stop, #main #adressOverlay .overlayButtonWrapper a#stop {
+#main #overlay .overlayButtonWrapper a#stop, #main #adressOverlay .overlayButtonWrapper a#stop, #main #paper-overlay .overlayButtonWrapper a#stop {
   background-color: #3a5b76;
 }
 /* line 241, ../scss/_shop.scss */
-#main #overlay .overlayButtonWrapper a:hover, #main #adressOverlay .overlayButtonWrapper a:hover {
+#main #overlay .overlayButtonWrapper a:hover, #main #adressOverlay .overlayButtonWrapper a:hover, #main #paper-overlay .overlayButtonWrapper a:hover {
   background-color: #3a5b76;
 }
 
-/* line 13, ../scss/_paper.scss */
+/* line 16, ../scss/_paper.scss */
+#paperParent #search,
+#paperParent #history,
+#paperParent #keywords {
+  overflow: hidden;
+}
+/* line 20, ../scss/_paper.scss */
+#paperParent #search h1,
+#paperParent #history h1,
+#paperParent #keywords h1 {
+  cursor: pointer;
+}
+
+/* line 25, ../scss/_paper.scss */
+#message {
+  display: none;
+}
+
+/* line 29, ../scss/_paper.scss */
+.edit #message {
+  display: block;
+}
+
+/* line 33, ../scss/_paper.scss */
 #paperParent #keywords {
   position: relative;
 }
-/* line 15, ../scss/_paper.scss */
+/* line 35, ../scss/_paper.scss */
 #paperParent #keywords .options {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 }
-/* line 19, ../scss/_paper.scss */
+/* line 39, ../scss/_paper.scss */
 #paperParent #keywords .options li {
   display: inline-block;
   background-color: #00407A;
@@ -1164,17 +1199,17 @@ footer a:visited {
   margin: 0.25em;
   cursor: pointer;
 }
-/* line 28, ../scss/_paper.scss */
+/* line 48, ../scss/_paper.scss */
 #paperParent #keywords .keywords {
   list-style-type: none;
   padding-left: 0;
   display: none;
 }
-/* line 32, ../scss/_paper.scss */
+/* line 52, ../scss/_paper.scss */
 #paperParent #keywords .keywords.active {
   display: block;
 }
-/* line 35, ../scss/_paper.scss */
+/* line 55, ../scss/_paper.scss */
 #paperParent #keywords .keywords li {
   display: inline;
   background-color: #4B7698;
@@ -1184,75 +1219,321 @@ footer a:visited {
   border: 1px solid #4B7698;
   cursor: pointer;
 }
-/* line 43, ../scss/_paper.scss */
+/* line 63, ../scss/_paper.scss */
 #paperParent #keywords .keywords li.active {
   background-color: #FDF6E3;
   color: #4B7698;
 }
-/* line 49, ../scss/_paper.scss */
+/* line 69, ../scss/_paper.scss */
 #paperParent #keywords .articles {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 52, ../scss/_paper.scss */
+/* line 72, ../scss/_paper.scss */
 #paperParent #keywords .articles li {
   cursor: pointer;
 }
-/* line 54, ../scss/_paper.scss */
+/* line 74, ../scss/_paper.scss */
 #paperParent #keywords .articles li h1,
 #paperParent #keywords .articles li h2 {
   display: inline;
 }
-/* line 65, ../scss/_paper.scss */
-#paperParent #keywords .paper {
-  position: relative;
-  right: -200%;
-  top: -112px;
+
+/* line 90, ../scss/_paper.scss */
+#paperParent #history ul {
   width: 100%;
-  background-color: #FDF6E3;
-  -moz-transition: right 0.7s;
-  -o-transition: right 0.7s;
-  -webkit-transition: right 0.7s;
-  transition: right 0.7s;
+  padding-left: 0;
+  list-style-type: none;
 }
-/* line 72, ../scss/_paper.scss */
-#paperParent #keywords .paper.active {
-  right: 0;
+/* line 94, ../scss/_paper.scss */
+#paperParent #history ul > li {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding-bottom: 0;
 }
-/* line 75, ../scss/_paper.scss */
-#paperParent #keywords .paper img {
+/* line 98, ../scss/_paper.scss */
+#paperParent #history ul > li img {
   max-width: 100%;
-  height: 400px;
+}
+/* line 101, ../scss/_paper.scss */
+#paperParent #history ul > li h2 {
+  border-bottom: 1px solid #00407A;
+}
+/* line 103, ../scss/_paper.scss */
+#paperParent #history ul > li h2 span {
+  padding: 0 0.5em;
+  border-bottom: 2px solid #00407A;
+}
+/* line 108, ../scss/_paper.scss */
+#paperParent #history ul > li ul {
+  width: 100%;
+}
+/* line 110, ../scss/_paper.scss */
+#paperParent #history ul > li ul li {
+  width: 24%;
+  margin-right: 0.9%;
+  max-width: 300px;
+}
+/* line 115, ../scss/_paper.scss */
+#paperParent #history ul > li ul li.lastOnLine {
+  margin-right: 0;
+}
+/* line 118, ../scss/_paper.scss */
+#paperParent #history ul > li ul li a {
   display: block;
+  position: relative;
+}
+/* line 121, ../scss/_paper.scss */
+#paperParent #history ul > li ul li a .hover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -moz-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+/* line 129, ../scss/_paper.scss */
+#paperParent #history ul > li ul li a .hover:hover {
+  background-color: #00192E;
+  background-color: rgba(0, 25, 46, 0.6);
+}
+/* line 132, ../scss/_paper.scss */
+#paperParent #history ul > li ul li a .hover:hover p {
+  opacity: 1;
+}
+/* line 137, ../scss/_paper.scss */
+#paperParent #history ul > li ul li a .hover p {
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  margin: 0;
+  max-width: 97%;
+  opacity: 0;
+  color: #FDF6E3;
+}
+/* line 144, ../scss/_paper.scss */
+#paperParent #history ul > li ul li a .hover p:before {
+  display: block;
+  font-size: 2em;
   margin: 0 auto;
 }
-/* line 81, ../scss/_paper.scss */
-#paperParent #keywords .paper > h1, #paperParent #keywords .paper > a {
-  text-align: center;
+
+/* line 160, ../scss/_paper.scss */
+#tagList {
+  padding: 0;
+}
+
+/* line 164, ../scss/_paper.scss */
+ul#tagHeader {
+  padding: 0;
+  border-bottom: 1px solid #00407A;
+  list-style-type: none;
+}
+/* line 168, ../scss/_paper.scss */
+ul#tagHeader li,
+ul#tagHeader li:last-child {
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 0 0.5em 0.3em 0.5em;
+  cursor: pointer;
+  margin-right: 1em;
+}
+/* line 175, ../scss/_paper.scss */
+ul#tagHeader li h2,
+ul#tagHeader li:last-child h2 {
+  margin: 0;
+}
+/* line 178, ../scss/_paper.scss */
+ul#tagHeader li:hover, ul#tagHeader li.active,
+ul#tagHeader li:last-child:hover,
+ul#tagHeader li:last-child.active {
+  padding-bottom: 0.0em;
+  border-bottom: 0.3em solid #00407A;
+}
+
+/* line 186, ../scss/_paper.scss */
+#tagList {
+  position: relative;
+  border-bottom: 1px solid #00407A;
+}
+
+/* line 191, ../scss/_paper.scss */
+ul#tagList ul {
+  padding: 0;
+  display: none;
+}
+/* line 194, ../scss/_paper.scss */
+ul#tagList ul.active {
   display: block;
 }
-/* line 87, ../scss/_paper.scss */
-#paperParent #keywords .paper section h2 {
+/* line 197, ../scss/_paper.scss */
+ul#tagList ul li,
+ul#tagList ul li:last-child {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 0.3em 1.1em 0.3em 0.4em;
+  margin: 0;
+  margin-right: 0.5em;
+  margin-bottom: 0.6em;
+  background-color: #00407A;
+  cursor: pointer;
+  color: #FDF6E3;
+}
+/* line 208, ../scss/_paper.scss */
+ul#tagList ul li i,
+ul#tagList ul li:last-child i {
+  font-size: 1.2em;
+  margin-left: 0;
+  margin-right: 0.2em;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 214, ../scss/_paper.scss */
+ul#tagList ul li i.icon-minus-circled,
+ul#tagList ul li:last-child i.icon-minus-circled {
+  display: none;
+}
+/* line 218, ../scss/_paper.scss */
+ul#tagList ul li.active i.icon-minus-circled,
+ul#tagList ul li:last-child.active i.icon-minus-circled {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 221, ../scss/_paper.scss */
+ul#tagList ul li.active i.icon-plus-circled,
+ul#tagList ul li:last-child.active i.icon-plus-circled {
+  display: none;
+}
+
+/* line 232, ../scss/_paper.scss */
+#container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+/* line 236, ../scss/_paper.scss */
+#container .paper {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  background-color: #FDF6E3;
+  padding-bottom: 2em;
+  -moz-transition: left 0.75s;
+  -o-transition: left 0.75s;
+  -webkit-transition: left 0.75s;
+  transition: left 0.75s;
+}
+/* line 244, ../scss/_paper.scss */
+#container .paper.show {
+  left: 0;
+}
+
+/* line 252, ../scss/_paper.scss */
+#main .paper div a {
+  float: left;
+  display: block;
+  width: 48%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 259, ../scss/_paper.scss */
+#main .paper div a img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+/* line 264, ../scss/_paper.scss */
+#main .paper div a .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #00192E;
+  background-color: rgba(0, 25, 46, 0.6);
+}
+/* line 273, ../scss/_paper.scss */
+#main .paper div a .hover p {
+  color: #FDF6E3;
+  font-size: 2.5em;
+  margin: 0 auto;
+  max-width: 90%;
+  line-height: 1.4;
+}
+/* line 280, ../scss/_paper.scss */
+#main .paper div a .hover p:before {
+  display: block;
+  margin: 0 auto;
   margin-bottom: 0.4em;
+  font-size: 1.9em;
 }
-/* line 90, ../scss/_paper.scss */
-#paperParent #keywords .paper section.active > h2,
-#paperParent #keywords .paper section article.active {
-  background-color: #EAD7A5;
-  -moz-transition: background-color 0.7s linear 1s;
-  -o-transition: background-color 0.7s linear 1s;
-  -webkit-transition: background-color 0.7s linear;
-  -webkit-transition-delay: 1s;
-  transition: background-color 0.7s linear 1s;
+/* line 289, ../scss/_paper.scss */
+#main .paper div h3 {
+  margin: 0;
+  padding: 0 0 1em 0;
+  float: right;
+  width: 49%;
 }
-/* line 95, ../scss/_paper.scss */
-#paperParent #keywords .paper section article {
-  padding-left: 0.5em;
+/* line 295, ../scss/_paper.scss */
+#main .paper div > ul.index {
+  float: right;
+  padding: 0;
+  display: block;
+  width: 49%;
+  margin: 0 auto;
+  padding: 0;
 }
-/* line 97, ../scss/_paper.scss */
-#paperParent #keywords .paper section article h1,
-#paperParent #keywords .paper section article h2 {
-  display: inline;
+/* line 302, ../scss/_paper.scss */
+#main .paper div > ul.index li {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+/* line 308, ../scss/_paper.scss */
+#main .paper div .close {
+  float: right;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+  margin: 2em 29% 0 0;
+  background-color: #4B7698;
+  color: #FDF6E3;
+  border: none;
+  padding: 0.25em 1em;
+  text-decoration: none;
+}
+
+/* line 325, ../scss/_paper.scss */
+#main #paper-overlay .messageInnerWrapper {
+  background-color: #dbdbdb;
+}
+/* line 328, ../scss/_paper.scss */
+#main #paper-overlay .messageInnerWrapper .overlayButtonWrapper {
+  position: static;
+  margin: 0em auto 1em auto;
 }
 
 /* ==========================================================================

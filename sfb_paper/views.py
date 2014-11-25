@@ -1,23 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseServerError
-from models import Issue
+from models import Issue, Article
 from os import path
 
 # Create your views here.
 
 
 def get_issue_from_id(request, issue_pk):
-    return HttpResponse("Hello test, you sent me " + str(issue_pk))
-    pass
+    issue = Issue.objects.get(pk=int(issue_pk))
+    index = issue.article_set.all().order_by('page')
+    return render(request, path.join('plugins', 'paper', 'issue_single.html'), {
+        'issue': issue,
+        'index': index
+    })
 
 
 def get_articles_from_tags(request, tags):
     tags = tags.split('/')
-    return HttpResponse("Hello test, you sent me " + str(tags))
+    qs = Article.objects
+    for tag in tags:
+        qs = qs.filter(tags__name__iexact=tag)
+    return render(request, path.join('plugins', 'paper', 'article.html'), {
+        'articles': qs
+    })
+    # return HttpResponse("Hello test, you sent me " + str(tags))
 
 
 def get_issues_by_date(request, amount):
-    issues = Issue.object().all()
+    issues = Issue.objects.all()
     return render(request, path.join('plugins', 'paper', 'tag.html'), {
         'issues': issues
     })

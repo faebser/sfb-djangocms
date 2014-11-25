@@ -3,6 +3,7 @@
 @include font-block('nobilebold', 'font/nobile/nobile-bold-webfont');
 @include font-block('ptsans-bold', 'font/ptsans_bold_german/PTS75F-webfont');
 @include font-block('sfb-shop', 'font/fontello/sfb-shop');
+@include font-block('sfb-shop', 'font/fontello/sfb-paper');
  
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "sfb-shop";
@@ -36,7 +37,8 @@
 }
  
 .icon-plus-circled:before { content: '\e800'; } /* '' */
-.icon-minus-circled:before { content: '\e801'; } /* '' */
+.icon-minus-circled:before { content: '\e801'; } /* '' */ 
+.icon-download:before { content: '\e810'; } /* '' */
 
 // The base font size
 $base-font-size: 16px;

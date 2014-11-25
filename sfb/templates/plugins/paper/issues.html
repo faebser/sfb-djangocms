@@ -1,8 +1,22 @@
 <div id="history">
     <h1>Chronologisch</h1>
     <ul>
-    {% for issue in issues %}
-            <li>{{ issue.name }}</li>
-    {% endfor %}
+        {% for year, issues in years.iteritems %}
+            <li class="year"><h2><span>{{ year }}</span></h2>
+                <ul>
+                    {% for issue in issues %}<li {% if forloop.counter|divisibleby:"4" %} class="lastOnLine"{% endif %}>
+                        {% if issue.download and issue.front %}
+                        <a href="{{ issue.download.pdf.url }}" target="_blank" class="pdf-download">
+                            <img src="{{issue.front.url }}" alt="Front zu {{issue.name}}"/>
+                            <div class="hover">
+                                <p class="icon-download">{{ issue.name }}</p>
+                            </div>
+                        </a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
     </ul>
 </div>

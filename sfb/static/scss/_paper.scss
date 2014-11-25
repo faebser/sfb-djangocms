@@ -1,3 +1,6 @@
+
+@import "compass/css3/border-radius";
+
 #paperParent {
 
 }
@@ -9,6 +12,23 @@
 }
 
 // keywords
+
+#paperParent #search,
+#paperParent #history,
+#paperParent #keywords {
+	overflow: hidden;
+	h1 {
+		cursor: pointer;
+	}
+}
+
+#message {
+	display: none;
+}
+
+.edit #message {
+	display: block;
+}
 
 #paperParent #keywords {
 	position: relative;
@@ -62,54 +82,252 @@
 			}
 		}
 	}
-	.paper {
-		position: relative;
-		right: -200%;
-		top: -112px;
+}
+
+// chronolgical
+
+#paperParent #history {
+	ul {
 		width: 100%;
-		background-color: $background;
-		@include single-transition(right, 0.7s);
-		&.active {
-			right: 0;
-		}
-		img {
-			max-width: 100%;
-			height: 400px;
-			display: block;
-			margin: 0 auto;
-		}
-		& > h1,
-		& > a {
-			text-align: center;
-			display: block;
-		}
-		section {
+		padding-left: 0;
+		list-style-type: none;
+		& > li {
+			width: 100%;
+			@include inline-block(top);
+			padding-bottom: 0;
+			img {
+				max-width: 100%;
+			}
 			h2 {
-				margin-bottom: 0.4em;
-			}
-			&.active > h2,
-			article.active {
-				background-color: #EAD7A5;
-				@include single-transition(background-color, 0.7s, linear, 1s);
-			}
-			article {
-				padding-left: 0.5em;
-				h1,
-				h2 {
-					@extend %regular;
-	    			@extend %t-base;
-	    			display: inline;
+				border-bottom: 1px solid $emphasize;
+				span {
+					padding: 0 0.5em;
+					border-bottom: 2px solid $emphasize;
 				}
-				h1 {
-					@extend %medium;
+			}
+			ul {
+				width: 100%;
+				li {
+					width: 24%;
+					margin-right: 0.9%;
+					max-width: 300px;
+
+					&.lastOnLine {
+						margin-right: 0;
+					}
+					a {
+						display: block;
+						position: relative;
+						.hover {
+							position: absolute;
+							height: 100%;
+							width: 100%;
+							top: 0;
+							left: 0;
+							@extend %center-parent;
+							@include transition(background-color 0.4s);
+							&:hover {
+								background-color: $extra;
+								background-color: rgba(0, 25, 46, 0.6);
+								p {
+									opacity: 1;
+
+								}
+							}
+							p {
+								@include transition(opacity 0.5s);
+								@extend %center-child;
+								margin: 0;
+								max-width: 97%;
+								opacity: 0;
+								color: $background;
+								&:before {
+									display: block;
+									font-size: 2em;
+									margin: 0 auto;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 }
 
-// chronolgical
+// keywords
 
-#paperParent #history {
+#tagList {
+	padding: 0;
+}
 
+ul#tagHeader {
+	padding: 0;
+	border-bottom: 1px solid $emphasize;
+	list-style-type: none;
+	li,
+	li:last-child {
+		@include inline-block(top);
+		padding: 0 0.5em 0.3em 0.5em;
+		//padding-bottom: 0.3em;
+		cursor: pointer;
+		margin-right: 1em;
+		h2 {
+			margin: 0;
+		}
+		&:hover,
+		&.active {
+			padding-bottom: 0.0em;
+			border-bottom: 0.3em solid $emphasize; 
+		}
+	}
+}
+
+#tagList {
+	position: relative;
+	border-bottom: 1px solid $emphasize;
+}
+
+ul#tagList ul {
+	padding: 0;
+	display: none;
+	&.active {
+		display: block;
+	}
+	li,
+	li:last-child {
+		list-style-type: none;
+		@include inline-block;
+		padding: 0.3em 1.1em 0.3em 0.4em;
+		margin: 0;
+		margin-right: 0.5em;
+		margin-bottom: 0.6em;
+		background-color: $emphasize;
+		cursor: pointer;
+		color: $background;
+		i {
+			font-size: 1.2em;
+			margin-left: 0;
+			margin-right: 0.2em;
+			@include inline-block;
+		}
+		i.icon-minus-circled {
+			display: none;
+		}
+		&.active {
+			i.icon-minus-circled {
+				@include inline-block;
+			}
+			i.icon-plus-circled {
+				display: none;
+			}
+		}
+	}
+}
+
+#keywords {
+
+}
+
+#container {
+	position: relative;
+	width: 100%;
+	overflow: hidden; 
+	.paper {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 100%;
+		background-color: $background;
+		padding-bottom: 2em;
+		@include transition(left 0.75s);
+		&.show {
+			left: 0;
+		}
+	}
+}
+
+#main .paper {
+	div {
+		a {
+			float: left;
+			display: block;
+			width: 48%;
+			max-width: 500px;
+			margin: 0 auto;
+			position: relative;
+			img {
+				display: block;
+				margin: 0 auto;
+				max-width: 100%;
+			}
+			.hover {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				color: $extra;
+				background-color: rgba(0, 25, 46, 0.6);
+				@extend %center-parent;
+				p {
+					@extend %center-child;
+					color: $background;
+					font-size: 2.5em;
+					margin: 0 auto;
+					max-width: 90%;
+					line-height: 1.4;
+					&:before {
+						display: block;
+						margin: 0 auto;
+						margin-bottom: 0.4em;
+						font-size: 1.9em;
+					}
+				}
+			}
+		}
+		h3 {
+			margin: 0;
+			padding: 0 0 1em 0;
+			float: right;
+			width: 49%;
+		}
+		& > ul.index {
+			float: right;
+			padding: 0;
+			display: block;
+			width: 49%;
+			margin: 0 auto;
+			padding: 0;
+			li {
+				width: 100%;
+				max-width: 100%;
+				display: block;
+			}
+		}
+		.close {
+			float: right;
+			display: inline-block;
+			text-align: center;
+			width: 20%;
+			margin: 2em 29% 0 0;
+			background-color: #4B7698;
+			color: #FDF6E3;
+			border: none;
+			padding: 0.25em 1em;
+			text-decoration: none;
+		}
+	}
+}
+
+#main #paper-overlay {
+	@extend #overlay;
+	.messageInnerWrapper {
+		@extend %center-child;
+		background-color: #dbdbdb;
+		.overlayButtonWrapper {
+			position: static;
+			margin: 0em auto 1em auto;
+		}
+	}
 }

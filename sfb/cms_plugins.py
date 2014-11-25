@@ -11,6 +11,8 @@ from models import *
 from os import path
 from sfb_shop import models as shop
 from sfb_paper import models as paper
+from collections import OrderedDict
+from django.db.models import Count
 
 class PluginSettings():
     templatePath = path.join("plugins", "sfb")
@@ -211,6 +213,14 @@ class ArticleList(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         context['instance'] = instance
+        years = OrderedDict()
+        for issue in paper.Issue.objects.all():
+            year_as_string = str(issue.year)
+            if year_as_string not in years:
+                years[year_as_string] = [issue]
+            else:
+                years[year_as_string].append(issue)
+        context['years'] = years
         context['issues'] = paper.Issue.objects.all()
 
         return context
@@ -220,6 +230,18 @@ class SearchPlugin(CMSPluginBase):
     name = u'Suche'
     module = ps.module + ' Archiv'
     render_template = path.join(ps.templatePathPaper, 'search.html')
+
+
+class MostUsedTagsPlugin(CMSPluginBase):
+    name = u'Beliebte Schlagworte'
+    module = ps.module + ' Archiv'
+    render_template = path.join(ps.templatePathPaper, 'mostusedtags.html')
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        context['tags'] = paper.Tag.objects.annotate(num_articles=Count('article')).order_by('-num_articles')
+        return context
+
 
 plugin_pool.register_plugin(DefaultPlugin)
 plugin_pool.register_plugin(ArticlePageIntro)
@@ -243,4 +265,4 @@ plugin_pool.register_plugin(TagContainer)
 plugin_pool.register_plugin(PaperTag)
 plugin_pool.register_plugin(ArticleList)
 plugin_pool.register_plugin(SearchPlugin)
-
+plugin_pool.register_plugin(MostUsedTagsPlugin)

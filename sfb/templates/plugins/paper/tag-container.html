@@ -1,7 +1,8 @@
 {% load cms_tags %}
 
-{% for plugin in instance.child_plugin_instances %}
-    <ul>
-        {% render_plugin plugin %}
-    </ul>
-{% endfor %}
+<ul class="chosen taglist">
+    <h2>Schwerpunkte</h2>
+    {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+    {% endfor %}
+</ul>
