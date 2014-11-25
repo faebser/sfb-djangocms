@@ -1,0 +1,14 @@
+{% for article in articles %}
+    <li>
+        <article data-url="{{ article.issue.id }}">
+            <h1>{{ article.title }} - {{ article.subtitle }} &middot;</h1>
+            <h2>
+            {% for author in article.authors.all %}
+                {% if author.firstname %} {{ author.firstname }} {% endif %} {{ author.name }}
+                {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+            &middot;</h2>
+            <h2>{{ article.issue.name }}</h2>
+        </article>
+    </li>
+{% endfor %}
