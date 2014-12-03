@@ -96,7 +96,7 @@ class Article(models.Model):
 
 
 class ArticleList(CMSPlugin):
-    amount = models.IntegerField(verbose_name=u'Anzahl')
+    amount = models.IntegerField(verbose_name=u'Anzahl Jahre zur Darstellung', default=3)
 
 
 class Issue(CMSPlugin):

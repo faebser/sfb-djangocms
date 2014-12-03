@@ -3,13 +3,13 @@
     <a href="{{ issue.download.pdf.url }}" target="_blank" class="pdf-download">
         <img src="{{issue.front.url }}" alt="Front zu {{issue.name}}"/>
         <div class="hover">
-            <p class="icon-download">{{ issue.name }}</p>
+            <p class="icon-download">UW {{ issue.year }}/{{ issue.name }}</p>
         </div>
     </a>
     <h3>Index</h3>
     <ul class="index">
         {% for article in index %}
-            <li>{{ article.title }} - {{ article.page }}</li>
+            <li id="article-{{article.id}}">{{ article.title }} - Seite {{ article.page }}</li>
         {% endfor %}
     </ul>
     <a href="#" class="close">Schliessen</a>

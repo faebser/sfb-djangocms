@@ -1,6 +1,6 @@
 {% for article in articles %}
     <li>
-        <article data-url="{{ article.issue.id }}">
+        <article data-url="{{ article.issue.id }}" id="article-{{article.id}}">
             <h1>{{ article.title }} - {{ article.subtitle }} &middot;</h1>
             <h2>
             {% for author in article.authors.all %}

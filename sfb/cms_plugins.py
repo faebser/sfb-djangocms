@@ -13,6 +13,8 @@ from sfb_shop import models as shop
 from sfb_paper import models as paper
 from collections import OrderedDict
 from django.db.models import Count
+from datetime import datetime
+
 
 class PluginSettings():
     templatePath = path.join("plugins", "sfb")
@@ -209,19 +211,31 @@ class ArticleList(CMSPluginBase):
     name = u'Chronologische Übersicht'
     module = ps.module + ' Archiv'
     model = paper.ArticleList
+    cache = False
     render_template = path.join(ps.templatePathPaper, 'issues.html')
 
     def render(self, context, instance, placeholder):
+        start_year = context['request'].GET.get('pagination', None) or datetime.now().year
+        start_year = int(start_year)
+        end_year = start_year - instance.amount + 1
         context['instance'] = instance
         years = OrderedDict()
-        for issue in paper.Issue.objects.all():
+        for issue in paper.Issue.objects.all().filter(year__lte=start_year).order_by('-date_sort'):
             year_as_string = str(issue.year)
+            if issue.year < end_year:
+                break
             if year_as_string not in years:
                 years[year_as_string] = [issue]
             else:
                 years[year_as_string].append(issue)
-        context['years'] = years
-        context['issues'] = paper.Issue.objects.all()
+
+        num_paginaton = paper.Issue.objects.all().filter(year__lte=end_year-1).count()
+
+        context.update({
+            'years': years,
+            'pagination': end_year - 1,
+            'num_pagination': num_paginaton
+        })
 
         return context
 

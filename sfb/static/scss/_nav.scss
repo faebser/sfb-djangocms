@@ -24,6 +24,7 @@ nav {
                 text-decoration: none;
                 letter-spacing: 0.15em;
                 padding: 1em 1.6em;
+                color: $background
             }
             &.selected {
                 & > a {

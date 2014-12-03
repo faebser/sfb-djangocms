@@ -87,6 +87,21 @@
 // chronolgical
 
 #paperParent #history {
+	a.pagination,
+	a.pagination:visited {
+		list-style-type: none;
+		//@include inline-block;
+		padding: 0.3em 1.1em 0.3em 0.4em;
+		margin: 0 auto;
+		//margin-right: 0.5em;
+		//margin-bottom: 0.6em;
+		background-color: $emphasize;
+		color: $background;
+		text-decoration: none;
+		width: 190px;
+		text-align: center;
+		display: block;
+	}
 	ul {
 		width: 100%;
 		padding-left: 0;
@@ -303,6 +318,13 @@ ul#tagList ul {
 				width: 100%;
 				max-width: 100%;
 				display: block;
+				padding: 0.25em 0 0.25em 0.5em;
+				background-color: $background;
+				@include transition(all 0.7s linear 1s);
+				&.show {
+					color: $background;
+					background-color: $emphasize;
+				}
 			}
 		}
 		.close {

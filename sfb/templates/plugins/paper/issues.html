@@ -9,7 +9,7 @@
                         <a href="{{ issue.download.pdf.url }}" target="_blank" class="pdf-download">
                             <img src="{{issue.front.url }}" alt="Front zu {{issue.name}}"/>
                             <div class="hover">
-                                <p class="icon-download">{{ issue.name }}</p>
+                                <p class="icon-download">UW {{ issue.year }}/{{ issue.name }}</p>
                             </div>
                         </a>
                         {% endif %}
@@ -19,4 +19,7 @@
             </li>
         {% endfor %}
     </ul>
+    {% if num_pagination > 0 %}
+        <a class="pagination" href="{{ request.get_path }}?pagination={{ pagination }}"><i class="icon-plus-circled"></i>Weitere Ausgaben</a>
+    {% endif %}
 </div>

@@ -68,6 +68,7 @@ sfb.paper = (function ($, Vue) {
 			var e = $(this);
 			e.toggleClass(c.active);
 			if(tagList.find('li.' + c.active).length != 0) {
+				closeOverlay();
 				var tagUrls = tagList.find('li.' + c.active).map(function() {
 					return $(this).data('url')
 				}).get().join('/');
@@ -89,18 +90,16 @@ sfb.paper = (function ($, Vue) {
 			  url: urls.issue + e.data('url') + '/',
 			  dataType: 'html',
 			  success: function(data) {
-			  	overlay.html(data);
-			  	overlay.parent().height(overlay.height());
-			  	overlay.toggleClass(c.show);
+			  	openOverlay(data, e.attr('id'));
+			  	$('html, body').animate({
+			  		'scrollTop': $('#container').offset().top
+			  	}, 500);
 			  }
 			});
 		});
 		overlay.on('click', '.close', function(event){
 			event.preventDefault();
-			overlay.toggleClass(c.show);
-			window.setTimeout(function(){
-				overlay.parent().height('auto');
-			}, 770);
+			closeOverlay();
 		});
 		$('#paperParent h1').on('click', function(event) {
 			var e = $(this);
@@ -136,12 +135,47 @@ sfb.paper = (function ($, Vue) {
 				window.open(e.attr('href'));
 			}
 		});
+		$('#history').on('click', '.pagination', function(event) {
+			event.preventDefault();
+			var e = $(this);
+			$.get(e.attr('href'), function(data) {
+				var target = $('#history > ul');
+				data = $(data);
+				console.log(data.find('#history ul li.year'));
+				target.append(data.find('#history li.year'));
+				if(data.find('#history .pagination').length != 0) {
+					$('#history .pagination').attr('href', data.find('#history .pagination').attr('href'));
+				}
+				else {
+					$('#history .pagination').remove();
+				}
+			});
+		});
+	},
+	openOverlay = function (html, articleId) {
+		overlay.html(html);
+	  	overlay.parent().height(overlay.height());
+	  	overlay.addClass(c.show);
+	  	showArticelById(articleId);
+	  	
+	},
+	closeOverlay = function () {
+		overlay.removeClass(c.show);
+		window.setTimeout(function(){
+			overlay.parent().height('auto');
+		}, 770);
 	},
 	makeHeadlinesSmall = function () {
 		$('#paperParent h1').each(function(index, element) {
 			var e = $(element);
 			e.parent().height(e.outerHeight(true));
 		})
+	},
+	showArticelById = function (id) {
+		var e =	overlay.find('#'+id).addClass(c.show);
+		window.setTimeout(function(){
+			e.removeClass(c.show);
+		}, 2000);
 	};
 	// public methods
 	module.init = function () {
@@ -303,7 +337,6 @@ sfb.shop = (function ($) {
 			delete returnCart[key].computePrice;
 			delete returnCart[key].total;
 		};
-		console.log(returnCart);
 		return returnCart;
 	},
 	addHtmlToCart = function (html) {
