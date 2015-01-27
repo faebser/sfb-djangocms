@@ -82,10 +82,8 @@ def checkout(request):
                 except ObjectDoesNotExist:
                     buyable = Merch.objects.get(pk=key)
                 if buyable is not None:
-                    print merch[key]['amount']
                     amount = merch[key]['amount']
                     price = buyable.price.items.filter(amount__gte=amount).order_by('amount')[0].price
-                    print price
                     articles_list.append({
                         'name': buyable.name,
                         'desc': strip_tags(buyable.description),
@@ -100,7 +98,7 @@ def checkout(request):
                 
             context = {'articles': articles_list, 'total': grand_total, 'data': data}
             print context
-            send_mail('Bestellung Webshop', loader.render_to_string('mails/customer-confirmation', context), 'marktplatz@friedensbewegung.ch', ['test@bla.ch'], fail_silently=False)
+            send_mail('Bestellung Webshop', loader.render_to_string('mails/customer-confirmation', context), 'marktplatz@friedensbewegung.ch', [data.email], fail_silently=False)
             send_mail('Bestellung Webshop', loader.render_to_string('mails/sfb-confirmation', context), 'webshop@friedensbewegung.ch', ['sfb@bluewin.ch'], fail_silently=False)
             return HttpResponse(json.dumps({'status': 'success'}), content_type='application/json')
         else:

@@ -60,7 +60,7 @@ class Item(CMSPlugin):
 
 class Card(Item):
     def __unicode__(self):
-        return u'Karte: ' + str(self.name)
+        return u'Karte: ' + unicode(self.name)
 
     class Meta:
         verbose_name = u'Karte für Shop'
