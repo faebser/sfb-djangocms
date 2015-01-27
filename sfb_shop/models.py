@@ -18,7 +18,7 @@ class PriceModelItem(CMSPlugin):
         verbose_name = u'Preismodel-Eintrag'
 
     def __unicode__(self):
-        return str(self.amount) + u" /  " + str(self.price)
+        return unicode(self.amount) + u" /  " + unicode(self.price)
 
 
 class PriceModel(CMSPlugin):
@@ -29,7 +29,7 @@ class PriceModel(CMSPlugin):
         verbose_name = u'Preismodel'
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)
 
     @property
     def to_json_data(self):
@@ -45,7 +45,7 @@ class ItemContainer(CMSPlugin):
     picture = models.ImageField(verbose_name=u'Bild', upload_to=path.join('shop', 'products'))
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)
 
 
 class Item(CMSPlugin):
@@ -68,7 +68,7 @@ class Card(Item):
 
 class Merch(Item):
     def __unicode__(self):
-        return u'Merchandise: ' + str(self.name)
+        return u'Merchandise: ' + unicode(self.name)
 
     class Meta:
         verbose_name = u'Merch für Shop'
