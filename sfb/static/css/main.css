@@ -270,7 +270,14 @@ h1 {
   font-style: normal;
 }
 
-/* line 110, ../scss/_font.scss */
+/* line 109, ../scss/_font.scss */
+#main .money .right h1, #main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span, #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
+  font-family: 'ptsans-bold', arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 116, ../scss/_font.scss */
 nav ul li a,
 nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a, #main #paper-overlay .overlayButtonWrapper a {
   font-size: 12px;
@@ -281,7 +288,7 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
   line-height: 1.75rem;
 }
 
-/* line 113, ../scss/_font.scss */
+/* line 119, ../scss/_font.scss */
 p,
 li,
 a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperParent #keywords .articles li h1,
@@ -294,7 +301,7 @@ a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperPa
   line-height: 1.75rem;
 }
 
-/* line 116, ../scss/_font.scss */
+/* line 122, ../scss/_font.scss */
 h2,
 h3,
 h4, #main .box h3 {
@@ -306,7 +313,7 @@ h4, #main .box h3 {
   line-height: 2.1875rem;
 }
 
-/* line 119, ../scss/_font.scss */
+/* line 125, ../scss/_font.scss */
 h1 {
   font-size: 28px;
   font-size: 1.77688rem;
@@ -316,7 +323,7 @@ h1 {
   line-height: 2.1875rem;
 }
 
-/* line 122, ../scss/_font.scss */
+/* line 128, ../scss/_font.scss */
 header h1,
 #header h1 {
   font-size: 38px;
@@ -666,15 +673,15 @@ nav ul li:hover > ul {
   margin: 0 auto;
 }
 /* line 52, ../scss/_content.scss */
-#main ul {
+#main > ul {
   list-style-type: square;
 }
 /* line 54, ../scss/_content.scss */
-#main ul li {
+#main > ul > li {
   padding-bottom: 0.5em;
 }
 /* line 56, ../scss/_content.scss */
-#main ul li:last-child {
+#main > ul > li:last-child {
   padding: 0;
 }
 
@@ -1156,6 +1163,223 @@ footer a:visited {
 /* line 241, ../scss/_shop.scss */
 #main #overlay .overlayButtonWrapper a:hover, #main #adressOverlay .overlayButtonWrapper a:hover, #main #paper-overlay .overlayButtonWrapper a:hover {
   background-color: #3a5b76;
+}
+
+/* line 249, ../scss/_shop.scss */
+#main .money {
+  display: block;
+}
+/* line 251, ../scss/_shop.scss */
+#main .money .right {
+  float: right;
+  background-color: #00407A;
+  color: #FDF6E3;
+  border-left: 2px solid #FDF6E3;
+}
+/* line 256, ../scss/_shop.scss */
+#main .money .right h1,
+#main .money .right p {
+  color: #FDF6E3;
+}
+/* line 260, ../scss/_shop.scss */
+#main .money .right p {
+  margin: 0 1em 1em 1em;
+  text-align: center;
+}
+/* line 264, ../scss/_shop.scss */
+#main .money .right h1 {
+  width: 70px;
+  margin: 0.6em 0.7em 0 0.7em;
+  text-align: center;
+}
+/* line 271, ../scss/_shop.scss */
+#main .money .left {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #00407A;
+}
+/* line 277, ../scss/_shop.scss */
+#main .money .left li {
+  color: #FDF6E3;
+}
+
+/* line 286, ../scss/_shop.scss */
+#main #shop2 {
+  list-style-type: none;
+  padding: 0;
+}
+/* line 289, ../scss/_shop.scss */
+#main #shop2 > li, #main #shop2 > .cms_plugin > li {
+  margin: 1em 0;
+  overflow: hidden;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position-y: -40px;
+}
+/* line 296, ../scss/_shop.scss */
+#main #shop2 > li .articles, #main #shop2 > .cms_plugin > li .articles {
+  padding: 0em 0.75em 0.5em 0.75em;
+  display: block;
+  position: relative;
+}
+/* line 300, ../scss/_shop.scss */
+#main #shop2 > li .articles.ready, #main #shop2 > .cms_plugin > li .articles.ready {
+  -moz-transition: height 0.5s ease-out;
+  -o-transition: height 0.5s ease-out;
+  -webkit-transition: height 0.5s ease-out;
+  transition: height 0.5s ease-out;
+}
+/* line 302, ../scss/_shop.scss */
+#main #shop2 > li .articles.ready .overlay, #main #shop2 > .cms_plugin > li .articles.ready .overlay {
+  -moz-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
+  -webkit-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+}
+/* line 306, ../scss/_shop.scss */
+#main #shop2 > li .articles .overlay, #main #shop2 > .cms_plugin > li .articles .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 312, ../scss/_shop.scss */
+#main #shop2 > li .articles .overlay.show, #main #shop2 > .cms_plugin > li .articles .overlay.show {
+  background-color: #00407A;
+  background-color: rgba(0, 64, 122, 0.3);
+}
+/* line 317, ../scss/_shop.scss */
+#main #shop2 > li .articles .trigger, #main #shop2 > .cms_plugin > li .articles .trigger {
+  padding-top: 3em;
+  padding-bottom: 1em;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+/* line 323, ../scss/_shop.scss */
+#main #shop2 > li .articles .trigger h1, #main #shop2 > .cms_plugin > li .articles .trigger h1 {
+  margin: 0;
+}
+/* line 326, ../scss/_shop.scss */
+#main #shop2 > li .articles .trigger p, #main #shop2 > .cms_plugin > li .articles .trigger p {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+/* line 331, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul, #main #shop2 > .cms_plugin > li .articles > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 335, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li, #main #shop2 > .cms_plugin > li .articles > ul li {
+  width: 32%;
+  margin-right: 2%;
+  height: 165px;
+  position: relative;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  overflow: hidden;
+  opacity: 0;
+  -moz-transition: all 0.3s linear 0.6s;
+  -o-transition: all 0.3s linear 0.6s;
+  -webkit-transition: all 0.3s linear;
+  -webkit-transition-delay: 0.6s;
+  transition: all 0.3s linear 0.6s;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 345, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li.show, #main #shop2 > .cms_plugin > li .articles > ul li.show {
+  opacity: 1;
+}
+/* line 348, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li:nth-child(3n), #main #shop2 > li .articles > ul li.lastInRow, #main #shop2 > .cms_plugin > li .articles > ul li:nth-child(3n), #main #shop2 > .cms_plugin > li .articles > ul li.lastInRow {
+  margin-right: 0;
+}
+/* line 353, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li img, #main #shop2 > .cms_plugin > li .articles > ul li img {
+  width: 100%;
+}
+/* line 356, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li h2,
+#main #shop2 > li .articles > ul li p, #main #shop2 > .cms_plugin > li .articles > ul li h2,
+#main #shop2 > .cms_plugin > li .articles > ul li p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 0.45em;
+}
+/* line 363, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li .controls, #main #shop2 > .cms_plugin > li .articles > ul li .controls {
+  position: absolute;
+  top: 50.5px;
+  text-align: center;
+  height: 64px;
+  width: 100%;
+}
+/* line 369, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span {
+  color: #00407A;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  line-height: 51px;
+  font-size: 40px;
+  width: 64px;
+  height: 64px;
+}
+/* line 382, ../scss/_shop.scss */
+#main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 387, ../scss/_shop.scss */
+#main #shop2 > li .priceElement .amount,
+#main #shop2 > li .priceElement .price,
+#main #shop2 > li .priceElement .total,
+#main #shop2 > li .priceElement .spacer, #main #shop2 > .cms_plugin > li .priceElement .amount,
+#main #shop2 > .cms_plugin > li .priceElement .price,
+#main #shop2 > .cms_plugin > li .priceElement .total,
+#main #shop2 > .cms_plugin > li .priceElement .spacer {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 394, ../scss/_shop.scss */
+#main #shop2 > li .priceElement .current, #main #shop2 > .cms_plugin > li .priceElement .current {
+  margin: 0.45em auto;
+  font-size: 1.4em;
+}
+/* line 398, ../scss/_shop.scss */
+#main #shop2 > li .priceElement .amount, #main #shop2 > .cms_plugin > li .priceElement .amount {
+  margin-right: 0.75em;
+}
+/* line 401, ../scss/_shop.scss */
+#main #shop2 > li .priceElement .total, #main #shop2 > .cms_plugin > li .priceElement .total {
+  margin-left: 0.75em;
+}
+/* line 404, ../scss/_shop.scss */
+#main #shop2 > li .priceElement .price, #main #shop2 > .cms_plugin > li .priceElement .price {
+  margin: 0 0.75em;
+}
+/* line 406, ../scss/_shop.scss */
+#main #shop2 > li .priceElement .price .prev,
+#main #shop2 > li .priceElement .price .next, #main #shop2 > .cms_plugin > li .priceElement .price .prev,
+#main #shop2 > .cms_plugin > li .priceElement .price .next {
+  text-align: right;
 }
 
 /* line 16, ../scss/_paper.scss */

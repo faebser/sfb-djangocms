@@ -106,6 +106,12 @@ $x-large-font-leading: 1.25;
     font-style: normal;
 }
 
+%price {
+    font-family: 'ptsans-bold', arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 %t-small {
  @include typeSize(small);

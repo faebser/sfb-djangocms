@@ -244,3 +244,170 @@
 		}
 	}
 }
+
+
+#main .money {
+	display: block;
+	.right {
+		float: right;
+		background-color: $emphasize;
+		color: $background;
+		border-left: 2px solid $background;
+		h1,
+		p {
+			color: $background;
+		}
+		p {
+			margin: 0 1em 1em 1em;
+			text-align: center;
+		}
+		h1 {
+			@extend %price;
+			width: 70px;
+			margin: 0.6em 0.7em 0 0.7em;
+			text-align: center;
+		}
+	}
+	.left {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		background-color: $emphasize;
+		li {
+			color: $background;
+		}
+	}
+}
+
+@import "compass/css3/transition";
+
+
+#main #shop2 {
+	list-style-type: none;
+	padding: 0;
+	& > li,
+	& > .cms_plugin > li {
+		margin: 1em 0;
+		overflow: hidden;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position-y: -40px;
+		.articles {
+			padding: 0em 0.75em 0.5em 0.75em;
+			display: block;
+			position: relative;
+			&.ready {
+				@include transition(height 0.5s ease-out);
+				.overlay {
+					@include transition(background-color 0.4s linear);
+				}
+			}
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				&.show {
+					background-color: $emphasize;
+					background-color: rgba($emphasize, 0.3);
+				}
+			}
+			.trigger {
+				padding-top: 3em;
+				padding-bottom: 1em;
+				cursor: pointer;
+				position: relative;
+				z-index: 100;
+				h1 {
+				margin: 0;
+				}
+				p {
+					margin-left: 0;
+					margin-bottom: 0;
+				}
+			}
+			& > ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				li {
+					width: 32%;
+					margin-right: 2%;
+					height: 165px;
+					position: relative;
+					padding-bottom: 0.5em;
+					margin-bottom: 1em;
+					overflow: hidden;
+					opacity: 0;
+					@include transition(all 0.3s linear 0.6s);
+					&.show {
+						opacity: 1;
+					}
+					&:nth-child(3n),
+					&.lastInRow {
+						margin-right: 0;
+					}
+					@include inline-block(top);
+					img {
+						width: 100%;
+					}
+					h2,
+					p {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						margin-left: 0.45em;
+					}
+					.controls {
+						position: absolute;
+						top: 165px/2-64px/2;
+						text-align: center;
+						height: 64px;
+						width: 100%;
+						span {
+							color: $emphasize;
+							@include inline-block;
+							@extend %price;
+							line-height: 51px;
+							font-size: 40px;
+							width: 64px;
+							height: 64px;
+						}
+					}
+				}
+			}
+		}
+		.priceElement {
+			 @extend %price;
+			 width: 30%;
+			 margin: 0 auto;
+			 text-align: center;
+			 .amount,
+			 .price,
+			 .total,
+			 .spacer {
+			 	width: auto;
+			 	@include inline-block;
+			 }
+			 .current {
+			 	margin: 0.45em auto;
+			 	font-size: 1.4em;
+			 }
+			 .amount {
+			 	margin-right: 0.75em;
+			 }
+			 .total {
+			 	margin-left: 0.75em;
+			 }
+			 .price {
+			 	margin: 0 0.75em;
+			 	.prev,
+			 	.next {
+			 		text-align: right;
+			 	}
+			 }
+		}
+	}
+}

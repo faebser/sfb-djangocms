@@ -49,9 +49,9 @@ $textSectionName: ".text-section";
             }
         }
     }
-    ul {
+    & > ul {
     	list-style-type: square;
-    	li {
+    	& > li {
     		padding-bottom: 0.5em;
     		&:last-child {
     			padding: 0;
