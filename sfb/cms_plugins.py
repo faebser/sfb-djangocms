@@ -161,6 +161,33 @@ class ShopContainer(CMSPluginBase):
     render_template = path.join(ps.templatePathShop, 'container.html')
 
 
+class ShopCategory(CMSPluginBase):
+    name = u'Artikel-Kategorie'
+    model = shop.Category
+    module = ps.module + ' Shop'
+    allow_children = True
+    child_classes = ['ShopNewItem']
+    render_template = path.join(ps.templatePathShop, 'category.html')
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        dump = list()
+        for item in instance.price.items.all():
+            dump.append({
+                'amount': str(item.amount),
+                'price': float(item.price)
+            })
+        context['priceData'] = json.dumps(dump)
+        return context
+
+
+class ShopNewItem(CMSPluginBase):
+    name = u'Neuer Artikel'
+    model = shop.NewItem
+    module = ps.module + ' Shop'
+    render_template = path.join(ps.templatePathShop, 'newItem.html')
+
+
 class ShopCard(CMSPluginBase):
     name = u'Karte'
     model = shop.Card
@@ -273,6 +300,9 @@ plugin_pool.register_plugin(ExternalLink)
 plugin_pool.register_plugin(ShopContainer)
 plugin_pool.register_plugin(ShopCard)
 plugin_pool.register_plugin(ShopMerch)
+plugin_pool.register_plugin(ShopCategory)
+plugin_pool.register_plugin(ShopNewItem)
+
 
 #paper
 plugin_pool.register_plugin(TagContainer)
