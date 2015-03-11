@@ -1,0 +1,41 @@
+{% load cms_tags sekizai_tags %}
+<li id="shop-{{ instance.pk }}" data-price="{{ priceData }}">
+    <div class="articles" v-shop-container>
+        <div class="overlay"></div>
+        <div class="trigger">
+            <h1>{{ instance.title }}</h1>
+
+            {{ instance.description | safe }}
+        </div>
+        <ul>{% for plugin in instance.child_plugin_instances %}{% render_plugin plugin %}{% endfor %}</ul>
+    </div>
+    <div class="priceElement" >
+            <div class="amount">
+                <div class="prev" v-text="prevAmount">10</div>
+                <div class="current" v-text="totalAmount">17</div>
+                <div class="next" v-text="nextAmount">25</div>
+            </div>
+            <div class="spacer">
+                <div class="times prev">&times;</div>
+                <div class="times current">&times;</div>
+                <div class="times next">&times;</div>
+            </div>
+            <div class="price">
+                <div class="prev" v-text="prevPrice">1.20 CHF</div>
+                <div class="current" v-text="currentPrice"> 0.90 CHF</div>
+                <div class="next" v-text="nextPrice"> 0.70 CHF</div>
+            </div>
+            <div class="spacer">
+                <div class="equals prev"></div>
+                <div class="equals current">=</div>
+                <div class="equals next"></div>
+            </div>
+            <div class="total">
+                <div class="prev"></div>
+                <div class="current" v-text="currentTotal">15.30 CHF</div>
+                <div class="next"></div>
+            </div>
+        </div>
+</li>
+
+{% addtoblock "css" %}<style> #shop-{{ instance.pk }} { background-image: url('{{ instance.picture.url }}');}</style>{% endaddtoblock %}

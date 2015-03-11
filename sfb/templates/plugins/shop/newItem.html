@@ -1,0 +1,10 @@
+<li data-id="{{ instance.id }}">
+    <div class="controls">
+        <span class="plus icon-plus-circled" v-on="click: addOneItem({{ instance.id }})"></span>
+        <span class="amount" v-text="amounts['id-{{ instance.id }}']['amount']"></span>
+        <span class="minus icon-minus-circled" v-on="click: removeOneItem({{ instance.id }})"></span>
+        <a class="fullscreen icon-download" href="{{ instance.bigPicture.url }}"></a>
+    </div>
+    <img src="{{ instance.picture.url }}" alt="{{ instance.name }}"/>
+    <h2>{{ instance.name }}</h2>
+</li>

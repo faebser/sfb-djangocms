@@ -80,6 +80,6 @@ CMS_PLACEHOLDER_CONF = {
     },
     'shop-content': {
         'name': u'Shop',
-        'plugins': ['ShopContainer']
+        'plugins': ['ShopCategory']
     }
 }

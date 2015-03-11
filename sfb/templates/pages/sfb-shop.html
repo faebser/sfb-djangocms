@@ -1,7 +1,7 @@
 {% extends "pages/sfb-base.html" %}
 {% load cms_tags menu_tags sekizai_tags %}
 
-{% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vue.js"></script>{% endaddtoblock %}
+
 
 {% block content %}
     <div id="noJs">
@@ -19,7 +19,81 @@
     </div>
     <div id="adressOverlay">
     </div>
-    <ul id="shop">
+    <div class="money clearfix">
+        <div class="right">
+            <h1 v-text="totalPrice">20</h1>
+            <p>chf</p>
+        </div>
+        <ul class="left">
+            <li v-repeat="item : cartList">
+                <span v-text="item.text"></span>
+                <span v-text="item.price"></span>
+                <span v-text="item.amount"></span>
+                <span v-text="formatFloatForCHF(item.price * item.amount)"></span>
+            </li>
+        </ul>
+    </div>
+<!-- <ul id="shop21">
+    <li>
+        <div class="articles" style="background-image: url(http://wheelsnorth.campyonly.com/images/postcards/Postcards%205-31-080031.jpg)">
+            <div class="overlay show"></div>
+            <h1>Postkarten</h1>
+            <p>Einfache Postkarten, vorne Druck hinten Text</p>
+            <ul><li> <!-- watch out for fix because of inline block
+                    <img src="{{ STATIC_URL }}img/Picasso1_2.jpg" alt=""/>
+                    <h2>Maternité</h2>
+                </li><li>
+                    <div class="controls">
+                        <span class="plus icon-plus-circled"></span>
+                        <span class="amount">1</span>
+                        <span class="minus icon-minus-circled"></span>
+                        <a class="fullscreen icon-download"></a>
+                    </div>
+                    <img src="{{ STATIC_URL }}img/Picasso1_2.jpg" alt=""/>
+                    <h2>La colombe bleue</h2>
+                </li><li>
+                    <img src="{{ STATIC_URL }}img/Picasso1_2.jpg" alt=""/>
+                    <h2>La colombe bleue</h2>
+                </li><li>
+                    <img src="{{ STATIC_URL }}img/Picasso4.jpg" alt=""/>
+                    <h2>La colombe bleue</h2>
+                </li><li>
+                    <img src="{{ STATIC_URL }}img/Picasso1_2.jpg" alt=""/>
+                    <h2>La colombe bleue</h2>
+                </li>
+            </ul>
+
+        </div>
+        <div class="priceElement">
+            <div class="amount">
+                <div class="prev">10</div>
+                <div class="current">17</div>
+                <div class="next">25</div>
+            </div>
+            <div class="spacer">
+                <div class="times prev">&times;</div>
+                <div class="times current">&times;</div>
+                <div class="times next">&times;</div>
+            </div>
+            <div class="price">
+                <div class="prev">1.20 CHF</div>
+                <div class="current"> 0.90 CHF</div>
+                <div class="next"> 0.70 CHF</div>
+            </div>
+            <div class="spacer">
+                <div class="equals prev"></div>
+                <div class="equals current">=</div>
+                <div class="equals next"></div>
+            </div>
+            <div class="total">
+                <div class="prev"></div>
+                <div class="current">15.30 CHF</div>
+                <div class="next"></div>
+            </div>
+        </div>
+    </li>
+</ul> -->
+    <ul id="shop2">
         {% placeholder "shop-content" %}
     </ul>
     <table id="cart" >
@@ -38,3 +112,5 @@
         <input type="submit" name="button" id="buy" value="Bestellen"/>
     </form>
 {% endblock content %}
+
+{% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vue.js"></script>{% endaddtoblock %}
