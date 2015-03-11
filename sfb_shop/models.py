@@ -55,7 +55,7 @@ class Item(CMSPlugin):
     price = models.ForeignKey(PriceModel)
 
     def __unicode__(self):
-        return self.name
+        return unicode(self.name)
 
 
 class Card(Item):
@@ -72,3 +72,28 @@ class Merch(Item):
 
     class Meta:
         verbose_name = u'Merch für Shop'
+
+
+class Category(CMSPlugin):
+    title = models.CharField(max_length=64, verbose_name=u'Name')
+    description = HTMLField(verbose_name=u'Beschreibung')
+    picture = models.ImageField(verbose_name=u'Bild', upload_to=path.join('shop', 'products', 'categories'))
+    price = models.ForeignKey(PriceModel)
+
+    class Meta:
+        verbose_name = u'the niew thing'
+
+    def __unicode__(self):
+        return unicode(self.title)
+
+
+class NewItem(CMSPlugin):
+    name = models.CharField(max_length=64, verbose_name=u'Name')
+    picture = models.ImageField(verbose_name=u'kleines Bild', upload_to=path.join('shop', 'products', 'items'))
+    bigPicture = models.ImageField(verbose_name=u'grosses Bild', upload_to=path.join('shop', 'products', 'items-big'))
+
+    class Meta:
+        verbose_name = u'the other niews things'
+
+    def __unicode__(self):
+        return unicode(self.name)
