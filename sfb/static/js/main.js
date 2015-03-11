@@ -61,7 +61,7 @@ sfb.paper = (function ($, Vue) {
 		}).get();
 
 		$('.taglist').remove();
-		tagHeadersList[0].click();
+		if(tagHeadersList[0]) tagHeadersList[0].click();
 	},
 	clickHandler = function () {
 		tagList.find('li').on('click', function(event) {
@@ -415,7 +415,7 @@ sfb.main = (function ($) {
 	// public methods
 	module.init = function () { // init all the other modules
 		if(main.find('#shop').length != 0) {
-			sfb.shop.init();
+			//sfb.shop.init();
 		}
 		$('#noJs').addClass('hidden');
 		$('.articles li article').click(function(event) {
@@ -428,5 +428,182 @@ sfb.main = (function ($) {
 	//return the module
 	return module;
 }(jQuery));
+
+Vue.directive('shop-container', {
+	cssClass: 'show',
+	overlay: null,
+	size: 0,
+	small: 140,
+	items: null,
+	bind: function() {
+
+		var self = this;
+		var e = $(this.el);
+		this.overlay = e.find('.overlay');
+		this.size = e.height();
+		e.height(this.small);
+		e.addClass('ready');
+		this.items = e.find('ul > li');
+
+		e.find('.trigger').click(function() {
+			self.overlay.toggleClass(self.cssClass);
+			self.items.toggleClass(self.cssClass);
+			e.toggleClass(self.cssClass);
+			if(e.hasClass(self.cssClass)) {
+				e.height(self.size);
+			}
+			else {
+				e.height(self.small);
+			};
+		});
+	}
+});
+
+var newShop = (function ($, Vue, _) {
+	// javascript module pattern
+	"use strict"; // enable strict mode for javascript module
+	// private vars
+	var module = {},
+		cart = undefined,
+		price = undefined;
+	// private methods
+	var formatFloatForCHF = function(input) {
+		if(input >= 10) return parseFloat(input).toPrecision(4);
+		return parseFloat(input).toPrecision(3);
+	}
+	// public methods
+	module.init = function () {
+		"use strict";
+		price = new Vue({
+			el: '.money',
+			data: {
+				cartList: {},
+				totalPrice: 0
+			},
+			methods: {
+				updateItem: function(id, text, amount, price) {
+					id = 'id-' + id;
+					if(this.cartList[id] && amount === 0) {
+						this.cartList.$delete(id);
+						this.totalPrice = this.computeTotalPrice();
+						return;
+					}
+					if(!this.cartList[id]) this.cartList.$add(id, {'text': '', 'amount':'', 'price': 0});
+					this.cartList[id]['amount'] = amount;
+					this.cartList[id]['text'] = text;
+					this.cartList[id]['price'] = price;
+					this.totalPrice = this.computeTotalPrice();
+				},
+				computeTotalPrice: function () {
+					if(this.cartList.length === 0) return 0;
+					var tempFloat = parseFloat(_.reduce(this.cartList, function getTheTotalFromList(result, value, key) {
+						result += value.amount * value.price;
+						return result;
+					}, 0));
+					return formatFloatForCHF(tempFloat);
+				},
+				formatFloatForCHF: function(input) {
+					return formatFloatForCHF(input);
+				}
+			}
+		});
+
+		cart = new Vue ({
+			el: '#shop2 > li',
+			data: {
+				stuff: 'stuff',
+				amounts: {},
+				priceModel : null,
+				prevPrice: 0,
+				nextPrice: 0,
+				prevAmount: 0,
+				nextAmount: 0,
+				currentPrice: 0,
+				currentTotal: 0
+			},
+			methods: {
+				addOneItem: function(e) {
+					this.amounts['id-' + e].amount += 1;
+					this.currentTotal = this.calculateCurrentTotal();
+					price.updateItem(e, this.amounts['id-' + e].text, this.amounts['id-' + e].amount, this.currentPrice);
+				},
+				removeOneItem: function(e) {
+					if(this.amounts['id-' + e].amount != 0) this.amounts['id-' + e].amount -= 1;
+					this.currentTotal = this.calculateCurrentTotal();
+					price.updateItem(e, this.amounts['id-' + e].text, this.amounts['id-' + e].amount, this.currentPrice);
+				},
+				calculateCurrentTotal: function() {
+					var diff;
+					if(this.totalAmount === 0) return 0;
+					for (var i = 0; i < this.priceModel.length; i++) {
+						var item = this.priceModel[i];
+						diff = this.totalAmount - parseInt(item.amount);
+						
+						if (diff < 0 || diff === 0 || i + 1 == this.priceModel.length) { // we found something
+							if (i >= 1) {
+								this.prevPrice = this.priceModel[i - 1].price;
+								this.prevAmount = this.priceModel[i - 1].amount;
+							}
+							else {
+								this.prevPrice = 0;
+								this.prevAmount = 0;
+							}
+							if (i + 1 < this.priceModel.length) {
+								this.nextPrice = this.priceModel[i + 1].price
+								this.nextAmount = this.priceModel[i + 1].amount;
+							}
+							else {
+								this.nextPrice = 0;
+								this.nextAmount = 0;
+							}
+							this.currentPrice = item.price.toPrecision(3);
+							var returnPrice = parseFloat(item.price * this.totalAmount);
+							if(returnPrice >= 10) return returnPrice.toPrecision(4);
+							return returnPrice.toPrecision(3);
+						}
+					}
+				}
+			},
+			computed: {
+				totalAmount: function () {
+					var sum = 0;
+					$.each(this.amounts, function(index, element) {
+						sum += element.amount;
+					});
+					return sum;
+				}
+			},
+			events: {
+				'hook:beforeCompile': function() {
+					var self = this;
+					// build the basis data
+					var e = $(this.$el);
+					e.find('ul > li').each(function(index, element) {
+						var el = $(element);
+						self.amounts.$add('id-'+ el.data('id'), {
+							'id': el.data('id'),
+							'amount': 0,
+							'text': el.find('h2').html()
+						});
+					});
+					// we take the price from json
+					this.priceModel = e.data('price');
+					// we have to make sure they are sorted so we can do magic stuff to them
+					this.priceModel.sort(function sortByPriceKey(a, b) {
+						var aValue = parseInt(a.amount);
+						var bValue = parseInt(b.amount);
+						if (aValue === bValue) return 0;
+						if (aValue > bValue) return 1;
+						if (aValue < bValue) return -1;
+					});
+				}
+			}
+		});
+	};
+	//return the module
+	return module;
+}(jQuery, Vue, _));
+
+$(document).ready(newShop.init);
 
 $(document).ready(sfb.main.init);
