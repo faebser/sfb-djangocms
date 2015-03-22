@@ -509,7 +509,7 @@ var newShop = (function ($, Vue, _) {
 		});
 
 		cart = new Vue ({
-			el: '#shop2 > li',
+			el: '#shop2 > li.shop-cat',
 			data: {
 				stuff: 'stuff',
 				amounts: {},
