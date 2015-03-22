@@ -24,14 +24,15 @@
             <h1 v-text="totalPrice">20</h1>
             <p>chf</p>
         </div>
-        <ul class="left">
-            <li v-repeat="item : cartList">
-                <span v-text="item.text"></span>
-                <span v-text="item.price"></span>
-                <span v-text="item.amount"></span>
-                <span v-text="formatFloatForCHF(item.price * item.amount)"></span>
-            </li>
-        </ul>
+        <table class="left">
+            <tr v-repeat="item : cartList">
+                <td v-text="item.text"></td>
+                <td v-text="item.amount" class="numbers amount" ></td>
+                <td class="numbers equals">&times;</td>
+                <td v-text="item.price" class="numbers price"></td>
+                <td v-text="formatFloatForCHF(item.price * item.amount)" class="numbers total"></td>
+            </tr>
+        </table>
     </div>
 <!-- <ul id="shop21">
     <li>
