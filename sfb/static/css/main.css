@@ -243,7 +243,8 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
 /* line 91, ../scss/_font.scss */
 p,
 li,
-a, #main .pageIntro .meta p .date span,
+a,
+td, #main .pageIntro .meta p .date span,
 #main .pageIntro .meta p .author span, #main table#cart tr td, #paperParent #keywords .articles li h1,
 #paperParent #keywords .articles li h2 {
   font-family: 'nobileregular', arial, sans-serif;
@@ -271,7 +272,7 @@ h1 {
 }
 
 /* line 109, ../scss/_font.scss */
-#main .money .right h1, #main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span, #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
+#main .money .right h1, #main .money .left td.numbers, #main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span, #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
   font-family: 'ptsans-bold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -291,7 +292,8 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
 /* line 119, ../scss/_font.scss */
 p,
 li,
-a, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperParent #keywords .articles li h1,
+a,
+td, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperParent #keywords .articles li h1,
 #paperParent #keywords .articles li h2 {
   font-size: 16px;
   font-size: 1rem;
@@ -349,16 +351,17 @@ h4 {
 /* line 132, ../scss/main.scss */
 p,
 li,
-a {
+a,
+td {
   color: #324A53;
 }
 
-/* line 139, ../scss/main.scss */
+/* line 140, ../scss/main.scss */
 strong {
   color: #00407A;
 }
 
-/* line 145, ../scss/main.scss */
+/* line 146, ../scss/main.scss */
 a {
   color: #00407A;
   text-decoration: underline;
@@ -367,17 +370,17 @@ a {
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
-/* line 149, ../scss/main.scss */
+/* line 150, ../scss/main.scss */
 a:hover {
   text-decoration: underline;
 }
-/* line 152, ../scss/main.scss */
+/* line 153, ../scss/main.scss */
 a:hover, a:visited {
   color: #C5B893;
 }
 
 /* wrappers */
-/* line 160, ../scss/main.scss */
+/* line 161, ../scss/main.scss */
 .outerWrapper, header,
 #header, nav ul, #main, footer {
   width: 100%;
@@ -387,13 +390,13 @@ a:hover, a:visited {
 }
 
 /* components */
-/* line 173, ../scss/main.scss */
+/* line 174, ../scss/main.scss */
 header,
 #header {
   margin-bottom: 4em;
   margin-top: 2.2em;
 }
-/* line 178, ../scss/main.scss */
+/* line 179, ../scss/main.scss */
 header h1,
 #header h1 {
   line-height: 1.2;
@@ -403,19 +406,19 @@ header h1,
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 186, ../scss/main.scss */
+/* line 187, ../scss/main.scss */
 header h1.second,
 #header h1.second {
   margin-top: 0;
   padding-top: 0;
 }
-/* line 191, ../scss/main.scss */
+/* line 192, ../scss/main.scss */
 header h2,
 #header h2 {
   font-size: 0.8em;
   text-align: left;
 }
-/* line 194, ../scss/main.scss */
+/* line 195, ../scss/main.scss */
 header h2 a,
 header h2 a:visited,
 #header h2 a,
@@ -1194,23 +1197,45 @@ footer a:visited {
 }
 /* line 271, ../scss/_shop.scss */
 #main .money .left {
-  width: 100%;
+  width: 88.5%;
   padding: 0;
   margin: 0;
-  list-style-type: none;
   background-color: #00407A;
 }
-/* line 277, ../scss/_shop.scss */
-#main .money .left li {
+/* line 276, ../scss/_shop.scss */
+#main .money .left td {
+  padding: 0.2em 0.75em;
   color: #FDF6E3;
 }
+/* line 279, ../scss/_shop.scss */
+#main .money .left td.numbers {
+  text-align: right;
+}
+/* line 283, ../scss/_shop.scss */
+#main .money .left td.equals {
+  width: 4%;
+  text-align: center;
+}
+/* line 287, ../scss/_shop.scss */
+#main .money .left td.amount {
+  width: 6%;
+}
+/* line 290, ../scss/_shop.scss */
+#main .money .left td.price {
+  width: 7.6%;
+  border-right: 2px solid #FDF6E3;
+}
+/* line 294, ../scss/_shop.scss */
+#main .money .left td.total {
+  width: 9.6%;
+}
 
-/* line 286, ../scss/_shop.scss */
+/* line 304, ../scss/_shop.scss */
 #main #shop2 {
   list-style-type: none;
   padding: 0;
 }
-/* line 289, ../scss/_shop.scss */
+/* line 307, ../scss/_shop.scss */
 #main #shop2 > li, #main #shop2 > .cms_plugin > li {
   margin: 1em 0;
   overflow: hidden;
@@ -1218,27 +1243,27 @@ footer a:visited {
   background-repeat: no-repeat;
   background-position-y: -40px;
 }
-/* line 296, ../scss/_shop.scss */
+/* line 314, ../scss/_shop.scss */
 #main #shop2 > li .articles, #main #shop2 > .cms_plugin > li .articles {
   padding: 0em 0.75em 0.5em 0.75em;
   display: block;
   position: relative;
 }
-/* line 300, ../scss/_shop.scss */
+/* line 318, ../scss/_shop.scss */
 #main #shop2 > li .articles.ready, #main #shop2 > .cms_plugin > li .articles.ready {
   -moz-transition: height 0.5s ease-out;
   -o-transition: height 0.5s ease-out;
   -webkit-transition: height 0.5s ease-out;
   transition: height 0.5s ease-out;
 }
-/* line 302, ../scss/_shop.scss */
+/* line 320, ../scss/_shop.scss */
 #main #shop2 > li .articles.ready .overlay, #main #shop2 > .cms_plugin > li .articles.ready .overlay {
   -moz-transition: background-color 0.4s linear;
   -o-transition: background-color 0.4s linear;
   -webkit-transition: background-color 0.4s linear;
   transition: background-color 0.4s linear;
 }
-/* line 306, ../scss/_shop.scss */
+/* line 324, ../scss/_shop.scss */
 #main #shop2 > li .articles .overlay, #main #shop2 > .cms_plugin > li .articles .overlay {
   position: absolute;
   top: 0;
@@ -1246,12 +1271,12 @@ footer a:visited {
   width: 100%;
   height: 100%;
 }
-/* line 312, ../scss/_shop.scss */
+/* line 330, ../scss/_shop.scss */
 #main #shop2 > li .articles .overlay.show, #main #shop2 > .cms_plugin > li .articles .overlay.show {
   background-color: #00407A;
   background-color: rgba(0, 64, 122, 0.3);
 }
-/* line 317, ../scss/_shop.scss */
+/* line 335, ../scss/_shop.scss */
 #main #shop2 > li .articles .trigger, #main #shop2 > .cms_plugin > li .articles .trigger {
   padding-top: 3em;
   padding-bottom: 1em;
@@ -1259,22 +1284,22 @@ footer a:visited {
   position: relative;
   z-index: 100;
 }
-/* line 323, ../scss/_shop.scss */
+/* line 341, ../scss/_shop.scss */
 #main #shop2 > li .articles .trigger h1, #main #shop2 > .cms_plugin > li .articles .trigger h1 {
   margin: 0;
 }
-/* line 326, ../scss/_shop.scss */
+/* line 344, ../scss/_shop.scss */
 #main #shop2 > li .articles .trigger p, #main #shop2 > .cms_plugin > li .articles .trigger p {
   margin-left: 0;
   margin-bottom: 0;
 }
-/* line 331, ../scss/_shop.scss */
+/* line 349, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul, #main #shop2 > .cms_plugin > li .articles > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 335, ../scss/_shop.scss */
+/* line 353, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li, #main #shop2 > .cms_plugin > li .articles > ul li {
   width: 32%;
   margin-right: 2%;
@@ -1295,19 +1320,19 @@ footer a:visited {
   *zoom: 1;
   *display: inline;
 }
-/* line 345, ../scss/_shop.scss */
+/* line 363, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li.show, #main #shop2 > .cms_plugin > li .articles > ul li.show {
   opacity: 1;
 }
-/* line 348, ../scss/_shop.scss */
+/* line 366, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li:nth-child(3n), #main #shop2 > li .articles > ul li.lastInRow, #main #shop2 > .cms_plugin > li .articles > ul li:nth-child(3n), #main #shop2 > .cms_plugin > li .articles > ul li.lastInRow {
   margin-right: 0;
 }
-/* line 353, ../scss/_shop.scss */
+/* line 371, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li img, #main #shop2 > .cms_plugin > li .articles > ul li img {
   width: 100%;
 }
-/* line 356, ../scss/_shop.scss */
+/* line 374, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li h2,
 #main #shop2 > li .articles > ul li p, #main #shop2 > .cms_plugin > li .articles > ul li h2,
 #main #shop2 > .cms_plugin > li .articles > ul li p {
@@ -1316,7 +1341,7 @@ footer a:visited {
   left: 0;
   margin-left: 0.45em;
 }
-/* line 363, ../scss/_shop.scss */
+/* line 381, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li .controls, #main #shop2 > .cms_plugin > li .articles > ul li .controls {
   position: absolute;
   top: 50.5px;
@@ -1324,7 +1349,7 @@ footer a:visited {
   height: 64px;
   width: 100%;
 }
-/* line 369, ../scss/_shop.scss */
+/* line 387, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span {
   color: #00407A;
   display: inline-block;
@@ -1337,13 +1362,13 @@ footer a:visited {
   width: 64px;
   height: 64px;
 }
-/* line 382, ../scss/_shop.scss */
+/* line 400, ../scss/_shop.scss */
 #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
   width: 30%;
   margin: 0 auto;
   text-align: center;
 }
-/* line 387, ../scss/_shop.scss */
+/* line 405, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .amount,
 #main #shop2 > li .priceElement .price,
 #main #shop2 > li .priceElement .total,
@@ -1358,24 +1383,24 @@ footer a:visited {
   *zoom: 1;
   *display: inline;
 }
-/* line 394, ../scss/_shop.scss */
+/* line 412, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .current, #main #shop2 > .cms_plugin > li .priceElement .current {
   margin: 0.45em auto;
   font-size: 1.4em;
 }
-/* line 398, ../scss/_shop.scss */
+/* line 416, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .amount, #main #shop2 > .cms_plugin > li .priceElement .amount {
   margin-right: 0.75em;
 }
-/* line 401, ../scss/_shop.scss */
+/* line 419, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .total, #main #shop2 > .cms_plugin > li .priceElement .total {
   margin-left: 0.75em;
 }
-/* line 404, ../scss/_shop.scss */
+/* line 422, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .price, #main #shop2 > .cms_plugin > li .priceElement .price {
   margin: 0 0.75em;
 }
-/* line 406, ../scss/_shop.scss */
+/* line 424, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .price .prev,
 #main #shop2 > li .priceElement .price .next, #main #shop2 > .cms_plugin > li .priceElement .price .prev,
 #main #shop2 > .cms_plugin > li .priceElement .price .next {
@@ -1792,7 +1817,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-/* line 213, ../scss/main.scss */
+/* line 214, ../scss/main.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -1801,7 +1826,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 222, ../scss/main.scss */
+/* line 223, ../scss/main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1817,7 +1842,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 238, ../scss/main.scss */
+/* line 239, ../scss/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -1831,7 +1856,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 252, ../scss/main.scss */
+/* line 253, ../scss/main.scss */
 .invisible {
   visibility: hidden;
 }
@@ -1847,7 +1872,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 269, ../scss/main.scss */
+/* line 270, ../scss/main.scss */
 .clearfix:before, footer:before, .clearfix:after, footer:after {
   content: " ";
   /* 1 */
@@ -1872,7 +1897,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 300, ../scss/main.scss */
+  /* line 301, ../scss/main.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -1881,18 +1906,18 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
     text-shadow: none !important;
   }
 
-  /* line 307, ../scss/main.scss */
+  /* line 308, ../scss/main.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 312, ../scss/main.scss */
+  /* line 313, ../scss/main.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 316, ../scss/main.scss */
+  /* line 317, ../scss/main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -1900,37 +1925,37 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 324, ../scss/main.scss */
+  /* line 325, ../scss/main.scss */
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 329, ../scss/main.scss */
+  /* line 330, ../scss/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 335, ../scss/main.scss */
+  /* line 336, ../scss/main.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 339, ../scss/main.scss */
+  /* line 340, ../scss/main.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 344, ../scss/main.scss */
+  /* line 345, ../scss/main.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 348, ../scss/main.scss */
+  /* line 349, ../scss/main.scss */
   p,
   h2,
   h3 {
@@ -1938,7 +1963,7 @@ ul#tagList ul li:last-child.active i.icon-plus-circled {
     widows: 3;
   }
 
-  /* line 355, ../scss/main.scss */
+  /* line 356, ../scss/main.scss */
   h2,
   h3 {
     page-break-after: avoid;

@@ -269,13 +269,31 @@
 		}
 	}
 	.left {
-		width: 100%;
+		width: 88.5%;
 		padding: 0;
 		margin: 0;
-		list-style-type: none;
 		background-color: $emphasize;
-		li {
+		td {
+			padding: 0.2em 0.75em;
 			color: $background;
+			&.numbers {
+				text-align: right;
+				@extend %price;
+			}
+			&.equals {
+				width: 4%;
+				text-align: center;
+			}
+			&.amount {
+				width: 6%;
+			}
+			&.price {
+				width: 7.6%;
+				border-right: 2px solid $background;
+			}
+			&.total {
+				width: 9.6%;
+			}
 		}
 	}
 }

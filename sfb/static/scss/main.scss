@@ -131,7 +131,8 @@ h4 {
 
 p,
 li,
-a {
+a,
+td {
     color: $text;
     @extend %regular;
     @extend %t-base;
