@@ -519,17 +519,20 @@ var newShop = (function ($, Vue, _) {
 				prevAmount: 0,
 				nextAmount: 0,
 				currentPrice: 0,
-				currentTotal: 0
+				currentTotal: 0,
+				hasPrice: true
 			},
 			methods: {
 				addOneItem: function(e) {
 					this.amounts['id-' + e].amount += 1;
 					this.currentTotal = this.calculateCurrentTotal();
+					this.hasPrice = this.currentTotal == 0;
 					price.updateItem(e, this.amounts['id-' + e].text, this.amounts['id-' + e].amount, this.currentPrice);
 				},
 				removeOneItem: function(e) {
 					if(this.amounts['id-' + e].amount != 0) this.amounts['id-' + e].amount -= 1;
 					this.currentTotal = this.calculateCurrentTotal();
+					this.hasPrice = this.currentTotal == 0;
 					price.updateItem(e, this.amounts['id-' + e].text, this.amounts['id-' + e].amount, this.currentPrice);
 				},
 				calculateCurrentTotal: function() {
