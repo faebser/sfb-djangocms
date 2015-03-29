@@ -459,21 +459,50 @@ Vue.directive('shop-container', {
 	}
 });
 
+Vue.directive('price-container', {
+	cssClass: 'fixed',
+	threshold: 0,
+	win: $(window),
+	bind: function() {
+		var self = this;
+		var e = $(this.el);
+		var spacer = e.parent().find('.spacer');
+		self.threshold = e.offset().top - $('.noJs').outerHeight(true);
+		self.win.on('scroll', function() {
+			var scrollTop = self.win.scrollTop();
+			if(!e.hasClass(self.cssClass) && scrollTop > e.offset().top) {
+				e.addClass(self.cssClass);
+				var h = e.height();
+				self.threshold = e.offset().top;
+				spacer.height(h);
+				return;
+			}
+			if(e.hasClass(self.cssClass) && scrollTop < self.threshold) {
+				e.removeClass(self.cssClass);
+				spacer.height(0);
+				return;
+			}
+		});
+	}
+});
+
 var newShop = (function ($, Vue, _) {
 	// javascript module pattern
 	"use strict"; // enable strict mode for javascript module
 	// private vars
 	var module = {},
 		cart = undefined,
-		price = undefined;
+		price = undefined,
+		prices = Array();
 	// private methods
 	var formatFloatForCHF = function(input) {
 		if(input >= 10) return parseFloat(input).toPrecision(4);
 		return parseFloat(input).toPrecision(3);
-	}
+	};
 	// public methods
 	module.init = function () {
 		"use strict";
+
 		price = new Vue({
 			el: '.money',
 			data: {
@@ -509,7 +538,7 @@ var newShop = (function ($, Vue, _) {
 		});
 
 		cart = new Vue ({
-			el: '#shop2 > li.shop-cat',
+			el: '#shop2 li.shop-cat',
 			data: {
 				stuff: 'stuff',
 				amounts: {},

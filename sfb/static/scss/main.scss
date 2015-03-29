@@ -143,6 +143,16 @@ strong {
     @extend %t-base;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    //background-color: $background;
+    z-index: 1000;
+}
+
 a {
     color: $emphasize;
     text-decoration: underline;

@@ -1,0 +1,951 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bor",
+				"border-left"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"has",
+				"hasPrice"
+			],
+			[
+				"current",
+				"currentPrice"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"form",
+				"formatFloatForCHF"
+			],
+			[
+				"cur",
+				"currentTotal"
+			],
+			[
+				"tem",
+				"tempFloat"
+			],
+			[
+				"com",
+				"computeTotalPrice"
+			],
+			[
+				"tot",
+				"totalPrice"
+			],
+			[
+				"cart",
+				"cartList"
+			],
+			[
+				"curr",
+				"currentPrice"
+			],
+			[
+				"fo",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"pr",
+				"priceLimit"
+			],
+			[
+				"pri",
+				"priceModel"
+			],
+			[
+				"to",
+				"totalAmount"
+			],
+			[
+				"getP",
+				"getPriceModel"
+			],
+			[
+				"css",
+				"cssClass"
+			],
+			[
+				"new",
+				"newShop"
+			],
+			[
+				"send",
+				"sendMessage"
+			],
+			[
+				"en",
+				"endif"
+			],
+			[
+				"if",
+				"ifdef"
+			],
+			[
+				"set",
+				"setPixelColor"
+			],
+			[
+				"register",
+				"registerCheckTest"
+			],
+			[
+				"hex",
+				"hexColorConverter"
+			],
+			[
+				"e",
+				"emphasize"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"marin",
+				"margin-right"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"open",
+				"openOverlay"
+			],
+			[
+				"show",
+				"showArticelById"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"co",
+				"cookie"
+			],
+			[
+				"toggle",
+				"toggleClass"
+			],
+			[
+				"mes",
+				"messageOverlay"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"fu",
+				"function	mod-function"
+			],
+			[
+				"s",
+				"show"
+			],
+			[
+				"sho",
+				"show"
+			],
+			[
+				"toggl",
+				"toggleClass"
+			],
+			[
+				"b",
+				"background-color"
+			],
+			[
+				"is",
+				"issue"
+			],
+			[
+				"art",
+				"articleList"
+			],
+			[
+				"ta",
+				"tagUrls"
+			],
+			[
+				"tag",
+				"taglist"
+			],
+			[
+				"ad",
+				"addClass"
+			],
+			[
+				"tagL",
+				"tagListClass"
+			],
+			[
+				"click",
+				"clickHandler"
+			],
+			[
+				"mari",
+				"margin-bottom"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"fin",
+				"finalList"
+			],
+			[
+				"par",
+				"parseTagList"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"paddn",
+				"padding-left"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"d",
+				"delete"
+			],
+			[
+				"return",
+				"returnCart"
+			],
+			[
+				"sh",
+				"show"
+			],
+			[
+				"remov",
+				"removeClass"
+			],
+			[
+				"bu",
+				"buy2"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"get",
+				"getForm"
+			],
+			[
+				"curre",
+				"currentTransaction"
+			],
+			[
+				"total",
+				"total_price"
+			],
+			[
+				"st",
+				"stay"
+			],
+			[
+				"way",
+				"way_cart"
+			],
+			[
+				"pric",
+				"price"
+			],
+			[
+				"temp",
+				"tempCart"
+			],
+			[
+				"upd",
+				"updateTempCart"
+			],
+			[
+				"fi",
+				"function	mod-function"
+			],
+			[
+				"price",
+				"priceModel"
+			],
+			[
+				"templa",
+				"templates"
+			],
+			[
+				"ur",
+				"urls"
+			],
+			[
+				"clo",
+				"closeOverlay"
+			],
+			[
+				"f",
+				"function	mod-function"
+			],
+			[
+				"backgro",
+				"background"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"nav",
+				"navBackground"
+			],
+			[
+				"lis",
+				"list-style-type"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"chro",
+				"chromeBugHeight"
+			],
+			[
+				"de",
+				"deactiveOverview"
+			],
+			[
+				"main",
+				"mainMoveWithTransition"
+			],
+			[
+				"ac",
+				"activateOverview"
+			],
+			[
+				"promo",
+				"promoE"
+			],
+			[
+				"prom",
+				"setPromoElementActive"
+			],
+			[
+				"rev",
+				"removeClass"
+			],
+			[
+				"ver",
+				"verticalNav"
+			],
+			[
+				"pro",
+				"promoE"
+			],
+			[
+				"a",
+				"active"
+			],
+			[
+				"ind",
+				"index"
+			],
+			[
+				"nave",
+				"navElements"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"l",
+				"logo"
+			],
+			[
+				"pos",
+				"pos"
+			],
+			[
+				"start",
+				"startPos"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"off",
+				"offset"
+			],
+			[
+				"coo",
+				"cookieName"
+			],
+			[
+				"fun",
+				"function	mod-function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "scss/_shop.scss",
+			"settings":
+			{
+				"buffer_size": 6944,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/faebser/opt/iodash/lodash.custom.js",
+			"settings":
+			{
+				"buffer_size": 68241,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 16637,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/main.scss",
+			"settings":
+			{
+				"buffer_size": 7085,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"set sy C",
+				"Set Syntax: C"
+			],
+			[
+				"set c+",
+				"Set Syntax: C++"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"en",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"set ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"enc",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"end",
+				"Snippet: <?php foreach (…) … <?php endforeach ?>"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"set sy ap",
+				"Set Syntax: Apache Conf"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"set sy scs",
+				"Set Syntax: SCSS"
+			],
+			[
+				"Snippet: m",
+				"Snippet: @import"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/vue.js",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/main.js",
+		"/home/faebser/Downloads/three/index.html",
+		"/home/faebser/workspace/three/js/globe.js",
+		"/home/faebser/workspace/three/js/main.js",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/lodash.custom.min.js",
+		"/home/faebser/workspace/oscola-lamp/index.html",
+		"/home/faebser/workspace/OSCOLA/code/OscolaControl/webApp/script/myScript.js",
+		"/home/faebser/workspace/oscola-lamp/library/script/myScript.js",
+		"/home/faebser/workspace/lamp/lamp.cpp",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_font.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_shop.scss",
+		"/home/faebser/workspace/pi-stream/js/main.js",
+		"/home/faebser/workspace/pi-stream/README.md",
+		"/home/faebser/workspace/pi-stream/test.cfg",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_content.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_nav.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_teaser.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_util.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_paper.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_components.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_colors.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/main.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb_paper/models.py",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/plugins.js",
+		"/home/faebser/opt/jquery-cookie/src/jquery.cookie.js",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/paper.js",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/vendor/vue.js",
+		"/home/faebser/Downloads/vue (1).js",
+		"/home/faebser/workspace/maennerbuero/old/index.php",
+		"/home/faebser/workspace/nordung-splash/index2.htm",
+		"/home/faebser/workspace/maennerbuero/old/index2.htm",
+		"/home/faebser/workspace/maennerbuero/old/index2.html",
+		"/home/faebser/opt/way.js/way.js",
+		"/home/faebser/opt/way.js/way.min.js",
+		"/home/faebser/workspace/sfb-djangocms/sfb_shop/cms_app.py",
+		"/home/faebser/workspace/sfb-djangocms/sfb_shop/urls.py",
+		"/home/faebser/workspace/maennerbuero/mb/models.py",
+		"/home/faebser/workspace/sfb-djangocms/sfb/models.py",
+		"/home/faebser/workspace/sfb-djangocms/sfb/cms_plugins.py",
+		"/home/faebser/workspace/sfb-djangocms/sfb/templates/pages/sfb-base.html",
+		"/home/faebser/workspace/zks/zks/static/css/screen.css",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_boxes.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_intro.scss",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_arrow.scss",
+		"/home/faebser/workspace/laughing-scss-utils/_util.scss",
+		"/home/faebser/opt/mustache.js/mustache.js",
+		"/home/faebser/opt/jquery-cookie/jquery.cookie.js",
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_footer.scss",
+		"/home/faebser/workspace/gaspardweissheimer/backend/templates/skeleton.html",
+		"/home/faebser/workspace/gaspardweissheimer/backend/templates/page.html",
+		"/home/faebser/workspace/gaspardweissheimer/backend/test",
+		"/home/faebser/workspace/gaspardweissheimer/backend/templates/pageColor.html",
+		"/home/faebser/workspace/gaspardweissheimer/backend/content/pages/03_ueber/data.json",
+		"/home/faebser/.config/sublime-text-2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"		\n",
+			";\n",
+			"console",
+			"repeat",
+			"current",
+			"cartList",
+			"\n					",
+			"bla",
+			"price",
+			"this.totalAmount",
+			"oscola/fabian/changeColor",
+			"50",
+			"lamp::hits[i].r",
+			"delayval",
+			"'",
+			"max",
+			".history",
+			"console",
+			";\n",
+			"width",
+			"{\n",
+			"getAjaxSettings",
+			"$('#buy-form')",
+			"currentTransaction[id]",
+			"tempCart[id]",
+			"way-cart",
+			".article-wrapper",
+			"filter",
+			"clearfix",
+			"4B7698",
+			"setActiveParent",
+			"verticalNavInit",
+			"console"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "scss/_shop.scss",
+					"settings":
+					{
+						"buffer_size": 6944,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4043,
+								4043
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3398.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/faebser/opt/iodash/lodash.custom.js",
+					"settings":
+					{
+						"buffer_size": 68241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 28434.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 16637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13634,
+								13634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7185.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scss/main.scss",
+					"settings":
+					{
+						"buffer_size": 7085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2528,
+								2528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1386.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"pa",
+				"scss/_paper.scss"
+			],
+			[
+				"_p",
+				"scss/_paper.scss"
+			],
+			[
+				"",
+				"scss/_paper.scss"
+			],
+			[
+				"_fo",
+				"scss/_font.scss"
+			],
+			[
+				"_uti",
+				"scss/_util.scss"
+			],
+			[
+				"_sh",
+				"scss/_shop.scss"
+			],
+			[
+				"pap",
+				"js/paper.js"
+			],
+			[
+				"font",
+				"scss/_font.scss"
+			],
+			[
+				"fon",
+				"scss/_font.scss"
+			],
+			[
+				"shop",
+				"scss/_shop.scss"
+			],
+			[
+				"uti",
+				"scss/_util.scss"
+			],
+			[
+				"_n",
+				"scss/_nav.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/faebser/workspace/maennerbuero/mb/mb.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 203.0,
+	"status_bar_visible": true
+}
