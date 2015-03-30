@@ -466,7 +466,7 @@ Vue.directive('price-container', {
 	bind: function() {
 		var self = this;
 		var e = $(this.el);
-		var spacer = e.parent().find('.spacer');
+		var spacer = e.parent().find('.spacer-fixed');
 		self.threshold = e.offset().top - $('.noJs').outerHeight(true);
 		self.win.on('scroll', function() {
 			var scrollTop = self.win.scrollTop();
