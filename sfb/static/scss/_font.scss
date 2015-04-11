@@ -3,9 +3,9 @@
 @include font-block('nobilebold', 'font/nobile/nobile-bold-webfont');
 @include font-block('ptsans-bold', 'font/ptsans_bold_german/PTS75F-webfont');
 @include font-block('sfb-shop', 'font/fontello/sfb-shop');
-@include font-block('sfb-shop', 'font/fontello/sfb-paper');
+@include font-block('sfb-shop-new', 'font/fontello/sfb_shop_new');
  
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before, [class*=" icon-"]:before, %icon {
   font-family: "sfb-shop";
   font-style: normal;
   font-weight: normal;
@@ -35,10 +35,17 @@
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
+
+[class^="icon-shop-"]:before, [class*=" icon-shop-"]:before {
+  @extend %icon;
+  font-family: "sfb-shop-new";
+}
  
 .icon-plus-circled:before { content: '\e800'; } /* '' */
 .icon-minus-circled:before { content: '\e801'; } /* '' */ 
 .icon-download:before { content: '\e810'; } /* '' */
+.icon-shop-resize-full:before { content: '\e812'; } /* '' */
+.icon-shop-cancel-circled:before { content: '\e813'; } /* '' */
 
 // The base font size
 $base-font-size: 16px;

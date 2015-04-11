@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"back",
+				"background"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"tre",
+				"threshold"
+			],
+			[
+				"retu",
+				"return"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"scrol",
+				"scrollTop"
+			],
+			[
+				"up",
+				"updateItem"
+			],
+			[
+				"pri",
+				"prices"
+			],
+			[
 				"bor",
 				"border-left"
 			],
@@ -18,10 +50,6 @@
 			[
 				"current",
 				"currentPrice"
-			],
-			[
-				"back",
-				"background"
 			],
 			[
 				"bac",
@@ -78,10 +106,6 @@
 			[
 				"pr",
 				"priceLimit"
-			],
-			[
-				"pri",
-				"priceModel"
 			],
 			[
 				"to",
@@ -242,10 +266,6 @@
 			[
 				"pad",
 				"padding"
-			],
-			[
-				"border",
-				"border-radius"
 			],
 			[
 				"ma",
@@ -491,7 +511,7 @@
 			"file": "scss/_shop.scss",
 			"settings":
 			{
-				"buffer_size": 6944,
+				"buffer_size": 7287,
 				"line_ending": "Unix"
 			}
 		},
@@ -507,7 +527,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 16637,
+				"buffer_size": 17561,
 				"line_ending": "Unix"
 			}
 		},
@@ -515,7 +535,7 @@
 			"file": "scss/main.scss",
 			"settings":
 			{
-				"buffer_size": 7085,
+				"buffer_size": 7209,
 				"line_ending": "Unix"
 			}
 		}
@@ -672,6 +692,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";\n",
+			"\n		",
 			"		\n",
 			";\n",
 			"console",
@@ -722,7 +744,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -730,15 +752,15 @@
 					"file": "scss/_shop.scss",
 					"settings":
 					{
-						"buffer_size": 6944,
+						"buffer_size": 7287,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4043,
-								4043
+								6143,
+								6143
 							]
 						],
 						"settings":
@@ -747,7 +769,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3398.0,
+						"translation.y": 4424.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -775,7 +797,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 28434.0,
+						"translation.y": 26403.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -785,15 +807,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 16637,
+						"buffer_size": 17561,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13634,
-								13634
+								11506,
+								11506
 							]
 						],
 						"settings":
@@ -802,7 +824,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7185.0,
+						"translation.y": 5136.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -812,15 +834,15 @@
 					"file": "scss/main.scss",
 					"settings":
 					{
-						"buffer_size": 7085,
+						"buffer_size": 7209,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2528,
-								2528
+								2729,
+								2729
 							]
 						],
 						"settings":
@@ -830,7 +852,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1386.0,
+						"translation.y": 1554.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -937,7 +959,7 @@
 		[
 			[
 				"",
-				"/home/faebser/workspace/maennerbuero/mb/mb.sublime-project"
+				"/home/faebser/workspace/lightdm-webkit-webkit-simple/greeter.sublime-project"
 			]
 		],
 		"width": 380.0

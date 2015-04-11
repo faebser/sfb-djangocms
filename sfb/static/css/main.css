@@ -93,11 +93,11 @@ textarea {
 /* compass imports */
 /* colors */
 /* line 7, ../scss/_util.scss */
-#main #overlay, #main #adressOverlay, #main #paper-overlay, #paperParent #history ul > li ul li a .hover, #main .paper div a .hover {
+#main #overlay, #main #adressOverlay, #main #paper-overlay, .image-overlay .imgContainer, #paperParent #history ul > li ul li a .hover, #main .paper div a .hover {
   text-align: center;
 }
 /* line 9, ../scss/_util.scss */
-#main #overlay:before, #main #adressOverlay:before, #main #paper-overlay:before, #paperParent #history ul > li ul li a .hover:before, #main .paper div a .hover:before {
+#main #overlay:before, #main #adressOverlay:before, #main #paper-overlay:before, .image-overlay .imgContainer:before, #paperParent #history ul > li ul li a .hover:before, #main .paper div a .hover:before {
   content: ' ';
   display: inline-block;
   vertical-align: middle;
@@ -110,7 +110,7 @@ textarea {
 }
 
 /* line 19, ../scss/_util.scss */
-#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul, #paperParent #history ul > li ul li a .hover p, #main .paper div a .hover p, #main #paper-overlay .messageInnerWrapper {
+#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul, .image-overlay .imgContainer img, #paperParent #history ul > li ul li a .hover p, #main .paper div a .hover p, #main #paper-overlay .messageInnerWrapper {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -182,14 +182,14 @@ body {
   font-style: normal;
 }
 @font-face {
-  font-family: "sfb-shop";
-  src: url("font/fontello/sfb-paper.eot");
-  src: url("font/fontello/sfb-paper.eot?#iefix") format("embedded-opentype"), url("font/fontello/sfb-paper.woff") format("woff"), url("font/fontello/sfb-paper.ttf") format("truetype"), url("font/fontello/sfb-paper.svg#pt_sansregular") format("svg");
+  font-family: "sfb-shop-new";
+  src: url("font/fontello/sfb_shop_new.eot");
+  src: url("font/fontello/sfb_shop_new.eot?#iefix") format("embedded-opentype"), url("font/fontello/sfb_shop_new.woff") format("woff"), url("font/fontello/sfb_shop_new.ttf") format("truetype"), url("font/fontello/sfb_shop_new.svg#pt_sansregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 /* line 8, ../scss/_font.scss */
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before, [class*=" icon-"]:before, [class^="icon-shop-"]:before, [class*=" icon-shop-"]:before {
   font-family: "sfb-shop";
   font-style: normal;
   font-weight: normal;
@@ -215,24 +215,41 @@ body {
 }
 
 /* line 39, ../scss/_font.scss */
+[class^="icon-shop-"]:before, [class*=" icon-shop-"]:before {
+  font-family: "sfb-shop-new";
+}
+
+/* line 44, ../scss/_font.scss */
 .icon-plus-circled:before {
   content: '\e800';
 }
 
 /* '' */
-/* line 40, ../scss/_font.scss */
+/* line 45, ../scss/_font.scss */
 .icon-minus-circled:before {
   content: '\e801';
 }
 
 /* '' */
-/* line 41, ../scss/_font.scss */
+/* line 46, ../scss/_font.scss */
 .icon-download:before {
   content: '\e810';
 }
 
 /* '' */
-/* line 84, ../scss/_font.scss */
+/* line 47, ../scss/_font.scss */
+.icon-shop-resize-full:before {
+  content: '\e812';
+}
+
+/* '' */
+/* line 48, ../scss/_font.scss */
+.icon-shop-cancel-circled:before {
+  content: '\e813';
+}
+
+/* '' */
+/* line 91, ../scss/_font.scss */
 nav ul li a,
 nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a, #main #paper-overlay .overlayButtonWrapper a {
   font-family: 'nobilebold', arial, sans-serif;
@@ -240,7 +257,7 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
   font-style: normal;
 }
 
-/* line 91, ../scss/_font.scss */
+/* line 98, ../scss/_font.scss */
 p,
 li,
 a,
@@ -252,7 +269,7 @@ td, #main .pageIntro .meta p .date span,
   font-style: normal;
 }
 
-/* line 97, ../scss/_font.scss */
+/* line 104, ../scss/_font.scss */
 h2,
 h3,
 h4, strong, header h2 a,
@@ -264,21 +281,23 @@ header h2 a:visited,
   font-style: normal;
 }
 
-/* line 103, ../scss/_font.scss */
+/* line 110, ../scss/_font.scss */
 h1 {
   font-family: 'nobilebold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 109, ../scss/_font.scss */
-#main .money .right h1, #main .money .left td.numbers, #main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span, #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
+/* line 116, ../scss/_font.scss */
+#main .money .right h1, #main .money .left td.numbers, #main #shop2 > li .articles > ul li .controls span,
+#main #shop2 > li .articles > ul li .controls a, #main #shop2 > .cms_plugin > li .articles > ul li .controls span,
+#main #shop2 > .cms_plugin > li .articles > ul li .controls a, #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
   font-family: 'ptsans-bold', arial, sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 116, ../scss/_font.scss */
+/* line 123, ../scss/_font.scss */
 nav ul li a,
 nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main #adressOverlay form ul + input, #main #overlay .overlayButtonWrapper a, #main #adressOverlay .overlayButtonWrapper a, #main #paper-overlay .overlayButtonWrapper a {
   font-size: 12px;
@@ -289,7 +308,7 @@ nav ul li a:hover, #main .pageIntro .meta p, footer, #main #shopForm #buy, #main
   line-height: 1.75rem;
 }
 
-/* line 119, ../scss/_font.scss */
+/* line 126, ../scss/_font.scss */
 p,
 li,
 a,
@@ -303,7 +322,7 @@ td, strong, #main table#cart tr th, #main table#cart tr td, #main #noJs, #paperP
   line-height: 1.75rem;
 }
 
-/* line 122, ../scss/_font.scss */
+/* line 129, ../scss/_font.scss */
 h2,
 h3,
 h4, #main .box h3 {
@@ -315,7 +334,7 @@ h4, #main .box h3 {
   line-height: 2.1875rem;
 }
 
-/* line 125, ../scss/_font.scss */
+/* line 132, ../scss/_font.scss */
 h1 {
   font-size: 28px;
   font-size: 1.77688rem;
@@ -325,7 +344,7 @@ h1 {
   line-height: 2.1875rem;
 }
 
-/* line 128, ../scss/_font.scss */
+/* line 135, ../scss/_font.scss */
 header h1,
 #header h1 {
   font-size: 38px;
@@ -469,11 +488,11 @@ header h2 a:visited,
 }
 
 /* line 7, ../scss/_util.scss */
-#main #overlay, #main #adressOverlay, #main #paper-overlay, #paperParent #history ul > li ul li a .hover, #main .paper div a .hover {
+#main #overlay, #main #adressOverlay, #main #paper-overlay, .image-overlay .imgContainer, #paperParent #history ul > li ul li a .hover, #main .paper div a .hover {
   text-align: center;
 }
 /* line 9, ../scss/_util.scss */
-#main #overlay:before, #main #adressOverlay:before, #main #paper-overlay:before, #paperParent #history ul > li ul li a .hover:before, #main .paper div a .hover:before {
+#main #overlay:before, #main #adressOverlay:before, #main #paper-overlay:before, .image-overlay .imgContainer:before, #paperParent #history ul > li ul li a .hover:before, #main .paper div a .hover:before {
   content: ' ';
   display: inline-block;
   vertical-align: middle;
@@ -486,7 +505,7 @@ header h2 a:visited,
 }
 
 /* line 19, ../scss/_util.scss */
-#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul, #paperParent #history ul > li ul li a .hover p, #main .paper div a .hover p, #main #paper-overlay .messageInnerWrapper {
+#main #overlay ul, #main #adressOverlay ul, #main #paper-overlay ul, .image-overlay .imgContainer img, #paperParent #history ul > li ul li a .hover p, #main .paper div a .hover p, #main #paper-overlay .messageInnerWrapper {
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -1244,17 +1263,44 @@ footer a:visited {
   width: 9.6%;
 }
 
-/* line 307, ../scss/_shop.scss */
+/* line 306, ../scss/_shop.scss */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+  background-color: #00407A;
+  background-color: rgba(0, 64, 122, 0.3);
+  cursor: pointer;
+}
+/* line 316, ../scss/_shop.scss */
+.image-overlay .imgContainer {
+  width: 100%;
+  height: 100%;
+  padding: 5% 7.5% 5% 7.5%;
+}
+/* line 321, ../scss/_shop.scss */
+.image-overlay .imgContainer img {
+  max-height: 100%;
+  width: auto;
+  margin: 0 auto;
+  height: auto;
+}
+
+/* line 332, ../scss/_shop.scss */
 #main #shop2 {
   list-style-type: none;
   padding: 0;
 }
-/* line 310, ../scss/_shop.scss */
+/* line 335, ../scss/_shop.scss */
 #main #shop2 > li, #main #shop2 > .cms_plugin > li {
   margin: 1em 0;
   overflow: hidden;
+  border: 1px solid #00407A;
 }
-/* line 314, ../scss/_shop.scss */
+/* line 340, ../scss/_shop.scss */
 #main #shop2 > li .articles, #main #shop2 > .cms_plugin > li .articles {
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -1263,25 +1309,18 @@ footer a:visited {
   display: block;
   position: relative;
 }
-/* line 321, ../scss/_shop.scss */
+/* line 347, ../scss/_shop.scss */
 #main #shop2 > li .articles ::selection, #main #shop2 > .cms_plugin > li .articles ::selection {
   background-color: transparent;
 }
-/* line 324, ../scss/_shop.scss */
+/* line 350, ../scss/_shop.scss */
 #main #shop2 > li .articles.ready, #main #shop2 > .cms_plugin > li .articles.ready {
   -moz-transition: height 0.5s ease-out;
   -o-transition: height 0.5s ease-out;
   -webkit-transition: height 0.5s ease-out;
   transition: height 0.5s ease-out;
 }
-/* line 326, ../scss/_shop.scss */
-#main #shop2 > li .articles.ready .overlay, #main #shop2 > .cms_plugin > li .articles.ready .overlay {
-  -moz-transition: background-color 0.4s linear;
-  -o-transition: background-color 0.4s linear;
-  -webkit-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear;
-}
-/* line 330, ../scss/_shop.scss */
+/* line 356, ../scss/_shop.scss */
 #main #shop2 > li .articles .overlay, #main #shop2 > .cms_plugin > li .articles .overlay {
   position: absolute;
   top: 0;
@@ -1289,12 +1328,12 @@ footer a:visited {
   width: 100%;
   height: 100%;
 }
-/* line 336, ../scss/_shop.scss */
+/* line 362, ../scss/_shop.scss */
 #main #shop2 > li .articles .overlay.show, #main #shop2 > .cms_plugin > li .articles .overlay.show {
   background-color: #00407A;
   background-color: rgba(0, 64, 122, 0.3);
 }
-/* line 341, ../scss/_shop.scss */
+/* line 367, ../scss/_shop.scss */
 #main #shop2 > li .articles .trigger, #main #shop2 > .cms_plugin > li .articles .trigger {
   padding-top: 3em;
   padding-bottom: 1em;
@@ -1302,22 +1341,22 @@ footer a:visited {
   position: relative;
   z-index: 100;
 }
-/* line 347, ../scss/_shop.scss */
+/* line 373, ../scss/_shop.scss */
 #main #shop2 > li .articles .trigger h1, #main #shop2 > .cms_plugin > li .articles .trigger h1 {
   margin: 0;
 }
-/* line 350, ../scss/_shop.scss */
+/* line 376, ../scss/_shop.scss */
 #main #shop2 > li .articles .trigger p, #main #shop2 > .cms_plugin > li .articles .trigger p {
   margin-left: 0;
   margin-bottom: 0;
 }
-/* line 355, ../scss/_shop.scss */
+/* line 381, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul, #main #shop2 > .cms_plugin > li .articles > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 359, ../scss/_shop.scss */
+/* line 385, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li, #main #shop2 > .cms_plugin > li .articles > ul li {
   width: 32%;
   margin-right: 2%;
@@ -1326,7 +1365,6 @@ footer a:visited {
   padding-bottom: 0.5em;
   margin-bottom: 1em;
   overflow: hidden;
-  opacity: 0;
   -moz-transition: all 0.3s linear 0.6s;
   -o-transition: all 0.3s linear 0.6s;
   -webkit-transition: all 0.3s linear;
@@ -1338,19 +1376,20 @@ footer a:visited {
   *zoom: 1;
   *display: inline;
 }
-/* line 369, ../scss/_shop.scss */
+/* line 395, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li.show, #main #shop2 > .cms_plugin > li .articles > ul li.show {
   opacity: 1;
 }
-/* line 372, ../scss/_shop.scss */
+/* line 398, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li:nth-child(3n), #main #shop2 > li .articles > ul li.lastInRow, #main #shop2 > .cms_plugin > li .articles > ul li:nth-child(3n), #main #shop2 > .cms_plugin > li .articles > ul li.lastInRow {
   margin-right: 0;
 }
-/* line 377, ../scss/_shop.scss */
+/* line 403, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li img, #main #shop2 > .cms_plugin > li .articles > ul li img {
   width: 100%;
+  height: auto;
 }
-/* line 380, ../scss/_shop.scss */
+/* line 407, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li h2,
 #main #shop2 > li .articles > ul li p, #main #shop2 > .cms_plugin > li .articles > ul li h2,
 #main #shop2 > .cms_plugin > li .articles > ul li p {
@@ -1359,7 +1398,7 @@ footer a:visited {
   left: 0;
   margin-left: 0.45em;
 }
-/* line 387, ../scss/_shop.scss */
+/* line 414, ../scss/_shop.scss */
 #main #shop2 > li .articles > ul li .controls, #main #shop2 > .cms_plugin > li .articles > ul li .controls {
   position: absolute;
   top: 50.5px;
@@ -1367,8 +1406,10 @@ footer a:visited {
   height: 64px;
   width: 100%;
 }
-/* line 393, ../scss/_shop.scss */
-#main #shop2 > li .articles > ul li .controls span, #main #shop2 > .cms_plugin > li .articles > ul li .controls span {
+/* line 420, ../scss/_shop.scss */
+#main #shop2 > li .articles > ul li .controls span,
+#main #shop2 > li .articles > ul li .controls a, #main #shop2 > .cms_plugin > li .articles > ul li .controls span,
+#main #shop2 > .cms_plugin > li .articles > ul li .controls a {
   color: #00407A;
   display: inline-block;
   vertical-align: middle;
@@ -1379,15 +1420,17 @@ footer a:visited {
   font-size: 40px;
   width: 64px;
   height: 64px;
+  text-decoration: none;
+  cursor: pointer;
 }
-/* line 406, ../scss/_shop.scss */
+/* line 436, ../scss/_shop.scss */
 #main #shop2 > li .priceElement, #main #shop2 > .cms_plugin > li .priceElement {
   width: 30%;
   margin: 1em auto;
   text-align: center;
-  border: 2px solid #00407A;
+  border: 1.5px solid #00407A;
 }
-/* line 412, ../scss/_shop.scss */
+/* line 442, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .amount,
 #main #shop2 > li .priceElement .price,
 #main #shop2 > li .priceElement .total,
@@ -1402,39 +1445,39 @@ footer a:visited {
   *zoom: 1;
   *display: inline;
 }
-/* line 419, ../scss/_shop.scss */
+/* line 449, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .current, #main #shop2 > .cms_plugin > li .priceElement .current {
   margin: 0 auto;
   font-size: 1.2em;
 }
-/* line 423, ../scss/_shop.scss */
+/* line 453, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .prev,
 #main #shop2 > li .priceElement .next, #main #shop2 > .cms_plugin > li .priceElement .prev,
 #main #shop2 > .cms_plugin > li .priceElement .next {
   font-size: 0.8em;
 }
-/* line 427, ../scss/_shop.scss */
+/* line 457, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .amount, #main #shop2 > .cms_plugin > li .priceElement .amount {
   margin-right: 0.25em;
 }
-/* line 429, ../scss/_shop.scss */
+/* line 459, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .amount div, #main #shop2 > .cms_plugin > li .priceElement .amount div {
   min-width: 30px;
   text-align: right;
 }
-/* line 434, ../scss/_shop.scss */
+/* line 464, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .total, #main #shop2 > .cms_plugin > li .priceElement .total {
   margin-left: 0.25em;
 }
-/* line 436, ../scss/_shop.scss */
+/* line 466, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .total .current, #main #shop2 > .cms_plugin > li .priceElement .total .current {
   min-width: 55px;
 }
-/* line 440, ../scss/_shop.scss */
+/* line 470, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .price, #main #shop2 > .cms_plugin > li .priceElement .price {
   margin: 0 0.25em;
 }
-/* line 442, ../scss/_shop.scss */
+/* line 472, ../scss/_shop.scss */
 #main #shop2 > li .priceElement .price div, #main #shop2 > .cms_plugin > li .priceElement .price div {
   min-width: 45px;
   text-align: right;

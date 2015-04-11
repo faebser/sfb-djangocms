@@ -303,6 +303,31 @@
 
 @import "compass/css3/transition";
 
+.image-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10000;
+	background-color: $emphasize;
+	background-color: rgba($emphasize, 0.3);
+	cursor: pointer;
+	.imgContainer {
+		width: 100%;
+		height: 100%;
+		padding: 5% 7.5% 5% 7.5%;
+		@extend %center-parent;
+			img {
+			@extend %center-child;
+			max-height: 100%;
+			width: auto;
+			margin: 0 auto;
+			height: auto;
+		}
+	}
+}
+
 
 #main #shop2 {
 	list-style-type: none;
@@ -311,6 +336,7 @@
 	& > .cms_plugin > li {
 		margin: 1em 0;
 		overflow: hidden;
+		border: 1px solid $emphasize;
 		.articles {
 			background-size: 100% auto;
 			background-repeat: no-repeat;
@@ -324,7 +350,7 @@
 			&.ready {
 				@include transition(height 0.5s ease-out);
 				.overlay {
-					@include transition(background-color 0.4s linear);
+					//@include transition(background-color 0.4s linear);
 				}
 			}
 			.overlay {
@@ -364,7 +390,7 @@
 					padding-bottom: 0.5em;
 					margin-bottom: 1em;
 					overflow: hidden;
-					opacity: 0;
+					//opacity: 0;
 					@include transition(all 0.3s linear 0.6s);
 					&.show {
 						opacity: 1;
@@ -376,6 +402,7 @@
 					@include inline-block(top);
 					img {
 						width: 100%;
+						height: auto;
 					}
 					h2,
 					p {
@@ -390,7 +417,8 @@
 						text-align: center;
 						height: 64px;
 						width: 100%;
-						span {
+						span,
+						a {
 							color: $emphasize;
 							@include inline-block;
 							@extend %price;
@@ -398,6 +426,8 @@
 							font-size: 40px;
 							width: 64px;
 							height: 64px;
+							text-decoration: none;
+							cursor: pointer;
 						}
 					}
 				}
@@ -408,7 +438,7 @@
 			 width: 30%;
 			 margin: 1em auto;
 			 text-align: center;
-			 border: 2px solid $emphasize;
+			 border: 1.5px solid $emphasize;
 			 .amount,
 			 .price,
 			 .total,

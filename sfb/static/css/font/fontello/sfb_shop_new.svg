@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="sfb_shop_new" horiz-adv-x="1000" >
+<font-face font-family="sfb_shop_new" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="resize-full" unicode="&#xe812;" d="m476 746l316 0 0-316-100 124-146-152-100 100 152 146z m-230-444l100-100-152-146 122-100-316 0 0 316 100-122z" horiz-adv-x="792" />
+<glyph glyph-name="cancel-circled" unicode="&#xe813;" d="m420 770q174 0 297-123t123-297-123-297-297-123-297 123-123 297 123 297 297 123z m86-420l154 154-86 86-154-152-152 152-88-86 154-154-154-152 88-86 152 152 154-152 86 86z" horiz-adv-x="840" />
+</font>
+</defs>
+</svg>

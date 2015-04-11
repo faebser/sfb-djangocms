@@ -439,18 +439,25 @@ Vue.directive('shop-container', {
 
 		var self = this;
 		var e = $(this.el);
+
+		console.log(e);
+
 		this.overlay = e.find('.overlay');
 		this.size = e.height();
-		e.height(this.small);
+		//e.height(this.small);
+		console.log(e.height());
 		e.addClass('ready');
 		this.items = e.find('ul > li');
+		$.each(this.items, function(index, ele) {
+			console.log($(ele).height());
+		});
 
 		e.find('.trigger').click(function() {
 			self.overlay.toggleClass(self.cssClass);
 			self.items.toggleClass(self.cssClass);
 			e.toggleClass(self.cssClass);
 			if(e.hasClass(self.cssClass)) {
-				e.height(self.size);
+				e.height('');
 			}
 			else {
 				e.height(self.small);
@@ -493,6 +500,7 @@ var newShop = (function ($, Vue, _) {
 	var module = {},
 		cart = undefined,
 		price = undefined,
+		overlay = undefined,
 		prices = Array();
 	// private methods
 	var formatFloatForCHF = function(input) {
@@ -502,6 +510,26 @@ var newShop = (function ($, Vue, _) {
 	// public methods
 	module.init = function () {
 		"use strict";
+
+		overlay = new Vue({
+			el: '.image-overlay',
+			data: {
+				'imageSource': null,
+				'isHidden': true
+			},
+			methods: {
+				toggleOverlay: function (url) {					
+					if(this.isHidden && url) {
+						this.imageSource = url;
+					}
+					if(!this.isHidden && !url) {
+						this.imageSource = null;
+					}
+					this.isHidden = !this.isHidden;
+				}
+			}
+		});
+
 
 		price = new Vue({
 			el: '.money',
@@ -537,9 +565,8 @@ var newShop = (function ($, Vue, _) {
 			}
 		});
 
-		cart = new Vue ({
-			el: '#shop2 li.shop-cat',
-			data: {
+		cart = Vue.extend ({
+			data: function () { return {
 				stuff: 'stuff',
 				amounts: {},
 				priceModel : null,
@@ -550,8 +577,12 @@ var newShop = (function ($, Vue, _) {
 				currentPrice: 0,
 				currentTotal: 0,
 				hasPrice: true
-			},
+			}},
 			methods: {
+				showBigPicture: function (url, event) {
+					event.preventDefault();
+					overlay.toggleOverlay(url);
+				},
 				addOneItem: function(e) {
 					this.amounts['id-' + e].amount += 1;
 					this.currentTotal = this.calculateCurrentTotal();
@@ -629,6 +660,13 @@ var newShop = (function ($, Vue, _) {
 						if (aValue < bValue) return -1;
 					});
 				}
+			}
+		});
+		
+		var main = new Vue({
+			el: '#main',
+			components: {
+				'sfb-item': cart
 			}
 		});
 	};
