@@ -1,5 +1,5 @@
 {% load cms_tags sekizai_tags %}
-<li  class="shop-cat" id="shop-{{ instance.pk }}" data-price="{{ priceData }}">
+<li v-component="sfb-item" class="shop-cat" id="shop-{{ instance.pk }}" data-price="{{ priceData }}">
     <div class="articles" v-shop-container>
         <div class="overlay"></div>
         <div class="trigger">
@@ -38,4 +38,4 @@
         </div>
 </li>
 
-{% addtoblock "css" %}<style> #shop-{{ instance.pk }} .articles { background-image: url('{{ instance.picture.url }}');}</style>{% endaddtoblock %}
+{% addtoblock "css" %}<style> #shop-{{ instance.pk }} .articles { background-image: url('');}</style>{% endaddtoblock %}

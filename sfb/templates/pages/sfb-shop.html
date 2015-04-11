@@ -95,6 +95,11 @@
         </div>
     </li>
 </ul> -->
+<div class="image-overlay" v-class="hidden: isHidden" v-on="click: toggleOverlay()">
+    <div class="imgContainer">
+        <img v-attr="src:imageSource" >
+    </div>
+</div>
     <ul id="shop2">
         {% placeholder "shop-content" %}
     </ul>
