@@ -203,12 +203,8 @@ ul#tagHeader {
 	border-bottom: 1px solid $emphasize;
 }
 
-ul#tagList ul {
+ul#tagList {
 	padding: 0;
-	display: none;
-	&.active {
-		display: block;
-	}
 	li,
 	li:last-child {
 		list-style-type: none;

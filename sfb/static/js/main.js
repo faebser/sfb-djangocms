@@ -97,7 +97,7 @@ sfb.paper = (function ($, Vue) {
 			  }
 			});
 		});
-		overlay.on('click', '.close', function(event){
+		overlay.on('click', '.close', function(event) {
 			event.preventDefault();
 			closeOverlay();
 		});
@@ -423,7 +423,7 @@ sfb.main = (function ($) {
 			e.find('section').addClass('active');
 			e.find('article').first().addClass('active');
 		});
-		if(sfb.paper) sfb.paper.init();
+		// if(sfb.paper) sfb.paper.init();
 	};
 	//return the module
 	return module;
@@ -501,7 +501,8 @@ var newShop = (function ($, Vue, _) {
 		cart = undefined,
 		price = undefined,
 		overlay = undefined,
-		prices = Array();
+		prices = Array(),
+		app = undefined;
 	// private methods
 	var formatFloatForCHF = function(input) {
 		if(input >= 10) return parseFloat(input).toPrecision(4);
@@ -530,6 +531,7 @@ var newShop = (function ($, Vue, _) {
 			}
 		});
 
+		
 
 		price = new Vue({
 			el: '.money',
@@ -644,7 +646,7 @@ var newShop = (function ($, Vue, _) {
 					e.find('ul > li').each(function(index, element) {
 						var el = $(element);
 						self.amounts.$add('id-'+ el.data('id'), {
-							'id': el.data('id'),
+							'id': e.attr('id'),
 							'amount': 0,
 							'text': el.find('h2').html()
 						});
@@ -662,13 +664,49 @@ var newShop = (function ($, Vue, _) {
 				}
 			}
 		});
-		
-		var main = new Vue({
-			el: '#main',
+
+		app = new Vue({
+			el: '',
+			data: {
+				amounts: {}
+			},
+			methods: {
+				addOneItem: function(category, name) {
+
+				},
+				removeOneItem: function(category, name) {
+
+				}
+			},
 			components: {
+				'sfb-price': price,
 				'sfb-item': cart
+			},
+			created: function () {
+				this.$on('add-item', function(category, name) {
+					return this.addOneItem(category, name);
+				});
+				this.$on('remove-item', function(category, name) {
+					return this.removeOneItem(category, name);
+				});
+
+				this.$on('test123', function() {
+					console.log("fasdfasdf");
+				});
+
+
+			},
+			events: {
+				'test123': function() {
+					console.log('123');
+				}
 			}
 		});
+
+		app.$dispatch('test123');
+		app.$broadcast('test123');
+
+		
 	};
 	//return the module
 	return module;

@@ -46,6 +46,12 @@ class Author(models.Model):
     firstname = models.CharField(max_length=256, verbose_name=u'Vorname', blank=True, null=True)
     name = models.CharField(max_length=256, verbose_name=u'Name')
 
+    def natural_key(self):
+        if self.firstname is None:
+            return unicode(self.name), ''
+        else:
+            return unicode(self.name), unicode(self.firstname)
+
     class Meta:
         verbose_name = u'Autor'
         verbose_name_plural = u'Autoren'
@@ -109,6 +115,9 @@ class Issue(CMSPlugin):
     download = models.ForeignKey(Download, verbose_name=u'Download', blank=True, null=True)
     front = models.ImageField(verbose_name=u'Frontseite', upload_to=generate_path, blank=True, null=True)
     date_sort = models.IntegerField(editable=False)
+
+    def natural_key(self):
+        return (unicode(self.id), self.name)
 
     def __unicode__(self):
         if self.download is None:
@@ -194,7 +203,7 @@ def csv_to_models_importer(csv_file):
     for row in reader:
         print ','.join(row)
         if 'Artikel-ID' in row[0]:
-            continue # header row
+            continue  # header row
         else:
             article = get_or_create_article(row, articles, articles_qs)
             issue = get_or_create_issue(row, issues, issues_qs)

@@ -2,9 +2,6 @@
 
 <ul class="mostUsed taglist">
     <h2>Beliebt</h2>
-{% for tag in tags %}
-    <li  data-url="{{ tag.url }}">
-        <i class="icon-plus-circled"></i><i class="icon-minus-circled"></i> {{ tag.name }}
-    </li>
+{% for tag in tags %}<li  data-url="{{ tag.url }}"><i class="icon-plus-circled"></i><i class="icon-minus-circled"></i>{{ tag.name }}</li>
 {% endfor %}
 </ul>

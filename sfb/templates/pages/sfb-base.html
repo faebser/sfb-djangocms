@@ -45,9 +45,10 @@
         {% render_block "js" %}
 
         {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vendor/jquery-1.11.0.min.js"></script>{% endaddtoblock %}
-        {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vue.js"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/vendor/vue.js"></script>{% endaddtoblock %}
         {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/lodash.custom.min.js"></script>{% endaddtoblock %}
         {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/plugins.js"></script>{% endaddtoblock %}
         {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/main.js"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{{ STATIC_URL }}js/paper.js"></script>{% endaddtoblock %}
     </body>
 </html>

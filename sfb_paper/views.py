@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseServerError
 from models import Issue, Article
+from django.core import serializers
 from os import path
 
 # Create your views here.
@@ -20,9 +21,10 @@ def get_articles_from_tags(request, tags):
     qs = Article.objects
     for tag in tags:
         qs = qs.filter(tags__name__iexact=tag)
-    return render(request, path.join('plugins', 'paper', 'article.html'), {
-        'articles': qs
-    })
+    return HttpResponse(serializers.serialize('json', qs, use_natural_keys=True), mimetype='application/json')
+    #return render(request, path.join('plugins', 'paper', 'article.html'), {
+    #   'articles': qs
+    #})
     # return HttpResponse("Hello test, you sent me " + str(tags))
 
 

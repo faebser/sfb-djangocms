@@ -2,9 +2,8 @@
 {% load cms_tags menu_tags sekizai_tags %}
 
 
-
 {% block content %}
-    <div id="noJs">
+<div id="noJs">
         <p>
             Bitte JavaScript aktivieren um das Archiv zu nutzen
         </p>
@@ -29,23 +28,39 @@
             <h1>Schlagworte</h1>
             {% verbatim %}
             <ul id="tagHeader">
-                <li v-repeat="tags" v-on="click: toggle(this)">
-                    <h2>{{ $value }}</h2>
+                <li v-for="header in headers" v-on:click="toggleHeader(header)">
+                    <h2>{{ header }}</h2>
                 </li>
             </ul>
             <ul id="tagList">
+                <li v-for="tag in tags" v-on:click="toggle(tag)" v-bind:class="{ 'active': tag.active }">
+                    <i class="icon-plus-circled"></i><i class="icon-minus-circled"></i>
+                    {{ tag.text }}
+                </li>
             </ul>
-            {% endverbatim %}
-            <div id="container">
+            <div id="container" v-bind:style="overlayParentStyleObject">
                 <ul class="articles">
-                    <li>
+                    <li v-show="html === ''">
                         <article>
                             <h1>Keine Artikel gefunden.</h1>
                         </article>
                     </li>
+                    <li v-for="article in articles" v-on:click="toggleIssue(article.fields.issue[0])">
+                            <article id="article-{{ article.pk }}">
+                                <h1>{{ article.fields.title }} - {{ article.fields.subtitle }} &middot;</h1>
+                                <h2>
+                                    <span v-for="author in article.fields.authors">
+                                        {{ author[0] }} {{ author[1] }} <span v-if="$index !== article.fields.authors.length - 1">,</span>
+                                    </span>
+                                &middot;</h2>
+                                <h2>{{ article.fields.issue[1] }}</h2>
+                            </article>
+                    </li>
                 </ul>
-                <section class="paper">
+                <section class="paper" v-bind:class="{ 'show': showOverlay }" v-el:overlay-element>
+                    {{{ overlayHtml }}}
                 </section>
+                {% endverbatim %}
             </div>
         </div>
     </div>

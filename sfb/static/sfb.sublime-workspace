@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"ca",
+				"category"
+			],
+			[
+				"add",
+				"addOneItem"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"prev",
+				"preventDefault"
+			],
+			[
+				"toggle",
+				"toggleOverlay"
+			],
+			[
+				"is",
+				"isHidden"
+			],
+			[
 				"back",
 				"background"
 			],
@@ -38,10 +66,6 @@
 			[
 				"bor",
 				"border-left"
-			],
-			[
-				"text",
-				"text-align"
 			],
 			[
 				"has",
@@ -160,10 +184,6 @@
 				"rgba()"
 			],
 			[
-				"max",
-				"max-height"
-			],
-			[
 				"marin",
 				"margin-right"
 			],
@@ -196,10 +216,6 @@
 				"cookie"
 			],
 			[
-				"toggle",
-				"toggleClass"
-			],
-			[
 				"mes",
 				"messageOverlay"
 			],
@@ -230,10 +246,6 @@
 			[
 				"b",
 				"background-color"
-			],
-			[
-				"is",
-				"issue"
 			],
 			[
 				"art",
@@ -330,10 +342,6 @@
 			[
 				"paddin",
 				"padding-left"
-			],
-			[
-				"add",
-				"addClass"
 			],
 			[
 				"get",
@@ -511,7 +519,7 @@
 			"file": "scss/_shop.scss",
 			"settings":
 			{
-				"buffer_size": 7287,
+				"buffer_size": 7799,
 				"line_ending": "Unix"
 			}
 		},
@@ -527,7 +535,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 17561,
+				"buffer_size": 18721,
 				"line_ending": "Unix"
 			}
 		},
@@ -543,7 +551,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 98.0,
 		"selected_items":
 		[
 			[
@@ -620,6 +628,7 @@
 	},
 	"file_history":
 	[
+		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_font.scss",
 		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/vue.js",
 		"/home/faebser/workspace/sfb-djangocms/sfb/static/js/main.js",
 		"/home/faebser/Downloads/three/index.html",
@@ -630,7 +639,6 @@
 		"/home/faebser/workspace/OSCOLA/code/OscolaControl/webApp/script/myScript.js",
 		"/home/faebser/workspace/oscola-lamp/library/script/myScript.js",
 		"/home/faebser/workspace/lamp/lamp.cpp",
-		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_font.scss",
 		"/home/faebser/workspace/sfb-djangocms/sfb/static/scss/_shop.scss",
 		"/home/faebser/workspace/pi-stream/js/main.js",
 		"/home/faebser/workspace/pi-stream/README.md",
@@ -692,6 +700,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"log",
+			");\n",
 			";\n",
 			"\n		",
 			"		\n",
@@ -729,7 +739,7 @@
 			"console"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -744,7 +754,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -752,15 +762,15 @@
 					"file": "scss/_shop.scss",
 					"settings":
 					{
-						"buffer_size": 7287,
+						"buffer_size": 7799,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6143,
-								6143
+								4978,
+								4978
 							]
 						],
 						"settings":
@@ -769,7 +779,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4424.0,
+						"translation.y": 3371.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -807,15 +817,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 17561,
+						"buffer_size": 18721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11506,
-								11506
+								18361,
+								18361
 							]
 						],
 						"settings":
@@ -824,7 +834,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5136.0,
+						"translation.y": 8329.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -841,8 +851,8 @@
 						"selection":
 						[
 							[
-								2729,
-								2729
+								2940,
+								2940
 							]
 						],
 						"settings":
@@ -852,7 +862,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1554.0,
+						"translation.y": 2061.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -959,7 +969,7 @@
 		[
 			[
 				"",
-				"/home/faebser/workspace/lightdm-webkit-webkit-simple/greeter.sublime-project"
+				"/home/faebser/workspace/pi-stream/pi-stream.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -967,7 +977,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 203.0,
 	"status_bar_visible": true
 }
