@@ -48,8 +48,9 @@ $(document).ready(function () {
 			chosen: chosen,
 			mostUsed: mostUsed,
 			headers: headers,
-			tags: [],
+			tags: chosen.slice(0),
 			articles: [],
+			
 			html: '',
 			overlayHtml: '123123',
 			overlayParentStyleObject: {
