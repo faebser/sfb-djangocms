@@ -40,12 +40,12 @@
             </ul>
             <div id="container" v-bind:style="overlayParentStyleObject">
                 <ul class="articles">
-                    <li v-show="html === ''">
+                    <li v-show="articles.length === 0">
                         <article>
                             <h1>Keine Artikel gefunden.</h1>
                         </article>
                     </li>
-                    <li v-for="article in articles" v-on:click="toggleIssue(article.fields.issue[0])">
+                    <li v-for="article in articles" v-on:click="toggleIssue(article.fields.issue[0], article.pk)">
                             <article id="article-{{ article.pk }}">
                                 <h1>{{ article.fields.title }} - {{ article.fields.subtitle }} &middot;</h1>
                                 <h2>
@@ -53,7 +53,7 @@
                                         {{ author[0] }} {{ author[1] }} <span v-if="$index !== article.fields.authors.length - 1">,</span>
                                     </span>
                                 &middot;</h2>
-                                <h2>{{ article.fields.issue[1] }}</h2>
+                                <h2>{{ article.fields.page }}</h2>
                             </article>
                     </li>
                 </ul>

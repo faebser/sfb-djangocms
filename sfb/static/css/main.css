@@ -1765,8 +1765,9 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   position: relative;
   width: 100%;
   overflow: hidden;
+  min-height: 700px;
 }
-/* line 247, ../scss/_paper.scss */
+/* line 248, ../scss/_paper.scss */
 #container .paper {
   position: absolute;
   top: 0;
@@ -1779,12 +1780,12 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   -webkit-transition: left 0.75s;
   transition: left 0.75s;
 }
-/* line 255, ../scss/_paper.scss */
+/* line 256, ../scss/_paper.scss */
 #container .paper.show {
   left: 0;
 }
 
-/* line 263, ../scss/_paper.scss */
+/* line 264, ../scss/_paper.scss */
 #main .paper div a {
   float: left;
   display: block;
@@ -1793,13 +1794,13 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   margin: 0 auto;
   position: relative;
 }
-/* line 270, ../scss/_paper.scss */
+/* line 271, ../scss/_paper.scss */
 #main .paper div a img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
 }
-/* line 275, ../scss/_paper.scss */
+/* line 276, ../scss/_paper.scss */
 #main .paper div a .hover {
   position: absolute;
   top: 0;
@@ -1809,7 +1810,7 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   color: #00192E;
   background-color: rgba(0, 25, 46, 0.6);
 }
-/* line 284, ../scss/_paper.scss */
+/* line 285, ../scss/_paper.scss */
 #main .paper div a .hover p {
   color: #FDF6E3;
   font-size: 2.5em;
@@ -1817,21 +1818,21 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   max-width: 90%;
   line-height: 1.4;
 }
-/* line 291, ../scss/_paper.scss */
+/* line 292, ../scss/_paper.scss */
 #main .paper div a .hover p:before {
   display: block;
   margin: 0 auto;
   margin-bottom: 0.4em;
   font-size: 1.9em;
 }
-/* line 300, ../scss/_paper.scss */
+/* line 301, ../scss/_paper.scss */
 #main .paper div h3 {
   margin: 0;
   padding: 0 0 1em 0;
   float: right;
   width: 49%;
 }
-/* line 306, ../scss/_paper.scss */
+/* line 307, ../scss/_paper.scss */
 #main .paper div > ul.index {
   float: right;
   padding: 0;
@@ -1840,7 +1841,7 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   margin: 0 auto;
   padding: 0;
 }
-/* line 313, ../scss/_paper.scss */
+/* line 314, ../scss/_paper.scss */
 #main .paper div > ul.index li {
   width: 100%;
   max-width: 100%;
@@ -1853,12 +1854,12 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   -webkit-transition-delay: 1s;
   transition: all 0.7s linear 1s;
 }
-/* line 320, ../scss/_paper.scss */
+/* line 321, ../scss/_paper.scss */
 #main .paper div > ul.index li.show {
   color: #FDF6E3;
   background-color: #00407A;
 }
-/* line 326, ../scss/_paper.scss */
+/* line 327, ../scss/_paper.scss */
 #main .paper div .close {
   float: right;
   display: inline-block;
@@ -1872,11 +1873,11 @@ ul#tagList li:last-child.active i.icon-plus-circled {
   text-decoration: none;
 }
 
-/* line 343, ../scss/_paper.scss */
+/* line 344, ../scss/_paper.scss */
 #main #paper-overlay .messageInnerWrapper {
   background-color: #dbdbdb;
 }
-/* line 346, ../scss/_paper.scss */
+/* line 347, ../scss/_paper.scss */
 #main #paper-overlay .messageInnerWrapper .overlayButtonWrapper {
   position: static;
   margin: 0em auto 1em auto;

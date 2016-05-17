@@ -243,7 +243,8 @@ ul#tagList {
 #container {
 	position: relative;
 	width: 100%;
-	overflow: hidden; 
+	overflow: hidden;
+	min-height: 700px;
 	.paper {
 		position: absolute;
 		top: 0;
